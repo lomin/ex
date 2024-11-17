@@ -2,6 +2,7 @@
   (:require [clojure.test :refer :all]
             [clojure.xml :as xml]
             [clojure.java.io :as io]
+            [com.rpl.specter :as sp]
             [me.lomin.ex :as ex]
             [malli.core :as m]
             [malli.generator :as mg]
@@ -119,25 +120,25 @@
 (defn offer-exchange [exchange-request]
   (ex/with-ex exchange-request
               (ex/with-examples [exchange-request (mg/generate request-schema)]
-                 (when (not (valid-request? exchange-request))
-                   (ex/exit :request/invalid))
-                 (let [offer (ex/exchange :offer (retrieve-offer! exchange-request)
-                                          :valid-offer (assoc exchange-request :valid-until #inst"2030-05-15T09:18:05.099-00:00")
-                                          :invalid-offer (mg/generate request-schema)
-                                          :currencies.retrieve/failed (ex/exit :currencies.retrieve/failed "test error"))]
-                   (if-let [order-id (and (valid-offer? offer (now!)) (save-order! exchange-request))]
-                     (ok (str "Your order with the id " order-id " has been saved!")
-                         :order-id order-id)
-                     (ok "Based on your request, we would like to make you the following offer:"
-                         :offer (save-offer! (calculate-offer exchange-request (now!) (retrieve-currencies!)))))))
+                (when (not (valid-request? exchange-request))
+                  (ex/exit :request/invalid))
+                (let [offer (ex/exchange :offer (retrieve-offer! exchange-request)
+                                         :valid-offer (assoc exchange-request :valid-until #inst"2030-05-15T09:18:05.099-00:00")
+                                         :invalid-offer (mg/generate request-schema)
+                                         :currencies.retrieve/failed (ex/exit :currencies.retrieve/failed "test error"))]
+                  (if-let [order-id (and (valid-offer? offer (now!)) (save-order! exchange-request))]
+                    (ok (str "Your order with the id " order-id " has been saved!")
+                        :order-id order-id)
+                    (ok "Based on your request, we would like to make you the following offer:"
+                        :offer (save-offer! (calculate-offer exchange-request (now!) (retrieve-currencies!)))))))
               (catch :request/invalid _e
-                 (error "Request is not valid."))
+                (error "Request is not valid."))
               (catch :currencies.retrieve/failed e
-                 (error "We are currently unable to make an offer. Try later." :fail e))
+                (error "We are currently unable to make an offer. Try later." :fail e))
               (catch :offer.save/failed e
-                 (error "Your offer could not be saved. Try later." :fail e))
+                (error "Your offer could not be saved. Try later." :fail e))
               (catch :order.save/failed e
-                 (error "Your order could not be saved. Try later." :fail e))))
+                (error "Your order could not be saved. Try later." :fail e))))
 
 
 (deftest catch-parsing-test
@@ -261,11 +262,11 @@
   (is (= {:fail   #:exit{:_/type :currencies.retrieve/failed, :msg "test error"},
           :status :error
           :msg    "We are currently unable to make an offer. Try later."}
-         (offer-exchange {:from                       :EUR
-                          :to                         :USD
-                          :amount                     100.0
-                          :offer :currencies.retrieve/failed
-                          :ex/gen                     :ex.gen/exits}))))
+         (offer-exchange {:from   :EUR
+                          :to     :USD
+                          :amount 100.0
+                          :offer  :currencies.retrieve/failed
+                          :ex/gen :ex.gen/exits}))))
 
 (declare side-effects)
 
@@ -365,11 +366,6 @@
          :ex.as/forms '[$]}
         (ex/destruct '$ '$ nil))))
 
-(def id-sequence (atom -1))
-
-(defn next-id! []
-  (swap! id-sequence inc))
-
 (defn nested-1 [ctx]
   (ex/with-ex ctx ctx))
 
@@ -377,14 +373,37 @@
   (ex/with-ex ctx
               (nested-1 ctx)))
 
+(defn with-id-seq [m]
+  (let [state (atom -1)]
+    (assoc m :ex/generate-id! (fn [] (swap! state inc)))))
+
 (deftest with-ex-tracing-test
   (is (=* {:ex.trace/parent-id nil,
            :ex.trace/id        0}
-          (do (reset! id-sequence -1)
-              (ex/with-ex {:ex/generate-id! next-id!} $
-                          $))))
+          (ex/with-ex (with-id-seq {}) $
+                      $)))
 
   (is (=* {:ex.trace/parent-id 0,
            :ex.trace/id        1}
-          (do (reset! id-sequence -1)
-              (nested-0 {:ex/generate-id! next-id!})))))
+          (nested-0 (with-id-seq {}))))
+
+  (is (=* {:outer              [{:inner [2 3]}],
+           :ex.trace/parent-id nil,
+           :ex.trace/id        0}
+          (ex/with-ex (with-id-seq {:outer [{:inner [1 2]}]}) $
+                      (sp/transform [:outer sp/FIRST :inner sp/ALL] inc $))))
+
+  (is (= 2
+         (ex/with-ex {:test 1} $
+                     (let [$ {:test 2}]
+                       (:test $)))))
+
+  (is (=* {:ex.trace/id        0
+           :ex.trace/parent-id nil
+           :actual             1
+           :expected           1}
+          (let [$ {:unexpected 2}]
+            (ex/with-ex (with-id-seq {:actual 1}) $ (merge $ {:expected 1})))))
+
+  (is (= 3
+         (ex/with-ex {:actual 1} (+ 1 2)))))

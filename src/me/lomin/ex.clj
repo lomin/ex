@@ -230,22 +230,22 @@
       (assoc :ex.trace/parent-id (:ex.trace/id ctx))
       (assoc :ex.trace/id ((:ex/generate-id! ctx random-uuid)))))
 
-(defn transform-ast [replacement name ast]
+(defn transform-ast [ex-sym name ast]
   (ast/prewalk ast
                (fn [m]
-                 (if (= (:form m) name)
-                   replacement
+                 (if (= (:name m) name)
+                   (assoc m :name ex-sym)
                    m))))
 
 (defmacro with-ex [var-or-expr name-or-expr & body]
   (let [ex-sym   (gensym "with_ex_")
         {:ex.as/keys [sym forms expr]} (destruct var-or-expr name-or-expr body)
         body'    `(try+ ~@(replace-ex-fns ex-sym forms &env))
-        analysis (try (transform-ast (->replacement-ast-node ex-sym)
+        analysis (try (transform-ast ex-sym
                                      sym
                                      (analyze body' &env {ex-sym (->replacement-ast-node ex-sym)}))
                       (catch Exception _
-                        (analyze body' &env {sym    (->replacement-ast-node ex-sym)
-                                             ex-sym (->replacement-ast-node ex-sym)})))]
+                        (analyze body' &env {ex-sym (->replacement-ast-node ex-sym)
+                                             sym    (->replacement-ast-node ex-sym)})))]
     `(as-> (update-context ~expr) ~ex-sym
            ~(emit/emit-hygienic-form analysis))))
