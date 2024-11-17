@@ -167,11 +167,6 @@
         :malli/schema (mg/generate (:malli/schema meta*))
         a-var))))
 
-(defmacro with-random [& body]
-  `(with-redefs [system #(generate-fn %2 :ex.gen/random)]
-     (let [result# (do ~@body)]
-       result#)))
-
 (defn ->fn [a-var system]
   (let [f (get system (symbol a-var))]
     (cond
@@ -206,18 +201,6 @@
 (defmacro protect-var [sym-str]
   `(var ~(symbol sym-str)))
 
-(defn replace-ex-fns3
-  ([body] (replace-ex-fns3 body 'me.lomin.ex/system))
-  ([body sym]
-   (walk/postwalk
-     (fn [x]
-       (if-let [replace (and (seq? x) (and (symbol? (first x))) (:ex/replace (meta (resolve (first x)))))]
-         (replace (rest x))
-         (if-let [id (and (symbol? x) (ex-fn-var2?? (resolve x)))]
-           (cons sym `(~id (protect-var ~(str x))))
-           x)))
-     body)))
-
 (defn replace-ex-fns4
   ([config body env]
    (walk/postwalk
@@ -236,24 +219,15 @@
   [bindings & body]
   `(let ~bindings ~@body))
 
+(defmacro with-examples2
+  {:ex/replace (fn [_ args config _env] (cons 'do (rest args)))}
+  [bindings & body]
+  `(let ~bindings ~@body))
+
 (defmacro example
   {:ex/replace first}
   [sym example]
   (if (and (symbol? sym) (or (resolve sym) (get &env sym))) sym example))
-
-(comment
-  (with-try
-    (let [x 2]
-      (example x 1))))
-
-
-(defn init [sys]
-  (alter-var-root #'me.lomin.ex/system (fn [_] sys))
-  sys)
-
-(defn no-macro-expand
-  ([form] form)
-  ([form env] form))
 
 (defn analyze [body local-env extra-env]
   (let [env (assoc (ana.jvm/empty-env)
@@ -265,7 +239,7 @@
                                         {}
                                         local-env)
                              extra-env))]
-    (ana.jvm/analyze body env (or {} {:bindings {#'ana/macroexpand-1 no-macro-expand}}))))
+    (ana.jvm/analyze body env {})))
 
 (defn deeply-resolvable? [env body]
   (some?
@@ -311,10 +285,8 @@
        result#)))
 
 (defmacro exchange {:ex/replace replace-exchange}
-  [_trace-key sym & {:as opts}]
-  (if (deeply-resolvable? &env sym)
-    sym
-    (rand-nth (vals opts))))
+  [_trace-key form & {:as opts}]
+  (rand-nth (filterv (partial deeply-resolvable? &env) (conj (vals opts) form))))
 
 (defn destruct [var-or-expr name-or-expr body]
   (if (seq body)
@@ -361,7 +333,9 @@
         destr    (destruct var-or-expr name-or-expr body)
         forms    (:ex.as/forms destr)
         body'    `(try+ ~@(replace-ex-fns4 sym forms &env))
-        analysis (try (transform-ast (->replacement-ast-node sym) (:ex.as/name destr) (analyze body' &env {sym (->replacement-ast-node sym)}))
+        analysis (try (transform-ast (->replacement-ast-node sym)
+                                     (:ex.as/name destr)
+                                     (analyze body' &env {sym (->replacement-ast-node sym)}))
                       (catch Exception _
                         (analyze body' &env {(:ex.as/name destr) (->replacement-ast-node sym)
                                              sym                 (->replacement-ast-node sym)})))]

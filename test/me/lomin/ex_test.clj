@@ -101,6 +101,11 @@
 
 (defn valid-request? [exchange-request] (m/validate request-schema exchange-request))
 
+(comment
+  (valid-request? {:from   :EUR
+                   :to     :USD
+                   :amount 100.0}))
+
 (def inst<= (comp not pos? compare))
 
 (defn invalid-offer? [offer now] (inst<= now (:valid-until offer)))
@@ -143,22 +148,27 @@
   offer)
 
 (defn offer-exchange [exchange-request]
-  (ex/with-try
-    (when (not (valid-request? exchange-request)) (ex/exit :request/invalid))
-    (let [offer (retrieve-offer! exchange-request)]
-      (if-let [order-id (and (valid-offer? offer (now!)) (save-order! exchange-request))]
-        (ok (str "Your order with the id " order-id " has been saved!")
-            :order-id order-id)
-        (ok "Based on your request, we would like to make you the following offer:"
-            :offer (save-offer! (calculate-offer exchange-request (now!) (retrieve-currencies!))))))
-    (catch :request/invalid _e
-      (error "Request is not valid."))
-    (catch :currencies.retrieve/failed e
-      (error "We are currently unable to make an offer. Try later." :fail e))
-    (catch :offer.save/failed e
-      (error "Your offer could not be saved. Try later." :fail e))
-    (catch :order.save/failed e
-      (error "Your order could not be saved. Try later." :fail e))))
+  (ex/with-ex2 exchange-request
+               (ex/with-examples2 [exchange-request (mg/generate request-schema)]
+                 (when (not (valid-request? exchange-request))
+                   (ex/exit :request/invalid))
+                 (let [offer (ex/exchange :offer (retrieve-offer! exchange-request)
+                                          :valid-offer (assoc exchange-request :valid-until #inst"2030-05-15T09:18:05.099-00:00")
+                                          :invalid-offer (mg/generate request-schema)
+                                          :currencies.retrieve/failed (ex/exit :currencies.retrieve/failed "test error"))]
+                   (if-let [order-id (and (valid-offer? offer (now!)) (save-order! exchange-request))]
+                     (ok (str "Your order with the id " order-id " has been saved!")
+                         :order-id order-id)
+                     (ok "Based on your request, we would like to make you the following offer:"
+                         :offer (save-offer! (calculate-offer exchange-request (now!) (retrieve-currencies!)))))))
+               (catch :request/invalid _e
+                 (error "Request is not valid."))
+               (catch :currencies.retrieve/failed e
+                 (error "We are currently unable to make an offer. Try later." :fail e))
+               (catch :offer.save/failed e
+                 (error "Your offer could not be saved. Try later." :fail e))
+               (catch :order.save/failed e
+                 (error "Your order could not be saved. Try later." :fail e))))
 
 
 (deftest catch-parsing-test
@@ -242,7 +252,7 @@
       (catch ::bar {:as data :keys [c]} (swap! state conj [::bar data c]))
       (catch ::foo data (swap! state conj [::foo data]))
       (catch clojure.lang.ExceptionInfo e (swap! state conj [:exception-info (ex-data e)]))
-      (catch Exception e (swap! state conj :exception))
+      (catch Exception _e (swap! state conj :exception))
       (finally (swap! state conj :finally)))
     (is (= [[::bar
              {:b        2
@@ -290,33 +300,31 @@
   (is (= {:offer  {:from :EUR, :rate 1.0385, :to :USD, :valid-until #inst "2022-05-16T09:18:05.099-00:00"},
           :status :ok,
           :msg    "Based on your request, we would like to make you the following offer:"}
-         (with-redefs [ex/system {::save-order! (constantly #uuid"12345678-93dd-4312-9258-c0f06216fffa")}]
-           (offer-exchange {:from        :EUR
-                            :to          :USD
-                            :valid-until #inst"2019-05-15T09:18:05.099-00:00"
-                            :amount      100.0}))))
-  (is (= {:fail   #:exit{:_/type :currencies.retrieve/failed, :msg ":currencies.retrieve/failed"},
+         (offer-exchange {:from        :EUR
+                          :to          :USD
+                          :valid-until #inst"2019-05-15T09:18:05.099-00:00"
+                          :amount      100.0})))
+  (is (= {:fail   #:exit{:_/type :currencies.retrieve/failed, :msg "test error"},
           :status :error
           :msg    "We are currently unable to make an offer. Try later."}
-         (with-redefs [ex/system #(ex/generate-fn %2 :ex.gen/exits)]
-           (offer-exchange {:from   :EUR
-                            :to     :USD
-                            :amount 100.0
-                            :ex/gen :ex.gen/exits})))))
+         (offer-exchange {:from                       :EUR
+                          :to                         :USD
+                          :amount                     100.0
+                          :offer :currencies.retrieve/failed
+                          :ex/gen                     :ex.gen/exits}))))
 
 (declare side-effects)
 
 (defn traced-test-function-0 [opts]
-  (ex/with-ex opts (let [x 1] (ex/exchange :ex-traced (do (swap! side-effects conj "side-effect!") (+ x 0))
+  (ex/with-ex2 opts (let [x 1] (ex/exchange :ex-traced (do (swap! side-effects conj "side-effect!") (+ x 0))
                                            :some-key 2
-                                           :some-other-key 3))))
+                                           :some-other-key 3
+                                           :lazy (swap! side-effects conj "not allowed!")))))
 
 (defn traced-test-function-1 [opts]
-  (ex/with-ex opts (let [x 1] (ex/exchange :ex-traced-2 (+ x 0)
+  (ex/with-ex2 opts (let [x 1] (ex/exchange :ex-traced-2 (+ x 0)
                                            :some-key 2
                                            :some-other-key 3))))
-
-
 
 (declare test-log)
 (declare test-opts)
@@ -328,8 +336,7 @@
 
   (is (= (let [minus (ex/exchange :minus (- a b)
                                   :default- -100)]
-           (ex/exchange :multiply (* minus 2)
-                        :default* 4))
+           (ex/exchange :multiply (* minus 2)))
          -200))
 
   (is (= (traced-test-function-0 (merge test-opts {:ex-traced false})) 1))
