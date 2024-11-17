@@ -341,27 +341,27 @@
          (demonstrate $ $)))
   (is (=
         {:ex.as/expr  '(+ 1 2)
-         :ex.as/name  '$
+         :ex.as/sym   '$
          :ex.as/forms '[(prn $)]}
         (ex/destruct '(+ 1 2) '$ '[(prn $)])))
   (is (=
         {:ex.as/expr  '$
-         :ex.as/name  '$
+         :ex.as/sym   '$
          :ex.as/forms '[(+ 1 2)]}
         (ex/destruct '$ '(+ 1 2) nil)))
   (is (=
         {:ex.as/expr  '$
-         :ex.as/name  '$
+         :ex.as/sym   '$
          :ex.as/forms '[(prn 1 2) (+ 3 4)]}
         (ex/destruct '$ '(prn 1 2) '[(+ 3 4)])))
   (is (=
         {:ex.as/expr  '(+ 1 2)
-         :ex.as/name  '$
+         :ex.as/sym   '$
          :ex.as/forms '[$]}
         (ex/destruct '(+ 1 2) '$ nil)))
   (is (=
         {:ex.as/expr  '$
-         :ex.as/name  '$
+         :ex.as/sym   '$
          :ex.as/forms '[$]}
         (ex/destruct '$ '$ nil))))
 

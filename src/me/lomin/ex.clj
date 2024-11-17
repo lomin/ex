@@ -1,14 +1,10 @@
 (ns me.lomin.ex
   (:require [com.rpl.specter :as sp]
             [malli.core :as m]
-            [malli.generator :as mg]
-            [clojure.tools.analyzer :as ana]
             [clojure.tools.analyzer.ast :as ast]
             [clojure.tools.analyzer.jvm :as ana.jvm]
             [clojure.tools.analyzer.passes.jvm.emit-form :as emit]
             [clojure.walk :as walk]))
-
-(def system {})
 
 (declare catch-clause-validator)
 (declare finally-clause-validator)
@@ -132,20 +128,17 @@
              (into (->exception-clauses (:catch-clauses parsed-try)))
              (into (->finally-clause (:finally-clause parsed-try)))))))
 
-(defmacro protect-var [sym-str]
-  `(var ~(symbol sym-str)))
-
-(defn replace-ex-fns4
-  ([config body env]
+(defn replace-ex-fns
+  ([context body env]
    (walk/postwalk
      (fn [x]
        (if-let [replace (and (seq? x) (and (symbol? (first x))) (:ex/replace (meta (resolve (first x)))))]
-         (replace (first x) (rest x) config env)
+         (replace (first x) (rest x) context env)
          x))
      body)))
 
 (defmacro with-examples
-  {:ex/replace (fn [_ args config _env] (cons 'do (rest args)))}
+  {:ex/replace (fn [_ args _context _env] (cons 'do (rest args)))}
   [bindings & body]
   `(let ~bindings ~@body))
 
@@ -179,13 +172,13 @@
 (defmacro resolve-shallow [x]
   `~(resolve-shallow* &env x))
 
-(defn replace-exchange [_ [trace-key sym & {:as opts}] config _env]
+(defn replace-exchange [_ [trace-key sym & {:as opts}] context _env]
   (let [delayed-opts (reduce-kv (fn [m k v] (assoc m k (list 'delay v))) {} opts)]
-    `(let [trace!#  (get ~config :ex/trace!)
-           context# {:ex.ex/form   (quote ~sym)
-                     :ex.ex/config ~config
-                     :ex.ex/code   (resolve-shallow ~sym)}
-           result#  (or (when-let [selector# (get ~config ~trace-key)]
+    `(let [trace!#  (get ~context :ex/trace!)
+           context# {:ex.ex/form    (quote ~sym)
+                     :ex.ex/context ~context
+                     :ex.ex/code    (resolve-shallow ~sym)}
+           result#  (or (when-let [selector# (get ~context ~trace-key)]
                           (if trace!#
                             (try
                               (let [result# (selector# ~delayed-opts context#)]
@@ -208,17 +201,17 @@
   (if (seq body)
     (if (symbol? name-or-expr)
       {:ex.as/expr  var-or-expr
-       :ex.as/name  name-or-expr
+       :ex.as/sym   name-or-expr
        :ex.as/forms body}
       {:ex.as/expr  var-or-expr
-       :ex.as/name  var-or-expr
+       :ex.as/sym   var-or-expr
        :ex.as/forms (into [name-or-expr] body)})
     (if (symbol? var-or-expr)
       {:ex.as/expr  var-or-expr
-       :ex.as/name  var-or-expr
+       :ex.as/sym   var-or-expr
        :ex.as/forms [name-or-expr]}
       {:ex.as/expr  var-or-expr
-       :ex.as/name  name-or-expr
+       :ex.as/sym   name-or-expr
        :ex.as/forms [name-or-expr]})))
 
 (defn ->replacement-ast-node [sym]
@@ -245,15 +238,14 @@
                    m))))
 
 (defmacro with-ex [var-or-expr name-or-expr & body]
-  (let [sym      (gensym "with_ex_")
-        destr    (destruct var-or-expr name-or-expr body)
-        forms    (:ex.as/forms destr)
-        body'    `(try+ ~@(replace-ex-fns4 sym forms &env))
-        analysis (try (transform-ast (->replacement-ast-node sym)
-                                     (:ex.as/name destr)
-                                     (analyze body' &env {sym (->replacement-ast-node sym)}))
+  (let [ex-sym   (gensym "with_ex_")
+        {:ex.as/keys [sym forms expr]} (destruct var-or-expr name-or-expr body)
+        body'    `(try+ ~@(replace-ex-fns ex-sym forms &env))
+        analysis (try (transform-ast (->replacement-ast-node ex-sym)
+                                     sym
+                                     (analyze body' &env {ex-sym (->replacement-ast-node ex-sym)}))
                       (catch Exception _
-                        (analyze body' &env {(:ex.as/name destr) (->replacement-ast-node sym)
-                                             sym                 (->replacement-ast-node sym)})))]
-    `(as-> (update-context ~(:ex.as/expr destr)) ~sym
+                        (analyze body' &env {sym    (->replacement-ast-node ex-sym)
+                                             ex-sym (->replacement-ast-node ex-sym)})))]
+    `(as-> (update-context ~expr) ~ex-sym
            ~(emit/emit-hygienic-form analysis))))
