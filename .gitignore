@@ -1,0 +1,59 @@
+# Operating System Files
+.DS_Store
+
+# Editor Files
+.idea/
+.vscode
+*.bak
+*.iml
+*.swp
+.sw*
+*~
+.rebel_readline_history
+
+# Calva
+.calva/output-window/
+.calva/repl.calva-repl
+
+# Clojure Tools and Build Artifacts
+.classpath
+.project
+.settings
+.cpcache
+.factorypath
+.shadow-cljs/
+target
+/target
+/classes
+/checkouts
+.lein-*
+.eastwood
+log/
+
+# clj-kondo and LSP
+.clj-kondo/.cache
+.lsp/.cache
+.lsp/sqlite.db
+
+# Portal and Clerk
+.portal/
+.portal/vs-code.edn
+.clerk/
+
+# NREPL and Socket REPL
+.nrepl-history
+.nrepl-port
+.socket-repl-port
+
+# Miscellaneous
+.java-version
+hs_err_pid*.log
+
+# Node Modules
+node_modules/
+modules/
+
+# Binary Files
+*.class
+*.jar
+*.dylib

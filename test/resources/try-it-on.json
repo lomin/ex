@@ -1,0 +1,1462 @@
+{
+  "response": {
+    "analysis": [
+      {
+        "continued": true,
+        "part": 0,
+        "subparts": [
+          {
+            "analyzer": "khaiii:0.5",
+            "inputText": "입어봐요",
+            "options": {
+              "allParseTreeLevels": false,
+              "autoCorrectSpacingErrors": false,
+              "checkForGrammarUpdates": false,
+              "checkForPatternUpdates": true,
+              "disableCorrections": false,
+              "enableAutoScaleToFit": true,
+              "enableCompactParseTree": true,
+              "enableDebugging": false,
+              "enablePartialParseOnError": false,
+              "enableTranslation": true,
+              "enabledTranslation": true,
+              "forceReanalyze": true,
+              "ignoreSpacingErrors": false,
+              "language": "en",
+              "logLevel": 1,
+              "zoomedPatterns": []
+            },
+            "sentence": {
+              "analyzerVersion": "Mirinae NLP v0.80",
+              "correctedPosString": "입:VV;어:EC;보:VX;아요:EF;.:SF",
+              "displayDefs": {
+                "입:VV": {
+                  "_id": {
+                    "$oid": "5e48d4f929df039420b3cb85"
+                  },
+                  "attribution": "NIKL",
+                  "attributionURL": "https://krdict.korean.go.kr/eng/mainAction?nation=eng",
+                  "audio": "http://dicmedia.korean.go.kr:8899/multimedia/multimedia_files/convert/20120408/58943/SND000047646.mp3",
+                  "created": {
+                    "$date": 1657402352351
+                  },
+                  "matchedPosLabel": null,
+                  "notes": [],
+                  "posList": [
+                    {
+                      "posLabel": "Action Verb",
+                      "senses": [
+                        {
+                          "key": 870,
+                          "meanings": [
+                            {
+                              "POS": "VV",
+                              "_id": {
+                                "$oid": "5e631a569b7fee2eabc41a2c"
+                              },
+                              "created": {
+                                "$date": 1657402352404
+                              },
+                              "defHTML": "<p>To hang or drape clothes on or around one's body.</p>",
+                              "examples": [
+                                {
+                                  "example": "교복을 입다.",
+                                  "parts": {
+                                    "end": ".",
+                                    "main": "입다",
+                                    "start": "교복을 "
+                                  },
+                                  "translations": {}
+                                },
+                                {
+                                  "example": "군복을 입다.",
+                                  "parts": {
+                                    "end": ".",
+                                    "main": "입다",
+                                    "start": "군복을 "
+                                  },
+                                  "translations": {}
+                                },
+                                {
+                                  "example": "정장을 입다.",
+                                  "parts": {
+                                    "end": ".",
+                                    "main": "입다",
+                                    "start": "정장을 "
+                                  },
+                                  "translations": {}
+                                },
+                                {
+                                  "example": "한복을 입다.",
+                                  "parts": {
+                                    "end": ".",
+                                    "main": "입다",
+                                    "start": "한복을 "
+                                  },
+                                  "translations": {}
+                                },
+                                {
+                                  "example": "옷을 두껍게 입다.",
+                                  "parts": {
+                                    "end": ".",
+                                    "main": "입다",
+                                    "start": "옷을 두껍게 "
+                                  },
+                                  "translations": {}
+                                },
+                                {
+                                  "example": "옷을 야하게 입다.",
+                                  "parts": {
+                                    "end": ".",
+                                    "main": "입다",
+                                    "start": "옷을 야하게 "
+                                  },
+                                  "translations": {}
+                                }
+                              ],
+                              "extRefs": [],
+                              "index": 0,
+                              "key": 867,
+                              "language": "en",
+                              "posLabel": "Action Verb",
+                              "relatedPatterns": [],
+                              "relatedWords": [],
+                              "sense": "1",
+                              "shortDef": "wear, be dressed, put on",
+                              "sourcePOS": "verb",
+                              "vocabID": {
+                                "$oid": "5e48d4f929df039420b3cb85"
+                              }
+                            },
+                            {
+                              "POS": "VV",
+                              "_id": {
+                                "$oid": "5e631a569b7fee2eabc41a2d"
+                              },
+                              "created": {
+                                "$date": 1657402352405
+                              },
+                              "defHTML": "<p>To experience something bad, such as a loss, injury, damage, etc.</p>",
+                              "examples": [
+                                {
+                                  "example": "동상을 입다.",
+                                  "parts": {
+                                    "end": ".",
+                                    "main": "입다",
+                                    "start": "동상을 "
+                                  },
+                                  "translations": {}
+                                },
+                                {
+                                  "example": "부상을 입다.",
+                                  "parts": {
+                                    "end": ".",
+                                    "main": "입다",
+                                    "start": "부상을 "
+                                  },
+                                  "translations": {}
+                                },
+                                {
+                                  "example": "상처를 입다.",
+                                  "parts": {
+                                    "end": ".",
+                                    "main": "입다",
+                                    "start": "상처를 "
+                                  },
+                                  "translations": {}
+                                },
+                                {
+                                  "example": "손실을 입다.",
+                                  "parts": {
+                                    "end": ".",
+                                    "main": "입다",
+                                    "start": "손실을 "
+                                  },
+                                  "translations": {}
+                                },
+                                {
+                                  "example": "손해를 입다.",
+                                  "parts": {
+                                    "end": ".",
+                                    "main": "입다",
+                                    "start": "손해를 "
+                                  },
+                                  "translations": {}
+                                },
+                                {
+                                  "example": "피해를 입다.",
+                                  "parts": {
+                                    "end": ".",
+                                    "main": "입다",
+                                    "start": "피해를 "
+                                  },
+                                  "translations": {}
+                                }
+                              ],
+                              "extRefs": [],
+                              "index": 1,
+                              "key": 868,
+                              "language": "en",
+                              "posLabel": "Action Verb",
+                              "relatedPatterns": [],
+                              "relatedWords": [],
+                              "sense": "1",
+                              "shortDef": "suffer, sustain",
+                              "sourcePOS": "verb",
+                              "vocabID": {
+                                "$oid": "5e48d4f929df039420b3cb85"
+                              }
+                            },
+                            {
+                              "POS": "VV",
+                              "_id": {
+                                "$oid": "5e631a569b7fee2eabc41a2e"
+                              },
+                              "created": {
+                                "$date": 1657402352406
+                              },
+                              "defHTML": "<p>To be favored with or benefit by something.</p>",
+                              "examples": [
+                                {
+                                  "example": "도움을 입다.",
+                                  "parts": {
+                                    "end": ".",
+                                    "main": "입다",
+                                    "start": "도움을 "
+                                  },
+                                  "translations": {}
+                                },
+                                {
+                                  "example": "은덕을 입다.",
+                                  "parts": {
+                                    "end": ".",
+                                    "main": "입다",
+                                    "start": "은덕을 "
+                                  },
+                                  "translations": {}
+                                },
+                                {
+                                  "example": "은혜를 입다.",
+                                  "parts": {
+                                    "end": ".",
+                                    "main": "입다",
+                                    "start": "은혜를 "
+                                  },
+                                  "translations": {}
+                                },
+                                {
+                                  "example": "혜택을 입다.",
+                                  "parts": {
+                                    "end": ".",
+                                    "main": "입다",
+                                    "start": "혜택을 "
+                                  },
+                                  "translations": {}
+                                },
+                                {
+                                  "example": "나는 그들에게 입은 은혜를 절대로 잊을 수가 없다.",
+                                  "parts": {
+                                    "end": " 은혜를 절대로 잊을 수가 없다.",
+                                    "main": "입은",
+                                    "start": "나는 그들에게 "
+                                  },
+                                  "translations": {}
+                                },
+                                {
+                                  "example": "세금을 내리면 결국 혜택을 입는 사람은 서민들이다.",
+                                  "parts": {
+                                    "end": " 사람은 서민들이다.",
+                                    "main": "입는",
+                                    "start": "세금을 내리면 결국 혜택을 "
+                                  },
+                                  "translations": {}
+                                }
+                              ],
+                              "extRefs": [],
+                              "index": 2,
+                              "key": 869,
+                              "language": "en",
+                              "posLabel": "Action Verb",
+                              "relatedPatterns": [],
+                              "relatedWords": [],
+                              "sense": "1",
+                              "shortDef": "receive, get",
+                              "sourcePOS": "verb",
+                              "vocabID": {
+                                "$oid": "5e48d4f929df039420b3cb85"
+                              }
+                            }
+                          ],
+                          "sense": "wear, be dressed, put on"
+                        }
+                      ]
+                    }
+                  ],
+                  "pronunciation": "입따",
+                  "source": {
+                    "$oid": "5e51c02df55e49defc7a2536"
+                  },
+                  "word": "입다",
+                  "wordDefs": [
+                    [
+                      {
+                        "POS": "VV",
+                        "_id": {
+                          "$oid": "5e631a569b7fee2eabc41a2c"
+                        },
+                        "created": {
+                          "$date": 1657402352404
+                        },
+                        "defHTML": "<p>To hang or drape clothes on or around one's body.</p>",
+                        "examples": [
+                          {
+                            "example": "교복을 입다.",
+                            "parts": {
+                              "end": ".",
+                              "main": "입다",
+                              "start": "교복을 "
+                            },
+                            "translations": {}
+                          },
+                          {
+                            "example": "군복을 입다.",
+                            "parts": {
+                              "end": ".",
+                              "main": "입다",
+                              "start": "군복을 "
+                            },
+                            "translations": {}
+                          },
+                          {
+                            "example": "정장을 입다.",
+                            "parts": {
+                              "end": ".",
+                              "main": "입다",
+                              "start": "정장을 "
+                            },
+                            "translations": {}
+                          },
+                          {
+                            "example": "한복을 입다.",
+                            "parts": {
+                              "end": ".",
+                              "main": "입다",
+                              "start": "한복을 "
+                            },
+                            "translations": {}
+                          },
+                          {
+                            "example": "옷을 두껍게 입다.",
+                            "parts": {
+                              "end": ".",
+                              "main": "입다",
+                              "start": "옷을 두껍게 "
+                            },
+                            "translations": {}
+                          },
+                          {
+                            "example": "옷을 야하게 입다.",
+                            "parts": {
+                              "end": ".",
+                              "main": "입다",
+                              "start": "옷을 야하게 "
+                            },
+                            "translations": {}
+                          }
+                        ],
+                        "extRefs": [],
+                        "index": 0,
+                        "key": 867,
+                        "language": "en",
+                        "posLabel": "Action Verb",
+                        "relatedPatterns": [],
+                        "relatedWords": [],
+                        "sense": "1",
+                        "shortDef": "wear, be dressed, put on",
+                        "sourcePOS": "verb",
+                        "vocabID": {
+                          "$oid": "5e48d4f929df039420b3cb85"
+                        }
+                      },
+                      {
+                        "POS": "VV",
+                        "_id": {
+                          "$oid": "5e631a569b7fee2eabc41a2d"
+                        },
+                        "created": {
+                          "$date": 1657402352405
+                        },
+                        "defHTML": "<p>To experience something bad, such as a loss, injury, damage, etc.</p>",
+                        "examples": [
+                          {
+                            "example": "동상을 입다.",
+                            "parts": {
+                              "end": ".",
+                              "main": "입다",
+                              "start": "동상을 "
+                            },
+                            "translations": {}
+                          },
+                          {
+                            "example": "부상을 입다.",
+                            "parts": {
+                              "end": ".",
+                              "main": "입다",
+                              "start": "부상을 "
+                            },
+                            "translations": {}
+                          },
+                          {
+                            "example": "상처를 입다.",
+                            "parts": {
+                              "end": ".",
+                              "main": "입다",
+                              "start": "상처를 "
+                            },
+                            "translations": {}
+                          },
+                          {
+                            "example": "손실을 입다.",
+                            "parts": {
+                              "end": ".",
+                              "main": "입다",
+                              "start": "손실을 "
+                            },
+                            "translations": {}
+                          },
+                          {
+                            "example": "손해를 입다.",
+                            "parts": {
+                              "end": ".",
+                              "main": "입다",
+                              "start": "손해를 "
+                            },
+                            "translations": {}
+                          },
+                          {
+                            "example": "피해를 입다.",
+                            "parts": {
+                              "end": ".",
+                              "main": "입다",
+                              "start": "피해를 "
+                            },
+                            "translations": {}
+                          }
+                        ],
+                        "extRefs": [],
+                        "index": 1,
+                        "key": 868,
+                        "language": "en",
+                        "posLabel": "Action Verb",
+                        "relatedPatterns": [],
+                        "relatedWords": [],
+                        "sense": "1",
+                        "shortDef": "suffer, sustain",
+                        "sourcePOS": "verb",
+                        "vocabID": {
+                          "$oid": "5e48d4f929df039420b3cb85"
+                        }
+                      },
+                      {
+                        "POS": "VV",
+                        "_id": {
+                          "$oid": "5e631a569b7fee2eabc41a2e"
+                        },
+                        "created": {
+                          "$date": 1657402352406
+                        },
+                        "defHTML": "<p>To be favored with or benefit by something.</p>",
+                        "examples": [
+                          {
+                            "example": "도움을 입다.",
+                            "parts": {
+                              "end": ".",
+                              "main": "입다",
+                              "start": "도움을 "
+                            },
+                            "translations": {}
+                          },
+                          {
+                            "example": "은덕을 입다.",
+                            "parts": {
+                              "end": ".",
+                              "main": "입다",
+                              "start": "은덕을 "
+                            },
+                            "translations": {}
+                          },
+                          {
+                            "example": "은혜를 입다.",
+                            "parts": {
+                              "end": ".",
+                              "main": "입다",
+                              "start": "은혜를 "
+                            },
+                            "translations": {}
+                          },
+                          {
+                            "example": "혜택을 입다.",
+                            "parts": {
+                              "end": ".",
+                              "main": "입다",
+                              "start": "혜택을 "
+                            },
+                            "translations": {}
+                          },
+                          {
+                            "example": "나는 그들에게 입은 은혜를 절대로 잊을 수가 없다.",
+                            "parts": {
+                              "end": " 은혜를 절대로 잊을 수가 없다.",
+                              "main": "입은",
+                              "start": "나는 그들에게 "
+                            },
+                            "translations": {}
+                          },
+                          {
+                            "example": "세금을 내리면 결국 혜택을 입는 사람은 서민들이다.",
+                            "parts": {
+                              "end": " 사람은 서민들이다.",
+                              "main": "입는",
+                              "start": "세금을 내리면 결국 혜택을 "
+                            },
+                            "translations": {}
+                          }
+                        ],
+                        "extRefs": [],
+                        "index": 2,
+                        "key": 869,
+                        "language": "en",
+                        "posLabel": "Action Verb",
+                        "relatedPatterns": [],
+                        "relatedWords": [],
+                        "sense": "1",
+                        "shortDef": "receive, get",
+                        "sourcePOS": "verb",
+                        "vocabID": {
+                          "$oid": "5e48d4f929df039420b3cb85"
+                        }
+                      }
+                    ]
+                  ]
+                }
+              },
+              "endingPunctuation": "",
+              "error": "",
+              "index": 0,
+              "mappedPosList": [
+                {
+                  "endOfWord": false,
+                  "index": 0,
+                  "isSetMeaning": true,
+                  "label": "Action Verb",
+                  "morph": "입:VV",
+                  "notSure": true,
+                  "phoneme": "입",
+                  "sourceSpan": [
+                    0,
+                    1
+                  ],
+                  "span": [
+                    1,
+                    5
+                  ],
+                  "tag": "VV",
+                  "translation": "wear",
+                  "wordIndex": 0
+                },
+                {
+                  "endOfWord": false,
+                  "index": 1,
+                  "label": "Auxiliary verb",
+                  "meaning": "Try / Have An Experience",
+                  "morph": "어보:AUX",
+                  "pattern": "5e6f3a3f7726170a2ba3b99f",
+                  "phoneme": "어보",
+                  "sourceSpan": [
+                    1,
+                    3
+                  ],
+                  "span": [
+                    6,
+                    15
+                  ],
+                  "tag": "AUX",
+                  "wordIndex": 0,
+                  "zoomable": true
+                },
+                {
+                  "endOfWord": true,
+                  "index": 2,
+                  "label": "Sentence end",
+                  "meaning": "Polite Informal ",
+                  "morph": "아요:SEF",
+                  "pattern": "5e7af34ccdcbc12952efb799",
+                  "phoneme": "아요",
+                  "sourceSpan": [
+                    3,
+                    5
+                  ],
+                  "span": [
+                    16,
+                    21
+                  ],
+                  "tag": "SEF",
+                  "wordIndex": 0,
+                  "zoomable": false
+                },
+                {
+                  "endOfWord": true,
+                  "index": 3,
+                  "label": ".",
+                  "morph": ".:SF",
+                  "phoneme": ".",
+                  "sourceSpan": [
+                    5,
+                    6
+                  ],
+                  "span": [
+                    22,
+                    26
+                  ],
+                  "tag": "SF",
+                  "wordIndex": 0
+                }
+              ],
+              "mappedPosString": ";입:VV;어보:AUX;아요:SEF;.:SF;",
+              "matchingLog": [
+                "match try / have an experience  -어 보다  prio = 2.02 span= (6, 15) : 어:EC;보:VX\n",
+                "match Polite informal   -어요  prio = 1.02 span= (16, 21) : 아요:EF\n",
+                "match And / because  -아/어/여  prio = 1.02 span= (6, 10) : 어:EC\n",
+                " * dropped, spanned by larger or superceded by a more-constrained pattern\n"
+              ],
+              "morphemeGroups": [
+                [
+                  "입어봐요.",
+                  [
+                    "입",
+                    "어",
+                    "보",
+                    "아요"
+                  ]
+                ]
+              ],
+              "parse": null,
+              "parseTrees": [
+                {
+                  "allNodes": [
+                    {
+                      "children": [],
+                      "id": 1,
+                      "layer": 0,
+                      "level": -1,
+                      "parent": 3,
+                      "posIndex": 0,
+                      "tag": "VV",
+                      "type": "word",
+                      "word": "입"
+                    },
+                    {
+                      "children": [],
+                      "id": 2,
+                      "layer": 0,
+                      "level": -1,
+                      "parent": 3,
+                      "posIndex": 1,
+                      "tag": "AUX",
+                      "type": "word",
+                      "word": "어보"
+                    },
+                    {
+                      "children": [
+                        {
+                          "children": [],
+                          "id": 1,
+                          "layer": 0,
+                          "level": -1,
+                          "parent": 3,
+                          "posIndex": 0,
+                          "tag": "VV",
+                          "type": "word",
+                          "word": "입"
+                        },
+                        {
+                          "children": [],
+                          "id": 2,
+                          "layer": 0,
+                          "level": -1,
+                          "parent": 3,
+                          "posIndex": 1,
+                          "tag": "AUX",
+                          "type": "word",
+                          "word": "어보"
+                        }
+                      ],
+                      "collapse": false,
+                      "id": 3,
+                      "layer": 1,
+                      "level": 1,
+                      "parent": 5,
+                      "tag": "Verb And Auxiliary",
+                      "type": "tree"
+                    },
+                    {
+                      "children": [],
+                      "id": 4,
+                      "layer": 0,
+                      "level": -1,
+                      "parent": 5,
+                      "posIndex": 2,
+                      "tag": "SEF",
+                      "type": "word",
+                      "word": "아요"
+                    },
+                    {
+                      "children": [
+                        {
+                          "children": [
+                            {
+                              "children": [],
+                              "id": 1,
+                              "layer": 0,
+                              "level": -1,
+                              "parent": 3,
+                              "posIndex": 0,
+                              "tag": "VV",
+                              "type": "word",
+                              "word": "입"
+                            },
+                            {
+                              "children": [],
+                              "id": 2,
+                              "layer": 0,
+                              "level": -1,
+                              "parent": 3,
+                              "posIndex": 1,
+                              "tag": "AUX",
+                              "type": "word",
+                              "word": "어보"
+                            }
+                          ],
+                          "collapse": false,
+                          "id": 3,
+                          "layer": 1,
+                          "level": 1,
+                          "parent": 5,
+                          "tag": "Verb And Auxiliary",
+                          "type": "tree"
+                        },
+                        {
+                          "children": [],
+                          "id": 4,
+                          "layer": 0,
+                          "level": -1,
+                          "parent": 5,
+                          "posIndex": 2,
+                          "tag": "SEF",
+                          "type": "word",
+                          "word": "아요"
+                        }
+                      ],
+                      "collapse": false,
+                      "id": 5,
+                      "layer": 2,
+                      "level": 0,
+                      "parent": null,
+                      "tag": "Verb Phrase",
+                      "type": "tree"
+                    }
+                  ],
+                  "hash": "9721aad31762c67694e27c1c092303fa",
+                  "layers": [
+                    [
+                      1,
+                      2,
+                      4
+                    ],
+                    [
+                      3
+                    ],
+                    [
+                      5
+                    ]
+                  ],
+                  "rank": 4,
+                  "spans": {
+                    "Verb And Auxiliary": [
+                      [
+                        0,
+                        2
+                      ]
+                    ],
+                    "Verb Phrase": [
+                      [
+                        0,
+                        3
+                      ]
+                    ]
+                  },
+                  "tree": {
+                    "children": [
+                      {
+                        "children": [
+                          {
+                            "children": [],
+                            "id": 1,
+                            "layer": 0,
+                            "level": -1,
+                            "parent": 3,
+                            "posIndex": 0,
+                            "tag": "VV",
+                            "type": "word",
+                            "word": "입"
+                          },
+                          {
+                            "children": [],
+                            "id": 2,
+                            "layer": 0,
+                            "level": -1,
+                            "parent": 3,
+                            "posIndex": 1,
+                            "tag": "AUX",
+                            "type": "word",
+                            "word": "어보"
+                          }
+                        ],
+                        "collapse": false,
+                        "id": 3,
+                        "layer": 1,
+                        "level": 1,
+                        "parent": 5,
+                        "tag": "Verb And Auxiliary",
+                        "type": "tree"
+                      },
+                      {
+                        "children": [],
+                        "id": 4,
+                        "layer": 0,
+                        "level": -1,
+                        "parent": 5,
+                        "posIndex": 2,
+                        "tag": "SEF",
+                        "type": "word",
+                        "word": "아요"
+                      }
+                    ],
+                    "collapse": false,
+                    "id": 5,
+                    "layer": 2,
+                    "level": 0,
+                    "parent": null,
+                    "tag": "Verb Phrase",
+                    "type": "tree"
+                  }
+                }
+              ],
+              "patterns": {
+                "5e6f3a3f7726170a2ba3b99f": {
+                  "gp": {
+                    "_id": {
+                      "$oid": "5e6f3a3f7726170a2ba3b99f"
+                    },
+                    "analyzer": "khaiii:0.5",
+                    "changeIndex": 9,
+                    "id": "5e6f3a3f7726170a2ba3b99f",
+                    "patternFunction": "",
+                    "patternSig": "(([^:]+):XSV)|(([^:]+):(VV|VHV|VX))(아|어|여):EC;보:VX?Auxiliary verb form",
+                    "patternType": "Auxiliary verb form",
+                    "patterns": [
+                      {
+                        "matchExpr": {
+                          "main": "(아|어|여):EC;보:VX",
+                          "pre": "(([^:]+):XSV)|(([^:]+):(VV|VHV|VX))"
+                        },
+                        "sourceSample": "나는 건강을 위해 가벼운 운동이라도 매일 해 보려고 한다. 지수는 자전거를 한 번도 타 본 적이 없다. 손님, 그 원피스가 마음에 드시면 한번 입어 보세요."
+                      }
+                    ],
+                    "referenceDef": {
+                      "main": "-어 보다",
+                      "pre": ""
+                    },
+                    "relatedPatterns": [
+                      {
+                        "index": 0,
+                        "notes": "See releated pattern notes",
+                        "patternDescr": "I tried (and I found)  : ~ 아/어 보니까  (Clause-connecting form)",
+                        "relatedPatternID": {
+                          "$oid": "5ef075664d2141fb8f2691fb"
+                        },
+                        "relationship": "Derived from"
+                      }
+                    ],
+                    "replacement": ""
+                  },
+                  "gr": {
+                    "_id": {
+                      "$oid": "5e6f3a3f7726170a2ba3b9a1"
+                    },
+                    "changeIndex": 9,
+                    "created": {
+                      "$date": 1584347711151
+                    },
+                    "defHTML": "<p><strong>-어 보다</strong> has two meanings. </p><p><br></p><ul><li><strong>try doing something</strong>: indicating that one does the act mentioned in the preceding statement, as a test</li></ul><p class=\"ql-indent-1\">e.g. 마음에 드시면 입<strong>어 보</strong>세요. (<strong>Try</strong> that on if you like it.) </p><p><br></p><ul><li><strong>have an experience of doing something</strong> : indicating that one experienced the act mentioned in the preceding statement earlier.</li></ul><p class=\"ql-indent-1\">e.g. 제주도에 <strong>가 봤</strong>어요? (<strong>Have you ever</strong> been to Jeju Island?)</p><p><br></p><p>It has three forms. </p><p>-아 보다 combines with a verb whose stem has ㅏ/ㅗ as its last vowel.</p><p>-어 보다 combines with a verb whose stem has other vowels.</p><p>-여 보다 combines with verbs in -하다 form.</p>",
+                    "examples": [
+                      {
+                        "example": "나는 건강을 위해 가벼운 운동이라도 매일 해 보려고 한다.",
+                        "index": 0,
+                        "parts": {
+                          "end": "려고 한다.",
+                          "main": "해 보",
+                          "pre": "",
+                          "start": "나는 건강을 위해 가벼운 운동이라도 매일 "
+                        },
+                        "source": {
+                          "$oid": "5e51c02df55e49defc7a2536"
+                        },
+                        "translation": "I try to do even light exercises every day for my health.",
+                        "translations": {}
+                      },
+                      {
+                        "example": "지수는 자전거를 한 번도 타 본 적이 없다.",
+                        "index": 1,
+                        "parts": {
+                          "end": " 적이 없다.",
+                          "main": "타 본 ",
+                          "pre": "",
+                          "start": "지수는 자전거를 한 번도 "
+                        },
+                        "source": {
+                          "$oid": "5e51c02df55e49defc7a2536"
+                        },
+                        "translation": "Jisu has never ridden a bicycle before.",
+                        "translations": {}
+                      },
+                      {
+                        "example": "마음에 드시면 입어 보세요. ",
+                        "index": 2,
+                        "parts": {
+                          "end": "세요.",
+                          "main": "어 보",
+                          "pre": "입",
+                          "start": "마음에 드시면 "
+                        },
+                        "translation": "Try that on if you like it.",
+                        "translations": {}
+                      },
+                      {
+                        "example": "제주도에 가 본 적이 있어요? ",
+                        "index": 3,
+                        "parts": {
+                          "start": "제주도에 가 본 적이 있어요?"
+                        },
+                        "translation": "Have you ever been to Jeju Island?",
+                        "translations": {}
+                      }
+                    ],
+                    "extRefs": [],
+                    "idiom": {},
+                    "intention": "",
+                    "language": "en",
+                    "niklLevel": "2",
+                    "niklNumber": "85",
+                    "notes": [],
+                    "origin": "",
+                    "patternClass": "pat",
+                    "patternID": {
+                      "$oid": "5e6f3a3f7726170a2ba3b99f"
+                    },
+                    "referenceDefStr": " -어 보다 ",
+                    "shortDescr": "Try (doing) / have an experience (of doing)",
+                    "tags": "",
+                    "title": "try / have an experience",
+                    "updated": {
+                      "$date": 1619167189377
+                    },
+                    "useCategories": [
+                      "Purpose or intention",
+                      "Exppressing state of mind"
+                    ]
+                  },
+                  "spans": [
+                    {
+                      "main": [
+                        6,
+                        15
+                      ],
+                      "pre": [
+                        1,
+                        5
+                      ]
+                    }
+                  ]
+                },
+                "5e7af34ccdcbc12952efb799": {
+                  "gp": {
+                    "_id": {
+                      "$oid": "5e7af34ccdcbc12952efb799"
+                    },
+                    "analyzer": "khaiii:0.5",
+                    "changeIndex": 16,
+                    "id": "5e7af34ccdcbc12952efb799",
+                    "patternSig": "(이|아니):VC[PN](;시:EP)*어요:EF?Sentence-ending form",
+                    "patternType": "Sentence-ending form",
+                    "patterns": [
+                      {
+                        "matchExpr": {
+                          "main": "(아요|어요|여요|에요|예요):EF",
+                          "pre": "([^:]+):(V[A-Z]+)((;(으시|시):EP)|(;(았|었|였):(EP))|(;겠:(TNS|EP)))*"
+                        },
+                        "sourceSample": "전화를 받아요. 양이 좀 적어요. 전화를 받았어요. "
+                      },
+                      {
+                        "matchExpr": {
+                          "main": "어요:EF",
+                          "pre": "(이|아니):VC[PN](;시:EP)*"
+                        },
+                        "sourceSample": "제 선생님이세요."
+                      }
+                    ],
+                    "referenceDef": {
+                      "main": "-어요",
+                      "pre": ""
+                    },
+                    "relatedPatterns": [
+                      {
+                        "index": 0,
+                        "notes": "See releated pattern notes",
+                        "patternDescr": "Polite informal :  ~요 ~  (Sentence-ending form)",
+                        "relatedPatternID": {
+                          "$oid": "601956a70dd4c28f2e554bc9"
+                        },
+                        "relationship": "Same meaning"
+                      }
+                    ],
+                    "replacement": ""
+                  },
+                  "gr": {
+                    "_id": {
+                      "$oid": "5e7af34ccdcbc12952efb79b"
+                    },
+                    "changeIndex": 16,
+                    "created": {
+                      "$date": 1585115980160
+                    },
+                    "defHTML": "<p><strong>-어요</strong> is a <strong>polite informal ending</strong>. This sentence ending can be used for statements, questions, commands and proposals. </p><p><br></p><p>It has several forms.</p><p>-아요 combines with a verb or an adjective whose stem has ㅏ or ㅗ as its last vowel.</p><p>e.g. 날씨가 좋<strong>아요</strong>. (The weather is nice.)</p><p><br></p><p>-어요 combines with a verb or an adjective whose stem has other vowels.</p><p>e.g. 셔츠가 예<strong>뻐요</strong>. (The shirt looks pretty.) </p><p><br></p><p>-여요 combines with a verb or an adjective whose stem is in -하다 form.</p><p>e.g. 신발이 불편<strong>해요</strong>. (The shoes are not very comfortable.)</p><p><br></p><p>-에요 combines with -이다 / -아니다 verb.</p><p>e.g. 저는 학생이<strong>에요</strong>. (I am a student.)</p><p>e.g. 저는 학생이 아니<strong>에요</strong>. (I am not a student.) </p><p><br></p><p>-예요 combines with a noun which ends with a vowel. </p><p>e.g. 이 분은 우리 아빠<strong>예요</strong>. (This person is my dad.) </p><p><br></p>",
+                    "examples": [
+                      {
+                        "example": "이야기가 재미있어요?",
+                        "index": 0,
+                        "parts": {
+                          "end": "?",
+                          "main": "어요",
+                          "pre": "재미있",
+                          "start": "이야기가 "
+                        },
+                        "translation": "Is the story interesting?",
+                        "translations": {}
+                      },
+                      {
+                        "example": "안녕하세요?",
+                        "index": 1,
+                        "parts": {
+                          "start": "안녕하세요?"
+                        },
+                        "translation": "Hello?",
+                        "translations": {}
+                      },
+                      {
+                        "example": "날씨가 좋아요. ",
+                        "index": 2,
+                        "parts": {
+                          "end": ".",
+                          "main": "아요",
+                          "pre": "좋",
+                          "start": "날씨가 "
+                        },
+                        "translation": "The weather is nice.",
+                        "translations": {}
+                      },
+                      {
+                        "example": "셔츠가 예뻐요. ",
+                        "index": 3,
+                        "parts": {
+                          "end": ".",
+                          "main": "뻐요",
+                          "pre": "예",
+                          "start": "셔츠가 "
+                        },
+                        "translation": "The shirt looks pretty.",
+                        "translations": {}
+                      },
+                      {
+                        "example": "신발이 불편해요. ",
+                        "index": 4,
+                        "parts": {
+                          "start": "신발이 불편해요."
+                        },
+                        "translation": "The shoes are not very comfortable.",
+                        "translations": {}
+                      },
+                      {
+                        "example": "저는 학생이에요. ",
+                        "index": 5,
+                        "parts": {
+                          "end": ".",
+                          "main": "에요",
+                          "pre": "이",
+                          "start": "저는 학생"
+                        },
+                        "translation": "I am a student.",
+                        "translations": {}
+                      },
+                      {
+                        "example": "저는 학생이 아니에요. ",
+                        "index": 6,
+                        "parts": {
+                          "end": ".",
+                          "main": "에요",
+                          "pre": "아니",
+                          "start": "저는 학생이 "
+                        },
+                        "translation": "I am not a student.",
+                        "translations": {}
+                      },
+                      {
+                        "example": "이 분은 우리 아빠예요.",
+                        "index": 7,
+                        "parts": {
+                          "end": ".",
+                          "main": "예요",
+                          "pre": "",
+                          "start": "이 분은 우리 아빠"
+                        },
+                        "translation": "This person is my dad.",
+                        "translations": {}
+                      }
+                    ],
+                    "extRefs": [],
+                    "idiom": {},
+                    "intention": "None",
+                    "language": "en",
+                    "niklLevel": "1",
+                    "niklNumber": "36",
+                    "notes": [],
+                    "origin": "",
+                    "patternClass": "pat",
+                    "patternID": {
+                      "$oid": "5e7af34ccdcbc12952efb799"
+                    },
+                    "referenceDefStr": " -어요 ",
+                    "shortDescr": "Polite informal style ending",
+                    "tags": "",
+                    "title": "Polite informal ",
+                    "updated": {
+                      "$date": 1622443211397
+                    },
+                    "useCategories": [
+                      "Sentence ending"
+                    ]
+                  },
+                  "spans": [
+                    {
+                      "main": [
+                        16,
+                        21
+                      ],
+                      "pre": [
+                        11,
+                        15
+                      ]
+                    }
+                  ]
+                }
+              },
+              "posList": [
+                {
+                  "endOfWord": false,
+                  "index": 0,
+                  "isSetMeaning": true,
+                  "label": "Action Verb",
+                  "morph": "입:VV",
+                  "notSure": true,
+                  "phoneme": "입",
+                  "sourceSpan": [
+                    0,
+                    1
+                  ],
+                  "span": [
+                    1,
+                    5
+                  ],
+                  "tag": "VV",
+                  "translation": "wear",
+                  "wordIndex": 0
+                },
+                {
+                  "endOfWord": false,
+                  "index": 1,
+                  "label": "Connecting Suffix",
+                  "morph": "어:EC",
+                  "phoneme": "어",
+                  "span": [
+                    6,
+                    10
+                  ],
+                  "tag": "EC",
+                  "wordIndex": 0
+                },
+                {
+                  "endOfWord": false,
+                  "index": 2,
+                  "label": "Auxiliary Verb",
+                  "morph": "보:VX",
+                  "phoneme": "보",
+                  "span": [
+                    11,
+                    15
+                  ],
+                  "tag": "VX",
+                  "wordIndex": 0
+                },
+                {
+                  "endOfWord": false,
+                  "index": 3,
+                  "label": "Predicate-ending Suffix",
+                  "morph": "아요:EF",
+                  "phoneme": "아요",
+                  "span": [
+                    16,
+                    21
+                  ],
+                  "tag": "EF",
+                  "wordIndex": 0
+                },
+                {
+                  "endOfWord": true,
+                  "index": 3,
+                  "label": ".",
+                  "morph": ".:SF",
+                  "phoneme": ".",
+                  "sourceSpan": [
+                    5,
+                    6
+                  ],
+                  "span": [
+                    22,
+                    26
+                  ],
+                  "tag": "SF",
+                  "wordIndex": 0
+                }
+              ],
+              "posListWithSpaces": [
+                {
+                  "phoneme": "입",
+                  "sourceSpan": [
+                    0,
+                    1
+                  ],
+                  "tag": "VV"
+                },
+                {
+                  "phoneme": "어",
+                  "sourceSpan": [
+                    1,
+                    2
+                  ],
+                  "tag": "EC"
+                },
+                {
+                  "phoneme": "보",
+                  "sourceSpan": [
+                    2,
+                    3
+                  ],
+                  "tag": "VX"
+                },
+                {
+                  "phoneme": "아요",
+                  "sourceSpan": [
+                    2,
+                    4
+                  ],
+                  "tag": "EF"
+                },
+                {
+                  "phoneme": ".",
+                  "sourceSpan": [
+                    4,
+                    5
+                  ],
+                  "tag": "SF"
+                }
+              ],
+              "posString": ";입:VV;어:EC;보:VX;아요:EF;.:SF;",
+              "sourceSpan": [
+                0,
+                5
+              ],
+              "sourceText": "입어봐요.",
+              "syllableList": [
+                {
+                  "eow": false,
+                  "sow": true,
+                  "syllable": "입",
+                  "wordIndex": 0
+                },
+                {
+                  "eow": false,
+                  "sow": false,
+                  "syllable": "어",
+                  "wordIndex": 0
+                },
+                {
+                  "eow": false,
+                  "sow": false,
+                  "syllable": "보",
+                  "wordIndex": 0
+                },
+                {
+                  "eow": false,
+                  "sow": false,
+                  "syllable": "아",
+                  "wordIndex": 0
+                },
+                {
+                  "eow": true,
+                  "sow": false,
+                  "syllable": "요",
+                  "wordIndex": 0
+                },
+                {
+                  "eow": true,
+                  "sow": false,
+                  "syllable": ".",
+                  "wordIndex": 0
+                }
+              ],
+              "translation": "Try it on.",
+              "translationService": "Naver/Papago",
+              "treeIndex": 0,
+              "uncorrectedPosString": ";입:VV;어:EC;보:VX;아요:EF;.:SF;",
+              "words": [
+                {
+                  "index": 0,
+                  "posList": [
+                    {
+                      "endOfWord": false,
+                      "index": 0,
+                      "isSetMeaning": true,
+                      "label": "Action Verb",
+                      "morph": "입:VV",
+                      "notSure": true,
+                      "phoneme": "입",
+                      "sourceSpan": [
+                        0,
+                        1
+                      ],
+                      "span": [
+                        1,
+                        5
+                      ],
+                      "tag": "VV",
+                      "translation": "wear",
+                      "wordIndex": 0
+                    },
+                    {
+                      "endOfWord": false,
+                      "index": 1,
+                      "label": "Connecting Suffix",
+                      "morph": "어:EC",
+                      "phoneme": "어",
+                      "span": [
+                        6,
+                        10
+                      ],
+                      "tag": "EC",
+                      "wordIndex": 0
+                    },
+                    {
+                      "endOfWord": false,
+                      "index": 2,
+                      "label": "Auxiliary Verb",
+                      "morph": "보:VX",
+                      "phoneme": "보",
+                      "span": [
+                        11,
+                        15
+                      ],
+                      "tag": "VX",
+                      "wordIndex": 0
+                    },
+                    {
+                      "endOfWord": false,
+                      "index": 3,
+                      "label": "Predicate-ending Suffix",
+                      "morph": "아요:EF",
+                      "phoneme": "아요",
+                      "span": [
+                        16,
+                        21
+                      ],
+                      "tag": "EF",
+                      "wordIndex": 0
+                    },
+                    {
+                      "endOfWord": true,
+                      "index": 3,
+                      "label": ".",
+                      "morph": ".:SF",
+                      "phoneme": ".",
+                      "sourceSpan": [
+                        5,
+                        6
+                      ],
+                      "span": [
+                        22,
+                        26
+                      ],
+                      "tag": "SF",
+                      "wordIndex": 0
+                    }
+                  ],
+                  "sourceSpan": [
+                    0,
+                    5
+                  ],
+                  "word": "입어봐요.",
+                  "wordSpan": [
+                    [
+                      0,
+                      0
+                    ],
+                    [
+                      2,
+                      1
+                    ],
+                    [
+                      3,
+                      0
+                    ]
+                  ]
+                }
+              ],
+              "zoomedPatterns": []
+            },
+            "sourceSpans": [
+              {
+                "span": [
+                  0,
+                  5
+                ],
+                "text": "입어봐요."
+              }
+            ],
+            "sourceText": "입어봐요."
+          }
+        ]
+      }
+    ],
+    "session": "62c9f2d8537b376f404ec320"
+  },
+  "success": true
+}

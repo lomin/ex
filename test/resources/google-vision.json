@@ -1,0 +1,4051 @@
+{
+  "cropHintsAnnotation": {
+    "cropHints": [
+      {
+        "boundingPoly": {
+          "vertices": [
+            {
+              "x": 899,
+              "y": 10
+            },
+            {
+              "x": 1048,
+              "y": 10
+            },
+            {
+              "x": 1048,
+              "y": 196
+            },
+            {
+              "x": 899,
+              "y": 196
+            }
+          ]
+        },
+        "confidence": 0.9782796,
+        "importanceFraction": 0.12539552
+      },
+      {
+        "boundingPoly": {
+          "vertices": [
+            {
+              "x": 799
+            },
+            {
+              "x": 1007
+            },
+            {
+              "x": 1007,
+              "y": 207
+            },
+            {
+              "x": 799,
+              "y": 207
+            }
+          ]
+        },
+        "confidence": 0.875,
+        "importanceFraction": 0.17524548
+      },
+      {
+        "boundingPoly": {
+          "vertices": [
+            {
+              "x": 799,
+              "y": 10
+            },
+            {
+              "x": 1022,
+              "y": 10
+            },
+            {
+              "x": 1022,
+              "y": 196
+            },
+            {
+              "x": 799,
+              "y": 196
+            }
+          ]
+        },
+        "confidence": 0.9782797,
+        "importanceFraction": 0.18809319
+      }
+    ]
+  },
+  "fullTextAnnotation": {
+    "pages": [
+      {
+        "blocks": [
+          {
+            "blockType": "TEXT",
+            "boundingBox": {
+              "vertices": [
+                {
+                  "x": -5,
+                  "y": -1
+                },
+                {
+                  "x": 1989,
+                  "y": 17
+                },
+                {
+                  "x": 1987,
+                  "y": 212
+                },
+                {
+                  "x": -7,
+                  "y": 194
+                }
+              ]
+            },
+            "confidence": 0.94620264,
+            "paragraphs": [
+              {
+                "boundingBox": {
+                  "vertices": [
+                    {
+                      "x": 12
+                    },
+                    {
+                      "x": 1989,
+                      "y": 17
+                    },
+                    {
+                      "x": 1988,
+                      "y": 91
+                    },
+                    {
+                      "x": 11,
+                      "y": 74
+                    }
+                  ]
+                },
+                "confidence": 0.94620776,
+                "words": [
+                  {
+                    "boundingBox": {
+                      "vertices": [
+                        {
+                          "x": 12
+                        },
+                        {
+                          "x": 296,
+                          "y": 2
+                        },
+                        {
+                          "x": 295,
+                          "y": 76
+                        },
+                        {
+                          "x": 11,
+                          "y": 74
+                        }
+                      ]
+                    },
+                    "confidence": 0.980704,
+                    "property": {
+                      "detectedLanguages": [
+                        {
+                          "confidence": 1,
+                          "languageCode": "ko"
+                        }
+                      ]
+                    },
+                    "symbols": [
+                      {
+                        "boundingBox": {
+                          "vertices": [
+                            {
+                              "x": 12,
+                              "y": 1
+                            },
+                            {
+                              "x": 56,
+                              "y": 1
+                            },
+                            {
+                              "x": 55,
+                              "y": 74
+                            },
+                            {
+                              "x": 11,
+                              "y": 74
+                            }
+                          ]
+                        },
+                        "confidence": 0.9856188,
+                        "text": "안"
+                      },
+                      {
+                        "boundingBox": {
+                          "vertices": [
+                            {
+                              "x": 77,
+                              "y": 1
+                            },
+                            {
+                              "x": 115,
+                              "y": 1
+                            },
+                            {
+                              "x": 114,
+                              "y": 74
+                            },
+                            {
+                              "x": 76,
+                              "y": 74
+                            }
+                          ]
+                        },
+                        "confidence": 0.9805009,
+                        "text": "녕"
+                      },
+                      {
+                        "boundingBox": {
+                          "vertices": [
+                            {
+                              "x": 122,
+                              "y": 1
+                            },
+                            {
+                              "x": 186,
+                              "y": 2
+                            },
+                            {
+                              "x": 185,
+                              "y": 75
+                            },
+                            {
+                              "x": 121,
+                              "y": 74
+                            }
+                          ]
+                        },
+                        "confidence": 0.9828673,
+                        "text": "하"
+                      },
+                      {
+                        "boundingBox": {
+                          "vertices": [
+                            {
+                              "x": 193,
+                              "y": 2
+                            },
+                            {
+                              "x": 245,
+                              "y": 2
+                            },
+                            {
+                              "x": 244,
+                              "y": 75
+                            },
+                            {
+                              "x": 192,
+                              "y": 75
+                            }
+                          ]
+                        },
+                        "confidence": 0.9719967,
+                        "text": "세"
+                      },
+                      {
+                        "boundingBox": {
+                          "vertices": [
+                            {
+                              "x": 249,
+                              "y": 3
+                            },
+                            {
+                              "x": 296,
+                              "y": 3
+                            },
+                            {
+                              "x": 295,
+                              "y": 76
+                            },
+                            {
+                              "x": 248,
+                              "y": 76
+                            }
+                          ]
+                        },
+                        "confidence": 0.98253644,
+                        "text": "요"
+                      }
+                    ]
+                  },
+                  {
+                    "boundingBox": {
+                      "vertices": [
+                        {
+                          "x": 306,
+                          "y": 3
+                        },
+                        {
+                          "x": 315,
+                          "y": 3
+                        },
+                        {
+                          "x": 314,
+                          "y": 76
+                        },
+                        {
+                          "x": 305,
+                          "y": 76
+                        }
+                      ]
+                    },
+                    "confidence": 0.9777084,
+                    "property": {
+                      "detectedLanguages": [
+                        {
+                          "confidence": 1,
+                          "languageCode": "ko"
+                        }
+                      ]
+                    },
+                    "symbols": [
+                      {
+                        "boundingBox": {
+                          "vertices": [
+                            {
+                              "x": 306,
+                              "y": 3
+                            },
+                            {
+                              "x": 315,
+                              "y": 3
+                            },
+                            {
+                              "x": 314,
+                              "y": 76
+                            },
+                            {
+                              "x": 305,
+                              "y": 76
+                            }
+                          ]
+                        },
+                        "confidence": 0.9777084,
+                        "property": {
+                          "detectedBreak": {
+                            "type": "SPACE"
+                          }
+                        },
+                        "text": "!"
+                      }
+                    ]
+                  },
+                  {
+                    "boundingBox": {
+                      "vertices": [
+                        {
+                          "x": 338,
+                          "y": 3
+                        },
+                        {
+                          "x": 391,
+                          "y": 3
+                        },
+                        {
+                          "x": 390,
+                          "y": 76
+                        },
+                        {
+                          "x": 337,
+                          "y": 76
+                        }
+                      ]
+                    },
+                    "confidence": 0.9726788,
+                    "property": {
+                      "detectedLanguages": [
+                        {
+                          "confidence": 1,
+                          "languageCode": "ko"
+                        }
+                      ]
+                    },
+                    "symbols": [
+                      {
+                        "boundingBox": {
+                          "vertices": [
+                            {
+                              "x": 338,
+                              "y": 3
+                            },
+                            {
+                              "x": 391,
+                              "y": 3
+                            },
+                            {
+                              "x": 390,
+                              "y": 76
+                            },
+                            {
+                              "x": 337,
+                              "y": 76
+                            }
+                          ]
+                        },
+                        "confidence": 0.9726788,
+                        "property": {
+                          "detectedBreak": {
+                            "type": "SPACE"
+                          }
+                        },
+                        "text": "제"
+                      }
+                    ]
+                  },
+                  {
+                    "boundingBox": {
+                      "vertices": [
+                        {
+                          "x": 413,
+                          "y": 4
+                        },
+                        {
+                          "x": 481,
+                          "y": 5
+                        },
+                        {
+                          "x": 480,
+                          "y": 78
+                        },
+                        {
+                          "x": 412,
+                          "y": 77
+                        }
+                      ]
+                    },
+                    "confidence": 0.9969505,
+                    "property": {
+                      "detectedLanguages": [
+                        {
+                          "confidence": 1,
+                          "languageCode": "ko"
+                        }
+                      ]
+                    },
+                    "symbols": [
+                      {
+                        "boundingBox": {
+                          "vertices": [
+                            {
+                              "x": 413,
+                              "y": 4
+                            },
+                            {
+                              "x": 450,
+                              "y": 4
+                            },
+                            {
+                              "x": 449,
+                              "y": 77
+                            },
+                            {
+                              "x": 412,
+                              "y": 77
+                            }
+                          ]
+                        },
+                        "confidence": 0.9959258,
+                        "text": "이"
+                      },
+                      {
+                        "boundingBox": {
+                          "vertices": [
+                            {
+                              "x": 460,
+                              "y": 4
+                            },
+                            {
+                              "x": 481,
+                              "y": 4
+                            },
+                            {
+                              "x": 480,
+                              "y": 77
+                            },
+                            {
+                              "x": 459,
+                              "y": 77
+                            }
+                          ]
+                        },
+                        "confidence": 0.9979752,
+                        "text": "름"
+                      }
+                    ]
+                  },
+                  {
+                    "boundingBox": {
+                      "vertices": [
+                        {
+                          "x": 488,
+                          "y": 5
+                        },
+                        {
+                          "x": 524,
+                          "y": 5
+                        },
+                        {
+                          "x": 523,
+                          "y": 78
+                        },
+                        {
+                          "x": 487,
+                          "y": 78
+                        }
+                      ]
+                    },
+                    "confidence": 0.9947175,
+                    "property": {
+                      "detectedLanguages": [
+                        {
+                          "confidence": 1,
+                          "languageCode": "ko"
+                        }
+                      ]
+                    },
+                    "symbols": [
+                      {
+                        "boundingBox": {
+                          "vertices": [
+                            {
+                              "x": 488,
+                              "y": 5
+                            },
+                            {
+                              "x": 524,
+                              "y": 5
+                            },
+                            {
+                              "x": 523,
+                              "y": 78
+                            },
+                            {
+                              "x": 487,
+                              "y": 78
+                            }
+                          ]
+                        },
+                        "confidence": 0.9947175,
+                        "property": {
+                          "detectedBreak": {
+                            "type": "SPACE"
+                          }
+                        },
+                        "text": "은"
+                      }
+                    ]
+                  },
+                  {
+                    "boundingBox": {
+                      "vertices": [
+                        {
+                          "x": 569,
+                          "y": 5
+                        },
+                        {
+                          "x": 697,
+                          "y": 6
+                        },
+                        {
+                          "x": 696,
+                          "y": 80
+                        },
+                        {
+                          "x": 568,
+                          "y": 79
+                        }
+                      ]
+                    },
+                    "confidence": 0.7512209,
+                    "property": {
+                      "detectedLanguages": [
+                        {
+                          "confidence": 1,
+                          "languageCode": "ko"
+                        }
+                      ]
+                    },
+                    "symbols": [
+                      {
+                        "boundingBox": {
+                          "vertices": [
+                            {
+                              "x": 569,
+                              "y": 5
+                            },
+                            {
+                              "x": 603,
+                              "y": 5
+                            },
+                            {
+                              "x": 602,
+                              "y": 78
+                            },
+                            {
+                              "x": 568,
+                              "y": 78
+                            }
+                          ]
+                        },
+                        "confidence": 0.96018976,
+                        "text": "스"
+                      },
+                      {
+                        "boundingBox": {
+                          "vertices": [
+                            {
+                              "x": 615,
+                              "y": 6
+                            },
+                            {
+                              "x": 651,
+                              "y": 6
+                            },
+                            {
+                              "x": 650,
+                              "y": 79
+                            },
+                            {
+                              "x": 614,
+                              "y": 79
+                            }
+                          ]
+                        },
+                        "confidence": 0.7938996,
+                        "text": "티"
+                      },
+                      {
+                        "boundingBox": {
+                          "vertices": [
+                            {
+                              "x": 669,
+                              "y": 6
+                            },
+                            {
+                              "x": 697,
+                              "y": 6
+                            },
+                            {
+                              "x": 696,
+                              "y": 79
+                            },
+                            {
+                              "x": 668,
+                              "y": 79
+                            }
+                          ]
+                        },
+                        "confidence": 0.49957323,
+                        "text": "븐"
+                      }
+                    ]
+                  },
+                  {
+                    "boundingBox": {
+                      "vertices": [
+                        {
+                          "x": 713,
+                          "y": 6
+                        },
+                        {
+                          "x": 835,
+                          "y": 7
+                        },
+                        {
+                          "x": 834,
+                          "y": 81
+                        },
+                        {
+                          "x": 712,
+                          "y": 80
+                        }
+                      ]
+                    },
+                    "confidence": 0.9549629,
+                    "property": {
+                      "detectedLanguages": [
+                        {
+                          "confidence": 1,
+                          "languageCode": "ko"
+                        }
+                      ]
+                    },
+                    "symbols": [
+                      {
+                        "boundingBox": {
+                          "vertices": [
+                            {
+                              "x": 713,
+                              "y": 6
+                            },
+                            {
+                              "x": 753,
+                              "y": 6
+                            },
+                            {
+                              "x": 752,
+                              "y": 79
+                            },
+                            {
+                              "x": 712,
+                              "y": 79
+                            }
+                          ]
+                        },
+                        "confidence": 0.913174,
+                        "text": "이"
+                      },
+                      {
+                        "boundingBox": {
+                          "vertices": [
+                            {
+                              "x": 750,
+                              "y": 7
+                            },
+                            {
+                              "x": 797,
+                              "y": 7
+                            },
+                            {
+                              "x": 796,
+                              "y": 80
+                            },
+                            {
+                              "x": 749,
+                              "y": 80
+                            }
+                          ]
+                        },
+                        "confidence": 0.96206045,
+                        "text": "에"
+                      },
+                      {
+                        "boundingBox": {
+                          "vertices": [
+                            {
+                              "x": 799,
+                              "y": 7
+                            },
+                            {
+                              "x": 835,
+                              "y": 7
+                            },
+                            {
+                              "x": 834,
+                              "y": 80
+                            },
+                            {
+                              "x": 798,
+                              "y": 80
+                            }
+                          ]
+                        },
+                        "confidence": 0.98965424,
+                        "text": "요"
+                      }
+                    ]
+                  },
+                  {
+                    "boundingBox": {
+                      "vertices": [
+                        {
+                          "x": 842,
+                          "y": 8
+                        },
+                        {
+                          "x": 843,
+                          "y": 8
+                        },
+                        {
+                          "x": 842,
+                          "y": 81
+                        },
+                        {
+                          "x": 841,
+                          "y": 81
+                        }
+                      ]
+                    },
+                    "confidence": 0.9761102,
+                    "property": {
+                      "detectedLanguages": [
+                        {
+                          "confidence": 1,
+                          "languageCode": "ko"
+                        }
+                      ]
+                    },
+                    "symbols": [
+                      {
+                        "boundingBox": {
+                          "vertices": [
+                            {
+                              "x": 842,
+                              "y": 8
+                            },
+                            {
+                              "x": 843,
+                              "y": 8
+                            },
+                            {
+                              "x": 842,
+                              "y": 81
+                            },
+                            {
+                              "x": 841,
+                              "y": 81
+                            }
+                          ]
+                        },
+                        "confidence": 0.9761102,
+                        "property": {
+                          "detectedBreak": {
+                            "type": "SPACE"
+                          }
+                        },
+                        "text": "."
+                      }
+                    ]
+                  },
+                  {
+                    "boundingBox": {
+                      "vertices": [
+                        {
+                          "x": 882,
+                          "y": 7
+                        },
+                        {
+                          "x": 977,
+                          "y": 8
+                        },
+                        {
+                          "x": 976,
+                          "y": 82
+                        },
+                        {
+                          "x": 881,
+                          "y": 81
+                        }
+                      ]
+                    },
+                    "confidence": 0.9971677,
+                    "property": {
+                      "detectedLanguages": [
+                        {
+                          "confidence": 1,
+                          "languageCode": "ko"
+                        }
+                      ]
+                    },
+                    "symbols": [
+                      {
+                        "boundingBox": {
+                          "vertices": [
+                            {
+                              "x": 882,
+                              "y": 8
+                            },
+                            {
+                              "x": 932,
+                              "y": 8
+                            },
+                            {
+                              "x": 931,
+                              "y": 81
+                            },
+                            {
+                              "x": 881,
+                              "y": 81
+                            }
+                          ]
+                        },
+                        "confidence": 0.9960921,
+                        "text": "저"
+                      },
+                      {
+                        "boundingBox": {
+                          "vertices": [
+                            {
+                              "x": 942,
+                              "y": 8
+                            },
+                            {
+                              "x": 977,
+                              "y": 8
+                            },
+                            {
+                              "x": 976,
+                              "y": 81
+                            },
+                            {
+                              "x": 941,
+                              "y": 81
+                            }
+                          ]
+                        },
+                        "confidence": 0.9982434,
+                        "property": {
+                          "detectedBreak": {
+                            "type": "SPACE"
+                          }
+                        },
+                        "text": "는"
+                      }
+                    ]
+                  },
+                  {
+                    "boundingBox": {
+                      "vertices": [
+                        {
+                          "x": 1011,
+                          "y": 9
+                        },
+                        {
+                          "x": 1081,
+                          "y": 10
+                        },
+                        {
+                          "x": 1080,
+                          "y": 83
+                        },
+                        {
+                          "x": 1010,
+                          "y": 82
+                        }
+                      ]
+                    },
+                    "confidence": 0.9987192,
+                    "property": {
+                      "detectedLanguages": [
+                        {
+                          "confidence": 1,
+                          "languageCode": "ko"
+                        }
+                      ]
+                    },
+                    "symbols": [
+                      {
+                        "boundingBox": {
+                          "vertices": [
+                            {
+                              "x": 1011,
+                              "y": 9
+                            },
+                            {
+                              "x": 1042,
+                              "y": 9
+                            },
+                            {
+                              "x": 1041,
+                              "y": 82
+                            },
+                            {
+                              "x": 1010,
+                              "y": 82
+                            }
+                          ]
+                        },
+                        "confidence": 0.9993714,
+                        "text": "독"
+                      },
+                      {
+                        "boundingBox": {
+                          "vertices": [
+                            {
+                              "x": 1045,
+                              "y": 9
+                            },
+                            {
+                              "x": 1081,
+                              "y": 9
+                            },
+                            {
+                              "x": 1080,
+                              "y": 82
+                            },
+                            {
+                              "x": 1044,
+                              "y": 82
+                            }
+                          ]
+                        },
+                        "confidence": 0.99806696,
+                        "property": {
+                          "detectedBreak": {
+                            "type": "SPACE"
+                          }
+                        },
+                        "text": "일"
+                      }
+                    ]
+                  },
+                  {
+                    "boundingBox": {
+                      "vertices": [
+                        {
+                          "x": 1095,
+                          "y": 10
+                        },
+                        {
+                          "x": 1199,
+                          "y": 11
+                        },
+                        {
+                          "x": 1198,
+                          "y": 84
+                        },
+                        {
+                          "x": 1094,
+                          "y": 83
+                        }
+                      ]
+                    },
+                    "confidence": 0.99163705,
+                    "property": {
+                      "detectedLanguages": [
+                        {
+                          "confidence": 1,
+                          "languageCode": "ko"
+                        }
+                      ]
+                    },
+                    "symbols": [
+                      {
+                        "boundingBox": {
+                          "vertices": [
+                            {
+                              "x": 1095,
+                              "y": 10
+                            },
+                            {
+                              "x": 1143,
+                              "y": 10
+                            },
+                            {
+                              "x": 1142,
+                              "y": 83
+                            },
+                            {
+                              "x": 1094,
+                              "y": 83
+                            }
+                          ]
+                        },
+                        "confidence": 0.99448806,
+                        "text": "사"
+                      },
+                      {
+                        "boundingBox": {
+                          "vertices": [
+                            {
+                              "x": 1148,
+                              "y": 10
+                            },
+                            {
+                              "x": 1199,
+                              "y": 10
+                            },
+                            {
+                              "x": 1198,
+                              "y": 83
+                            },
+                            {
+                              "x": 1147,
+                              "y": 83
+                            }
+                          ]
+                        },
+                        "confidence": 0.98878604,
+                        "text": "람"
+                      }
+                    ]
+                  },
+                  {
+                    "boundingBox": {
+                      "vertices": [
+                        {
+                          "x": 1205,
+                          "y": 11
+                        },
+                        {
+                          "x": 1357,
+                          "y": 12
+                        },
+                        {
+                          "x": 1356,
+                          "y": 85
+                        },
+                        {
+                          "x": 1204,
+                          "y": 84
+                        }
+                      ]
+                    },
+                    "confidence": 0.99372184,
+                    "property": {
+                      "detectedLanguages": [
+                        {
+                          "confidence": 1,
+                          "languageCode": "ko"
+                        }
+                      ]
+                    },
+                    "symbols": [
+                      {
+                        "boundingBox": {
+                          "vertices": [
+                            {
+                              "x": 1205,
+                              "y": 11
+                            },
+                            {
+                              "x": 1251,
+                              "y": 11
+                            },
+                            {
+                              "x": 1250,
+                              "y": 84
+                            },
+                            {
+                              "x": 1204,
+                              "y": 84
+                            }
+                          ]
+                        },
+                        "confidence": 0.9912993,
+                        "text": "이"
+                      },
+                      {
+                        "boundingBox": {
+                          "vertices": [
+                            {
+                              "x": 1252,
+                              "y": 11
+                            },
+                            {
+                              "x": 1307,
+                              "y": 11
+                            },
+                            {
+                              "x": 1306,
+                              "y": 84
+                            },
+                            {
+                              "x": 1251,
+                              "y": 84
+                            }
+                          ]
+                        },
+                        "confidence": 0.99471194,
+                        "text": "에"
+                      },
+                      {
+                        "boundingBox": {
+                          "vertices": [
+                            {
+                              "x": 1308,
+                              "y": 12
+                            },
+                            {
+                              "x": 1357,
+                              "y": 12
+                            },
+                            {
+                              "x": 1356,
+                              "y": 85
+                            },
+                            {
+                              "x": 1307,
+                              "y": 85
+                            }
+                          ]
+                        },
+                        "confidence": 0.99515426,
+                        "text": "요"
+                      }
+                    ]
+                  },
+                  {
+                    "boundingBox": {
+                      "vertices": [
+                        {
+                          "x": 1367,
+                          "y": 12
+                        },
+                        {
+                          "x": 1368,
+                          "y": 12
+                        },
+                        {
+                          "x": 1367,
+                          "y": 85
+                        },
+                        {
+                          "x": 1366,
+                          "y": 85
+                        }
+                      ]
+                    },
+                    "confidence": 0.987649,
+                    "property": {
+                      "detectedLanguages": [
+                        {
+                          "confidence": 1,
+                          "languageCode": "ko"
+                        }
+                      ]
+                    },
+                    "symbols": [
+                      {
+                        "boundingBox": {
+                          "vertices": [
+                            {
+                              "x": 1367,
+                              "y": 12
+                            },
+                            {
+                              "x": 1368,
+                              "y": 12
+                            },
+                            {
+                              "x": 1367,
+                              "y": 85
+                            },
+                            {
+                              "x": 1366,
+                              "y": 85
+                            }
+                          ]
+                        },
+                        "confidence": 0.987649,
+                        "property": {
+                          "detectedBreak": {
+                            "type": "SPACE"
+                          }
+                        },
+                        "text": "."
+                      }
+                    ]
+                  },
+                  {
+                    "boundingBox": {
+                      "vertices": [
+                        {
+                          "x": 1398,
+                          "y": 12
+                        },
+                        {
+                          "x": 1543,
+                          "y": 13
+                        },
+                        {
+                          "x": 1542,
+                          "y": 87
+                        },
+                        {
+                          "x": 1397,
+                          "y": 86
+                        }
+                      ]
+                    },
+                    "confidence": 0.97413784,
+                    "property": {
+                      "detectedLanguages": [
+                        {
+                          "confidence": 1,
+                          "languageCode": "ko"
+                        }
+                      ]
+                    },
+                    "symbols": [
+                      {
+                        "boundingBox": {
+                          "vertices": [
+                            {
+                              "x": 1398,
+                              "y": 12
+                            },
+                            {
+                              "x": 1444,
+                              "y": 12
+                            },
+                            {
+                              "x": 1443,
+                              "y": 85
+                            },
+                            {
+                              "x": 1397,
+                              "y": 85
+                            }
+                          ]
+                        },
+                        "confidence": 0.9543198,
+                        "text": "함"
+                      },
+                      {
+                        "boundingBox": {
+                          "vertices": [
+                            {
+                              "x": 1455,
+                              "y": 13
+                            },
+                            {
+                              "x": 1479,
+                              "y": 13
+                            },
+                            {
+                              "x": 1478,
+                              "y": 86
+                            },
+                            {
+                              "x": 1454,
+                              "y": 86
+                            }
+                          ]
+                        },
+                        "confidence": 0.98524916,
+                        "text": "부"
+                      },
+                      {
+                        "boundingBox": {
+                          "vertices": [
+                            {
+                              "x": 1486,
+                              "y": 13
+                            },
+                            {
+                              "x": 1511,
+                              "y": 13
+                            },
+                            {
+                              "x": 1510,
+                              "y": 86
+                            },
+                            {
+                              "x": 1485,
+                              "y": 86
+                            }
+                          ]
+                        },
+                        "confidence": 0.97276294,
+                        "text": "르"
+                      },
+                      {
+                        "boundingBox": {
+                          "vertices": [
+                            {
+                              "x": 1520,
+                              "y": 13
+                            },
+                            {
+                              "x": 1543,
+                              "y": 13
+                            },
+                            {
+                              "x": 1542,
+                              "y": 86
+                            },
+                            {
+                              "x": 1519,
+                              "y": 86
+                            }
+                          ]
+                        },
+                        "confidence": 0.9842195,
+                        "text": "크"
+                      }
+                    ]
+                  },
+                  {
+                    "boundingBox": {
+                      "vertices": [
+                        {
+                          "x": 1551,
+                          "y": 14
+                        },
+                        {
+                          "x": 1629,
+                          "y": 15
+                        },
+                        {
+                          "x": 1628,
+                          "y": 88
+                        },
+                        {
+                          "x": 1550,
+                          "y": 87
+                        }
+                      ]
+                    },
+                    "confidence": 0.99634224,
+                    "property": {
+                      "detectedLanguages": [
+                        {
+                          "confidence": 1,
+                          "languageCode": "ko"
+                        }
+                      ]
+                    },
+                    "symbols": [
+                      {
+                        "boundingBox": {
+                          "vertices": [
+                            {
+                              "x": 1551,
+                              "y": 14
+                            },
+                            {
+                              "x": 1591,
+                              "y": 14
+                            },
+                            {
+                              "x": 1590,
+                              "y": 87
+                            },
+                            {
+                              "x": 1550,
+                              "y": 87
+                            }
+                          ]
+                        },
+                        "confidence": 0.995756,
+                        "text": "에"
+                      },
+                      {
+                        "boundingBox": {
+                          "vertices": [
+                            {
+                              "x": 1598,
+                              "y": 14
+                            },
+                            {
+                              "x": 1629,
+                              "y": 14
+                            },
+                            {
+                              "x": 1628,
+                              "y": 87
+                            },
+                            {
+                              "x": 1597,
+                              "y": 87
+                            }
+                          ]
+                        },
+                        "confidence": 0.9969285,
+                        "property": {
+                          "detectedBreak": {
+                            "type": "SPACE"
+                          }
+                        },
+                        "text": "서"
+                      }
+                    ]
+                  },
+                  {
+                    "boundingBox": {
+                      "vertices": [
+                        {
+                          "x": 1657,
+                          "y": 14
+                        },
+                        {
+                          "x": 1831,
+                          "y": 15
+                        },
+                        {
+                          "x": 1830,
+                          "y": 89
+                        },
+                        {
+                          "x": 1656,
+                          "y": 88
+                        }
+                      ]
+                    },
+                    "confidence": 0.885058,
+                    "property": {
+                      "detectedLanguages": [
+                        {
+                          "confidence": 1,
+                          "languageCode": "ko"
+                        }
+                      ]
+                    },
+                    "symbols": [
+                      {
+                        "boundingBox": {
+                          "vertices": [
+                            {
+                              "x": 1657,
+                              "y": 15
+                            },
+                            {
+                              "x": 1688,
+                              "y": 15
+                            },
+                            {
+                              "x": 1687,
+                              "y": 88
+                            },
+                            {
+                              "x": 1656,
+                              "y": 88
+                            }
+                          ]
+                        },
+                        "confidence": 0.9963448,
+                        "text": "프"
+                      },
+                      {
+                        "boundingBox": {
+                          "vertices": [
+                            {
+                              "x": 1697,
+                              "y": 15
+                            },
+                            {
+                              "x": 1716,
+                              "y": 15
+                            },
+                            {
+                              "x": 1715,
+                              "y": 88
+                            },
+                            {
+                              "x": 1696,
+                              "y": 88
+                            }
+                          ]
+                        },
+                        "confidence": 0.98837656,
+                        "text": "로"
+                      },
+                      {
+                        "boundingBox": {
+                          "vertices": [
+                            {
+                              "x": 1728,
+                              "y": 15
+                            },
+                            {
+                              "x": 1743,
+                              "y": 15
+                            },
+                            {
+                              "x": 1742,
+                              "y": 88
+                            },
+                            {
+                              "x": 1727,
+                              "y": 88
+                            }
+                          ]
+                        },
+                        "confidence": 0.8014778,
+                        "text": "그"
+                      },
+                      {
+                        "boundingBox": {
+                          "vertices": [
+                            {
+                              "x": 1753,
+                              "y": 15
+                            },
+                            {
+                              "x": 1787,
+                              "y": 15
+                            },
+                            {
+                              "x": 1786,
+                              "y": 88
+                            },
+                            {
+                              "x": 1752,
+                              "y": 88
+                            }
+                          ]
+                        },
+                        "confidence": 0.81939805,
+                        "text": "래"
+                      },
+                      {
+                        "boundingBox": {
+                          "vertices": [
+                            {
+                              "x": 1801,
+                              "y": 16
+                            },
+                            {
+                              "x": 1831,
+                              "y": 16
+                            },
+                            {
+                              "x": 1830,
+                              "y": 89
+                            },
+                            {
+                              "x": 1800,
+                              "y": 89
+                            }
+                          ]
+                        },
+                        "confidence": 0.8196928,
+                        "text": "머"
+                      }
+                    ]
+                  },
+                  {
+                    "boundingBox": {
+                      "vertices": [
+                        {
+                          "x": 1843,
+                          "y": 16
+                        },
+                        {
+                          "x": 1863,
+                          "y": 16
+                        },
+                        {
+                          "x": 1862,
+                          "y": 89
+                        },
+                        {
+                          "x": 1842,
+                          "y": 89
+                        }
+                      ]
+                    },
+                    "confidence": 0.96997315,
+                    "property": {
+                      "detectedLanguages": [
+                        {
+                          "confidence": 1,
+                          "languageCode": "ko"
+                        }
+                      ]
+                    },
+                    "symbols": [
+                      {
+                        "boundingBox": {
+                          "vertices": [
+                            {
+                              "x": 1843,
+                              "y": 16
+                            },
+                            {
+                              "x": 1863,
+                              "y": 16
+                            },
+                            {
+                              "x": 1862,
+                              "y": 89
+                            },
+                            {
+                              "x": 1842,
+                              "y": 89
+                            }
+                          ]
+                        },
+                        "confidence": 0.96997315,
+                        "property": {
+                          "detectedBreak": {
+                            "type": "SPACE"
+                          }
+                        },
+                        "text": "로"
+                      }
+                    ]
+                  },
+                  {
+                    "boundingBox": {
+                      "vertices": [
+                        {
+                          "x": 1877,
+                          "y": 16
+                        },
+                        {
+                          "x": 1908,
+                          "y": 16
+                        },
+                        {
+                          "x": 1907,
+                          "y": 89
+                        },
+                        {
+                          "x": 1876,
+                          "y": 89
+                        }
+                      ]
+                    },
+                    "confidence": 0.81462514,
+                    "property": {
+                      "detectedLanguages": [
+                        {
+                          "confidence": 1,
+                          "languageCode": "ko"
+                        }
+                      ]
+                    },
+                    "symbols": [
+                      {
+                        "boundingBox": {
+                          "vertices": [
+                            {
+                              "x": 1877,
+                              "y": 16
+                            },
+                            {
+                              "x": 1908,
+                              "y": 16
+                            },
+                            {
+                              "x": 1907,
+                              "y": 89
+                            },
+                            {
+                              "x": 1876,
+                              "y": 89
+                            }
+                          ]
+                        },
+                        "confidence": 0.81462514,
+                        "text": "일"
+                      }
+                    ]
+                  },
+                  {
+                    "boundingBox": {
+                      "vertices": [
+                        {
+                          "x": 1919,
+                          "y": 17
+                        },
+                        {
+                          "x": 1989,
+                          "y": 18
+                        },
+                        {
+                          "x": 1988,
+                          "y": 91
+                        },
+                        {
+                          "x": 1918,
+                          "y": 90
+                        }
+                      ]
+                    },
+                    "confidence": 0.8802755,
+                    "property": {
+                      "detectedLanguages": [
+                        {
+                          "confidence": 1,
+                          "languageCode": "ko"
+                        }
+                      ]
+                    },
+                    "symbols": [
+                      {
+                        "boundingBox": {
+                          "vertices": [
+                            {
+                              "x": 1919,
+                              "y": 17
+                            },
+                            {
+                              "x": 1959,
+                              "y": 17
+                            },
+                            {
+                              "x": 1958,
+                              "y": 90
+                            },
+                            {
+                              "x": 1918,
+                              "y": 90
+                            }
+                          ]
+                        },
+                        "confidence": 0.90358216,
+                        "text": "해"
+                      },
+                      {
+                        "boundingBox": {
+                          "vertices": [
+                            {
+                              "x": 1966,
+                              "y": 17
+                            },
+                            {
+                              "x": 1989,
+                              "y": 17
+                            },
+                            {
+                              "x": 1988,
+                              "y": 90
+                            },
+                            {
+                              "x": 1965,
+                              "y": 90
+                            }
+                          ]
+                        },
+                        "confidence": 0.85696876,
+                        "property": {
+                          "detectedBreak": {
+                            "type": "LINE_BREAK"
+                          }
+                        },
+                        "text": "요"
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "boundingBox": {
+                  "vertices": [
+                    {
+                      "x": -6,
+                      "y": 118
+                    },
+                    {
+                      "x": 1300,
+                      "y": 131
+                    },
+                    {
+                      "x": 1299,
+                      "y": 206
+                    },
+                    {
+                      "x": -7,
+                      "y": 193
+                    }
+                  ]
+                },
+                "confidence": 0.94619507,
+                "words": [
+                  {
+                    "boundingBox": {
+                      "vertices": [
+                        {
+                          "x": -6,
+                          "y": 118
+                        },
+                        {
+                          "x": 102,
+                          "y": 119
+                        },
+                        {
+                          "x": 101,
+                          "y": 194
+                        },
+                        {
+                          "x": -7,
+                          "y": 193
+                        }
+                      ]
+                    },
+                    "confidence": 0.98558235,
+                    "property": {
+                      "detectedLanguages": [
+                        {
+                          "confidence": 1,
+                          "languageCode": "ko"
+                        }
+                      ]
+                    },
+                    "symbols": [
+                      {
+                        "boundingBox": {
+                          "vertices": [
+                            {
+                              "x": -6,
+                              "y": 119
+                            },
+                            {
+                              "x": 53,
+                              "y": 120
+                            },
+                            {
+                              "x": 52,
+                              "y": 194
+                            },
+                            {
+                              "x": -7,
+                              "y": 193
+                            }
+                          ]
+                        },
+                        "confidence": 0.97429186,
+                        "text": "저"
+                      },
+                      {
+                        "boundingBox": {
+                          "vertices": [
+                            {
+                              "x": 66,
+                              "y": 119
+                            },
+                            {
+                              "x": 102,
+                              "y": 119
+                            },
+                            {
+                              "x": 101,
+                              "y": 193
+                            },
+                            {
+                              "x": 65,
+                              "y": 193
+                            }
+                          ]
+                        },
+                        "confidence": 0.9968728,
+                        "property": {
+                          "detectedBreak": {
+                            "type": "SPACE"
+                          }
+                        },
+                        "text": "는"
+                      }
+                    ]
+                  },
+                  {
+                    "boundingBox": {
+                      "vertices": [
+                        {
+                          "x": 135,
+                          "y": 120
+                        },
+                        {
+                          "x": 234,
+                          "y": 121
+                        },
+                        {
+                          "x": 233,
+                          "y": 195
+                        },
+                        {
+                          "x": 134,
+                          "y": 194
+                        }
+                      ]
+                    },
+                    "confidence": 0.9717425,
+                    "property": {
+                      "detectedLanguages": [
+                        {
+                          "confidence": 1,
+                          "languageCode": "ko"
+                        }
+                      ]
+                    },
+                    "symbols": [
+                      {
+                        "boundingBox": {
+                          "vertices": [
+                            {
+                              "x": 135,
+                              "y": 120
+                            },
+                            {
+                              "x": 187,
+                              "y": 121
+                            },
+                            {
+                              "x": 186,
+                              "y": 195
+                            },
+                            {
+                              "x": 134,
+                              "y": 194
+                            }
+                          ]
+                        },
+                        "confidence": 0.9934326,
+                        "text": "서"
+                      },
+                      {
+                        "boundingBox": {
+                          "vertices": [
+                            {
+                              "x": 204,
+                              "y": 121
+                            },
+                            {
+                              "x": 234,
+                              "y": 121
+                            },
+                            {
+                              "x": 233,
+                              "y": 195
+                            },
+                            {
+                              "x": 203,
+                              "y": 195
+                            }
+                          ]
+                        },
+                        "confidence": 0.95005244,
+                        "text": "른"
+                      }
+                    ]
+                  },
+                  {
+                    "boundingBox": {
+                      "vertices": [
+                        {
+                          "x": 255,
+                          "y": 121
+                        },
+                        {
+                          "x": 331,
+                          "y": 122
+                        },
+                        {
+                          "x": 330,
+                          "y": 197
+                        },
+                        {
+                          "x": 254,
+                          "y": 196
+                        }
+                      ]
+                    },
+                    "confidence": 0.98265684,
+                    "property": {
+                      "detectedLanguages": [
+                        {
+                          "confidence": 1,
+                          "languageCode": "ko"
+                        }
+                      ]
+                    },
+                    "symbols": [
+                      {
+                        "boundingBox": {
+                          "vertices": [
+                            {
+                              "x": 255,
+                              "y": 121
+                            },
+                            {
+                              "x": 286,
+                              "y": 121
+                            },
+                            {
+                              "x": 285,
+                              "y": 195
+                            },
+                            {
+                              "x": 254,
+                              "y": 195
+                            }
+                          ]
+                        },
+                        "confidence": 0.9834323,
+                        "text": "여"
+                      },
+                      {
+                        "boundingBox": {
+                          "vertices": [
+                            {
+                              "x": 305,
+                              "y": 122
+                            },
+                            {
+                              "x": 331,
+                              "y": 122
+                            },
+                            {
+                              "x": 330,
+                              "y": 196
+                            },
+                            {
+                              "x": 304,
+                              "y": 196
+                            }
+                          ]
+                        },
+                        "confidence": 0.98188144,
+                        "property": {
+                          "detectedBreak": {
+                            "type": "SPACE"
+                          }
+                        },
+                        "text": "덟"
+                      }
+                    ]
+                  },
+                  {
+                    "boundingBox": {
+                      "vertices": [
+                        {
+                          "x": 363,
+                          "y": 122
+                        },
+                        {
+                          "x": 401,
+                          "y": 122
+                        },
+                        {
+                          "x": 400,
+                          "y": 196
+                        },
+                        {
+                          "x": 362,
+                          "y": 196
+                        }
+                      ]
+                    },
+                    "confidence": 0.97709394,
+                    "property": {
+                      "detectedLanguages": [
+                        {
+                          "confidence": 1,
+                          "languageCode": "ko"
+                        }
+                      ]
+                    },
+                    "symbols": [
+                      {
+                        "boundingBox": {
+                          "vertices": [
+                            {
+                              "x": 363,
+                              "y": 122
+                            },
+                            {
+                              "x": 401,
+                              "y": 122
+                            },
+                            {
+                              "x": 400,
+                              "y": 196
+                            },
+                            {
+                              "x": 362,
+                              "y": 196
+                            }
+                          ]
+                        },
+                        "confidence": 0.97709394,
+                        "text": "살"
+                      }
+                    ]
+                  },
+                  {
+                    "boundingBox": {
+                      "vertices": [
+                        {
+                          "x": 403,
+                          "y": 122
+                        },
+                        {
+                          "x": 511,
+                          "y": 123
+                        },
+                        {
+                          "x": 510,
+                          "y": 198
+                        },
+                        {
+                          "x": 402,
+                          "y": 197
+                        }
+                      ]
+                    },
+                    "confidence": 0.9935681,
+                    "property": {
+                      "detectedLanguages": [
+                        {
+                          "confidence": 1,
+                          "languageCode": "ko"
+                        }
+                      ]
+                    },
+                    "symbols": [
+                      {
+                        "boundingBox": {
+                          "vertices": [
+                            {
+                              "x": 403,
+                              "y": 123
+                            },
+                            {
+                              "x": 434,
+                              "y": 123
+                            },
+                            {
+                              "x": 433,
+                              "y": 197
+                            },
+                            {
+                              "x": 402,
+                              "y": 197
+                            }
+                          ]
+                        },
+                        "confidence": 0.9936262,
+                        "text": "이"
+                      },
+                      {
+                        "boundingBox": {
+                          "vertices": [
+                            {
+                              "x": 432,
+                              "y": 123
+                            },
+                            {
+                              "x": 483,
+                              "y": 124
+                            },
+                            {
+                              "x": 482,
+                              "y": 198
+                            },
+                            {
+                              "x": 431,
+                              "y": 197
+                            }
+                          ]
+                        },
+                        "confidence": 0.9938333,
+                        "text": "에"
+                      },
+                      {
+                        "boundingBox": {
+                          "vertices": [
+                            {
+                              "x": 486,
+                              "y": 123
+                            },
+                            {
+                              "x": 511,
+                              "y": 123
+                            },
+                            {
+                              "x": 510,
+                              "y": 197
+                            },
+                            {
+                              "x": 485,
+                              "y": 197
+                            }
+                          ]
+                        },
+                        "confidence": 0.99324495,
+                        "text": "요"
+                      }
+                    ]
+                  },
+                  {
+                    "boundingBox": {
+                      "vertices": [
+                        {
+                          "x": 513,
+                          "y": 124
+                        },
+                        {
+                          "x": 513,
+                          "y": 124
+                        },
+                        {
+                          "x": 512,
+                          "y": 198
+                        },
+                        {
+                          "x": 512,
+                          "y": 198
+                        }
+                      ]
+                    },
+                    "confidence": 0.983998,
+                    "property": {
+                      "detectedLanguages": [
+                        {
+                          "confidence": 1,
+                          "languageCode": "ko"
+                        }
+                      ]
+                    },
+                    "symbols": [
+                      {
+                        "boundingBox": {
+                          "vertices": [
+                            {
+                              "x": 513,
+                              "y": 124
+                            },
+                            {
+                              "x": 513,
+                              "y": 124
+                            },
+                            {
+                              "x": 512,
+                              "y": 198
+                            },
+                            {
+                              "x": 512,
+                              "y": 198
+                            }
+                          ]
+                        },
+                        "confidence": 0.983998,
+                        "property": {
+                          "detectedBreak": {
+                            "type": "SPACE"
+                          }
+                        },
+                        "text": "."
+                      }
+                    ]
+                  },
+                  {
+                    "boundingBox": {
+                      "vertices": [
+                        {
+                          "x": 547,
+                          "y": 124
+                        },
+                        {
+                          "x": 632,
+                          "y": 125
+                        },
+                        {
+                          "x": 631,
+                          "y": 199
+                        },
+                        {
+                          "x": 546,
+                          "y": 198
+                        }
+                      ]
+                    },
+                    "confidence": 0.994957,
+                    "property": {
+                      "detectedLanguages": [
+                        {
+                          "confidence": 1,
+                          "languageCode": "ko"
+                        }
+                      ]
+                    },
+                    "symbols": [
+                      {
+                        "boundingBox": {
+                          "vertices": [
+                            {
+                              "x": 547,
+                              "y": 124
+                            },
+                            {
+                              "x": 598,
+                              "y": 125
+                            },
+                            {
+                              "x": 597,
+                              "y": 199
+                            },
+                            {
+                              "x": 546,
+                              "y": 198
+                            }
+                          ]
+                        },
+                        "confidence": 0.9948602,
+                        "text": "한"
+                      },
+                      {
+                        "boundingBox": {
+                          "vertices": [
+                            {
+                              "x": 604,
+                              "y": 125
+                            },
+                            {
+                              "x": 632,
+                              "y": 125
+                            },
+                            {
+                              "x": 631,
+                              "y": 199
+                            },
+                            {
+                              "x": 603,
+                              "y": 199
+                            }
+                          ]
+                        },
+                        "confidence": 0.99505377,
+                        "property": {
+                          "detectedBreak": {
+                            "type": "SPACE"
+                          }
+                        },
+                        "text": "국"
+                      }
+                    ]
+                  },
+                  {
+                    "boundingBox": {
+                      "vertices": [
+                        {
+                          "x": 658,
+                          "y": 125
+                        },
+                        {
+                          "x": 752,
+                          "y": 126
+                        },
+                        {
+                          "x": 751,
+                          "y": 201
+                        },
+                        {
+                          "x": 657,
+                          "y": 200
+                        }
+                      ]
+                    },
+                    "confidence": 0.98516315,
+                    "property": {
+                      "detectedLanguages": [
+                        {
+                          "confidence": 1,
+                          "languageCode": "ko"
+                        }
+                      ]
+                    },
+                    "symbols": [
+                      {
+                        "boundingBox": {
+                          "vertices": [
+                            {
+                              "x": 658,
+                              "y": 125
+                            },
+                            {
+                              "x": 698,
+                              "y": 125
+                            },
+                            {
+                              "x": 697,
+                              "y": 199
+                            },
+                            {
+                              "x": 657,
+                              "y": 199
+                            }
+                          ]
+                        },
+                        "confidence": 0.98013085,
+                        "text": "영"
+                      },
+                      {
+                        "boundingBox": {
+                          "vertices": [
+                            {
+                              "x": 704,
+                              "y": 126
+                            },
+                            {
+                              "x": 752,
+                              "y": 126
+                            },
+                            {
+                              "x": 751,
+                              "y": 200
+                            },
+                            {
+                              "x": 703,
+                              "y": 200
+                            }
+                          ]
+                        },
+                        "confidence": 0.99019545,
+                        "text": "화"
+                      }
+                    ]
+                  },
+                  {
+                    "boundingBox": {
+                      "vertices": [
+                        {
+                          "x": 764,
+                          "y": 126
+                        },
+                        {
+                          "x": 802,
+                          "y": 126
+                        },
+                        {
+                          "x": 801,
+                          "y": 200
+                        },
+                        {
+                          "x": 763,
+                          "y": 200
+                        }
+                      ]
+                    },
+                    "confidence": 0.8896825,
+                    "property": {
+                      "detectedLanguages": [
+                        {
+                          "confidence": 1,
+                          "languageCode": "ko"
+                        }
+                      ]
+                    },
+                    "symbols": [
+                      {
+                        "boundingBox": {
+                          "vertices": [
+                            {
+                              "x": 764,
+                              "y": 126
+                            },
+                            {
+                              "x": 802,
+                              "y": 126
+                            },
+                            {
+                              "x": 801,
+                              "y": 200
+                            },
+                            {
+                              "x": 763,
+                              "y": 200
+                            }
+                          ]
+                        },
+                        "confidence": 0.8896825,
+                        "property": {
+                          "detectedBreak": {
+                            "type": "SPACE"
+                          }
+                        },
+                        "text": "와"
+                      }
+                    ]
+                  },
+                  {
+                    "boundingBox": {
+                      "vertices": [
+                        {
+                          "x": 840,
+                          "y": 127
+                        },
+                        {
+                          "x": 979,
+                          "y": 128
+                        },
+                        {
+                          "x": 978,
+                          "y": 202
+                        },
+                        {
+                          "x": 839,
+                          "y": 201
+                        }
+                      ]
+                    },
+                    "confidence": 0.9378857,
+                    "property": {
+                      "detectedLanguages": [
+                        {
+                          "confidence": 1,
+                          "languageCode": "ko"
+                        }
+                      ]
+                    },
+                    "symbols": [
+                      {
+                        "boundingBox": {
+                          "vertices": [
+                            {
+                              "x": 840,
+                              "y": 127
+                            },
+                            {
+                              "x": 859,
+                              "y": 127
+                            },
+                            {
+                              "x": 858,
+                              "y": 201
+                            },
+                            {
+                              "x": 839,
+                              "y": 201
+                            }
+                          ]
+                        },
+                        "confidence": 0.9817889,
+                        "text": "무"
+                      },
+                      {
+                        "boundingBox": {
+                          "vertices": [
+                            {
+                              "x": 865,
+                              "y": 127
+                            },
+                            {
+                              "x": 896,
+                              "y": 127
+                            },
+                            {
+                              "x": 895,
+                              "y": 201
+                            },
+                            {
+                              "x": 864,
+                              "y": 201
+                            }
+                          ]
+                        },
+                        "confidence": 0.97288156,
+                        "text": "에"
+                      },
+                      {
+                        "boundingBox": {
+                          "vertices": [
+                            {
+                              "x": 907,
+                              "y": 128
+                            },
+                            {
+                              "x": 941,
+                              "y": 128
+                            },
+                            {
+                              "x": 940,
+                              "y": 202
+                            },
+                            {
+                              "x": 906,
+                              "y": 202
+                            }
+                          ]
+                        },
+                        "confidence": 0.92939067,
+                        "text": "타"
+                      },
+                      {
+                        "boundingBox": {
+                          "vertices": [
+                            {
+                              "x": 950,
+                              "y": 128
+                            },
+                            {
+                              "x": 979,
+                              "y": 128
+                            },
+                            {
+                              "x": 978,
+                              "y": 202
+                            },
+                            {
+                              "x": 949,
+                              "y": 202
+                            }
+                          ]
+                        },
+                        "confidence": 0.86748165,
+                        "text": "이"
+                      }
+                    ]
+                  },
+                  {
+                    "boundingBox": {
+                      "vertices": [
+                        {
+                          "x": 996,
+                          "y": 128
+                        },
+                        {
+                          "x": 1070,
+                          "y": 129
+                        },
+                        {
+                          "x": 1069,
+                          "y": 204
+                        },
+                        {
+                          "x": 995,
+                          "y": 203
+                        }
+                      ]
+                    },
+                    "confidence": 0.6021905,
+                    "property": {
+                      "detectedLanguages": [
+                        {
+                          "confidence": 1,
+                          "languageCode": "ko"
+                        }
+                      ]
+                    },
+                    "symbols": [
+                      {
+                        "boundingBox": {
+                          "vertices": [
+                            {
+                              "x": 996,
+                              "y": 128
+                            },
+                            {
+                              "x": 1025,
+                              "y": 128
+                            },
+                            {
+                              "x": 1024,
+                              "y": 202
+                            },
+                            {
+                              "x": 995,
+                              "y": 202
+                            }
+                          ]
+                        },
+                        "confidence": 0.55804056,
+                        "text": "보"
+                      },
+                      {
+                        "boundingBox": {
+                          "vertices": [
+                            {
+                              "x": 1039,
+                              "y": 129
+                            },
+                            {
+                              "x": 1070,
+                              "y": 129
+                            },
+                            {
+                              "x": 1069,
+                              "y": 203
+                            },
+                            {
+                              "x": 1038,
+                              "y": 203
+                            }
+                          ]
+                        },
+                        "confidence": 0.6463404,
+                        "text": "싱"
+                      }
+                    ]
+                  },
+                  {
+                    "boundingBox": {
+                      "vertices": [
+                        {
+                          "x": 1087,
+                          "y": 129
+                        },
+                        {
+                          "x": 1108,
+                          "y": 129
+                        },
+                        {
+                          "x": 1107,
+                          "y": 203
+                        },
+                        {
+                          "x": 1086,
+                          "y": 203
+                        }
+                      ]
+                    },
+                    "confidence": 0.9289408,
+                    "property": {
+                      "detectedLanguages": [
+                        {
+                          "confidence": 1,
+                          "languageCode": "ko"
+                        }
+                      ]
+                    },
+                    "symbols": [
+                      {
+                        "boundingBox": {
+                          "vertices": [
+                            {
+                              "x": 1087,
+                              "y": 129
+                            },
+                            {
+                              "x": 1108,
+                              "y": 129
+                            },
+                            {
+                              "x": 1107,
+                              "y": 203
+                            },
+                            {
+                              "x": 1086,
+                              "y": 203
+                            }
+                          ]
+                        },
+                        "confidence": 0.9289408,
+                        "property": {
+                          "detectedBreak": {
+                            "type": "SPACE"
+                          }
+                        },
+                        "text": "을"
+                      }
+                    ]
+                  },
+                  {
+                    "boundingBox": {
+                      "vertices": [
+                        {
+                          "x": 1142,
+                          "y": 130
+                        },
+                        {
+                          "x": 1291,
+                          "y": 131
+                        },
+                        {
+                          "x": 1290,
+                          "y": 205
+                        },
+                        {
+                          "x": 1141,
+                          "y": 204
+                        }
+                      ]
+                    },
+                    "confidence": 0.9920447,
+                    "property": {
+                      "detectedLanguages": [
+                        {
+                          "confidence": 1,
+                          "languageCode": "ko"
+                        }
+                      ]
+                    },
+                    "symbols": [
+                      {
+                        "boundingBox": {
+                          "vertices": [
+                            {
+                              "x": 1142,
+                              "y": 130
+                            },
+                            {
+                              "x": 1169,
+                              "y": 130
+                            },
+                            {
+                              "x": 1168,
+                              "y": 204
+                            },
+                            {
+                              "x": 1141,
+                              "y": 204
+                            }
+                          ]
+                        },
+                        "confidence": 0.9822813,
+                        "text": "좋"
+                      },
+                      {
+                        "boundingBox": {
+                          "vertices": [
+                            {
+                              "x": 1176,
+                              "y": 130
+                            },
+                            {
+                              "x": 1213,
+                              "y": 130
+                            },
+                            {
+                              "x": 1212,
+                              "y": 204
+                            },
+                            {
+                              "x": 1175,
+                              "y": 204
+                            }
+                          ]
+                        },
+                        "confidence": 0.9960729,
+                        "text": "아"
+                      },
+                      {
+                        "boundingBox": {
+                          "vertices": [
+                            {
+                              "x": 1220,
+                              "y": 131
+                            },
+                            {
+                              "x": 1257,
+                              "y": 131
+                            },
+                            {
+                              "x": 1256,
+                              "y": 205
+                            },
+                            {
+                              "x": 1219,
+                              "y": 205
+                            }
+                          ]
+                        },
+                        "confidence": 0.9945788,
+                        "text": "해"
+                      },
+                      {
+                        "boundingBox": {
+                          "vertices": [
+                            {
+                              "x": 1261,
+                              "y": 131
+                            },
+                            {
+                              "x": 1291,
+                              "y": 131
+                            },
+                            {
+                              "x": 1290,
+                              "y": 205
+                            },
+                            {
+                              "x": 1260,
+                              "y": 205
+                            }
+                          ]
+                        },
+                        "confidence": 0.99524575,
+                        "text": "요"
+                      }
+                    ]
+                  },
+                  {
+                    "boundingBox": {
+                      "vertices": [
+                        {
+                          "x": 1300,
+                          "y": 132
+                        },
+                        {
+                          "x": 1300,
+                          "y": 132
+                        },
+                        {
+                          "x": 1299,
+                          "y": 206
+                        },
+                        {
+                          "x": 1299,
+                          "y": 206
+                        }
+                      ]
+                    },
+                    "confidence": 0.968736,
+                    "property": {
+                      "detectedLanguages": [
+                        {
+                          "confidence": 1,
+                          "languageCode": "ko"
+                        }
+                      ]
+                    },
+                    "symbols": [
+                      {
+                        "boundingBox": {
+                          "vertices": [
+                            {
+                              "x": 1300,
+                              "y": 132
+                            },
+                            {
+                              "x": 1300,
+                              "y": 132
+                            },
+                            {
+                              "x": 1299,
+                              "y": 206
+                            },
+                            {
+                              "x": 1299,
+                              "y": 206
+                            }
+                          ]
+                        },
+                        "confidence": 0.968736,
+                        "property": {
+                          "detectedBreak": {
+                            "type": "LINE_BREAK"
+                          }
+                        },
+                        "text": "."
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        ],
+        "confidence": 0.94620264,
+        "height": 208,
+        "property": {
+          "detectedLanguages": [
+            {
+              "confidence": 1,
+              "languageCode": "ko"
+            }
+          ]
+        },
+        "width": 1999
+      }
+    ],
+    "text": "안녕하세요! 제 이름은 스티븐이에요. 저는 독일 사람이에요. 함부르크에서 프로그래머로 일해요\n저는 서른여덟 살이에요. 한국 영화와 무에타이보싱을 좋아해요."
+  },
+  "imagePropertiesAnnotation": {
+    "cropHints": [
+      {
+        "boundingPoly": {
+          "vertices": [
+            {
+              "x": 899,
+              "y": 10
+            },
+            {
+              "x": 1048,
+              "y": 10
+            },
+            {
+              "x": 1048,
+              "y": 196
+            },
+            {
+              "x": 899,
+              "y": 196
+            }
+          ]
+        },
+        "confidence": 0.9782796,
+        "importanceFraction": 0.12539552
+      },
+      {
+        "boundingPoly": {
+          "vertices": [
+            {
+              "x": 799
+            },
+            {
+              "x": 1007
+            },
+            {
+              "x": 1007,
+              "y": 207
+            },
+            {
+              "x": 799,
+              "y": 207
+            }
+          ]
+        },
+        "confidence": 0.875,
+        "importanceFraction": 0.17524548
+      },
+      {
+        "boundingPoly": {
+          "vertices": [
+            {
+              "x": 799,
+              "y": 10
+            },
+            {
+              "x": 1022,
+              "y": 10
+            },
+            {
+              "x": 1022,
+              "y": 196
+            },
+            {
+              "x": 799,
+              "y": 196
+            }
+          ]
+        },
+        "confidence": 0.9782797,
+        "importanceFraction": 0.18809319
+      }
+    ],
+    "dominantColors": {
+      "colors": [
+        {
+          "color": {
+            "blue": 128,
+            "green": 128,
+            "red": 128
+          },
+          "hex": "808080",
+          "percent": 42.40078406510769,
+          "percentRounded": 42,
+          "pixelFraction": 0.06875,
+          "rgb": "128, 128,\n 128",
+          "score": 0.42400783
+        },
+        {
+          "color": {
+            "blue": 161,
+            "green": 161,
+            "red": 161
+          },
+          "hex": "A1A1A1",
+          "percent": 21.729347545841208,
+          "percentRounded": 22,
+          "pixelFraction": 0.07541667,
+          "rgb": "161, 161,\n 161",
+          "score": 0.21729347
+        },
+        {
+          "color": {
+            "blue": 180,
+            "green": 180,
+            "red": 180
+          },
+          "hex": "B4B4B4",
+          "percent": 20.076102504311695,
+          "percentRounded": 20,
+          "pixelFraction": 0.09583333,
+          "rgb": "180, 180,\n 180",
+          "score": 0.20076102
+        },
+        {
+          "color": {
+            "blue": 230,
+            "green": 230,
+            "red": 230
+          },
+          "hex": "E6E6E6",
+          "percent": 15.695351394267226,
+          "percentRounded": 16,
+          "pixelFraction": 0.7341667,
+          "rgb": "230, 230,\n 230",
+          "score": 0.15695351
+        },
+        {
+          "color": {
+            "blue": 89,
+            "green": 89,
+            "red": 89
+          },
+          "hex": "595959",
+          "percent": 0.07445377187027875,
+          "percentRounded": 0,
+          "pixelFraction": 0.021666666,
+          "rgb": "89, 89,\n 89",
+          "score": 0.0007445377
+        },
+        {
+          "color": {
+            "blue": 60,
+            "green": 60,
+            "red": 60
+          },
+          "hex": "3C3C3C",
+          "percent": 0.023960718601893253,
+          "percentRounded": 0,
+          "pixelFraction": 0.004166667,
+          "rgb": "60, 60,\n 60",
+          "score": 0.00023960718
+        }
+      ]
+    }
+  },
+  "labelAnnotations": [
+    {
+      "description": "Handwriting",
+      "mid": "/m/0gkxy13",
+      "score": 0.89879566,
+      "topicality": 0.89879566
+    },
+    {
+      "description": "Font",
+      "mid": "/m/03gq5hm",
+      "score": 0.82902306,
+      "topicality": 0.82902306
+    },
+    {
+      "description": "Rectangle",
+      "mid": "/m/0j62f",
+      "score": 0.78216356,
+      "topicality": 0.78216356
+    },
+    {
+      "description": "Art",
+      "mid": "/m/0jjw",
+      "score": 0.74305373,
+      "topicality": 0.74305373
+    },
+    {
+      "description": "Writing",
+      "mid": "/m/081rb",
+      "score": 0.7266424,
+      "topicality": 0.7266424
+    },
+    {
+      "description": "Monochrome",
+      "mid": "/m/01mwkf",
+      "score": 0.6563763,
+      "topicality": 0.6563763
+    },
+    {
+      "description": "Number",
+      "mid": "/m/05fwb",
+      "score": 0.6321793,
+      "topicality": 0.6321793
+    },
+    {
+      "description": "Illustration",
+      "mid": "/m/01kr8f",
+      "score": 0.61941963,
+      "topicality": 0.61941963
+    },
+    {
+      "description": "Circle",
+      "mid": "/m/01vkl",
+      "score": 0.52983,
+      "topicality": 0.52983
+    },
+    {
+      "description": "Pattern",
+      "mid": "/m/0hwky",
+      "score": 0.52317333,
+      "topicality": 0.52317333
+    },
+    {
+      "description": "Slope",
+      "mid": "/m/078hm",
+      "score": 0.5217852,
+      "topicality": 0.5217852
+    },
+    {
+      "description": "Calligraphy",
+      "mid": "/m/0f1tz",
+      "score": 0.5163148,
+      "topicality": 0.5163148
+    },
+    {
+      "description": "Happy",
+      "mid": "/m/016pp7",
+      "score": 0.5028143,
+      "topicality": 0.5028143
+    }
+  ],
+  "safeSearchAnnotation": {
+    "adult": "UNLIKELY",
+    "medical": "UNLIKELY",
+    "racy": "UNLIKELY",
+    "spoof": "VERY_UNLIKELY",
+    "violence": "UNLIKELY"
+  },
+  "textAnnotations": [
+    {
+      "boundingPoly": {
+        "vertices": [
+          {
+            "x": -7,
+            "y": -1
+          },
+          {
+            "x": 1989,
+            "y": -1
+          },
+          {
+            "x": 1989,
+            "y": 212
+          },
+          {
+            "x": -7,
+            "y": 212
+          }
+        ]
+      },
+      "description": "안녕하세요! 제 이름은 스티븐이에요. 저는 독일 사람이에요. 함부르크에서 프로그래머로 일해요\n저는 서른여덟 살이에요. 한국 영화와 무에타이보싱을 좋아해요.",
+      "locale": "ko"
+    },
+    {
+      "boundingPoly": {
+        "vertices": [
+          {
+            "x": 12
+          },
+          {
+            "x": 296,
+            "y": 2
+          },
+          {
+            "x": 295,
+            "y": 76
+          },
+          {
+            "x": 11,
+            "y": 74
+          }
+        ]
+      },
+      "description": "안녕하세요"
+    },
+    {
+      "boundingPoly": {
+        "vertices": [
+          {
+            "x": 306,
+            "y": 3
+          },
+          {
+            "x": 315,
+            "y": 3
+          },
+          {
+            "x": 314,
+            "y": 76
+          },
+          {
+            "x": 305,
+            "y": 76
+          }
+        ]
+      },
+      "description": "!"
+    },
+    {
+      "boundingPoly": {
+        "vertices": [
+          {
+            "x": 338,
+            "y": 3
+          },
+          {
+            "x": 391,
+            "y": 3
+          },
+          {
+            "x": 390,
+            "y": 76
+          },
+          {
+            "x": 337,
+            "y": 76
+          }
+        ]
+      },
+      "description": "제"
+    },
+    {
+      "boundingPoly": {
+        "vertices": [
+          {
+            "x": 413,
+            "y": 4
+          },
+          {
+            "x": 481,
+            "y": 5
+          },
+          {
+            "x": 480,
+            "y": 78
+          },
+          {
+            "x": 412,
+            "y": 77
+          }
+        ]
+      },
+      "description": "이름"
+    },
+    {
+      "boundingPoly": {
+        "vertices": [
+          {
+            "x": 488,
+            "y": 5
+          },
+          {
+            "x": 524,
+            "y": 5
+          },
+          {
+            "x": 523,
+            "y": 78
+          },
+          {
+            "x": 487,
+            "y": 78
+          }
+        ]
+      },
+      "description": "은"
+    },
+    {
+      "boundingPoly": {
+        "vertices": [
+          {
+            "x": 569,
+            "y": 5
+          },
+          {
+            "x": 697,
+            "y": 6
+          },
+          {
+            "x": 696,
+            "y": 80
+          },
+          {
+            "x": 568,
+            "y": 79
+          }
+        ]
+      },
+      "description": "스티븐"
+    },
+    {
+      "boundingPoly": {
+        "vertices": [
+          {
+            "x": 713,
+            "y": 6
+          },
+          {
+            "x": 835,
+            "y": 7
+          },
+          {
+            "x": 834,
+            "y": 81
+          },
+          {
+            "x": 712,
+            "y": 80
+          }
+        ]
+      },
+      "description": "이에요"
+    },
+    {
+      "boundingPoly": {
+        "vertices": [
+          {
+            "x": 842,
+            "y": 8
+          },
+          {
+            "x": 843,
+            "y": 8
+          },
+          {
+            "x": 842,
+            "y": 81
+          },
+          {
+            "x": 841,
+            "y": 81
+          }
+        ]
+      },
+      "description": "."
+    },
+    {
+      "boundingPoly": {
+        "vertices": [
+          {
+            "x": 882,
+            "y": 7
+          },
+          {
+            "x": 977,
+            "y": 8
+          },
+          {
+            "x": 976,
+            "y": 82
+          },
+          {
+            "x": 881,
+            "y": 81
+          }
+        ]
+      },
+      "description": "저는"
+    },
+    {
+      "boundingPoly": {
+        "vertices": [
+          {
+            "x": 1011,
+            "y": 9
+          },
+          {
+            "x": 1081,
+            "y": 10
+          },
+          {
+            "x": 1080,
+            "y": 83
+          },
+          {
+            "x": 1010,
+            "y": 82
+          }
+        ]
+      },
+      "description": "독일"
+    },
+    {
+      "boundingPoly": {
+        "vertices": [
+          {
+            "x": 1095,
+            "y": 10
+          },
+          {
+            "x": 1199,
+            "y": 11
+          },
+          {
+            "x": 1198,
+            "y": 84
+          },
+          {
+            "x": 1094,
+            "y": 83
+          }
+        ]
+      },
+      "description": "사람"
+    },
+    {
+      "boundingPoly": {
+        "vertices": [
+          {
+            "x": 1205,
+            "y": 11
+          },
+          {
+            "x": 1357,
+            "y": 12
+          },
+          {
+            "x": 1356,
+            "y": 85
+          },
+          {
+            "x": 1204,
+            "y": 84
+          }
+        ]
+      },
+      "description": "이에요"
+    },
+    {
+      "boundingPoly": {
+        "vertices": [
+          {
+            "x": 1367,
+            "y": 12
+          },
+          {
+            "x": 1368,
+            "y": 12
+          },
+          {
+            "x": 1367,
+            "y": 85
+          },
+          {
+            "x": 1366,
+            "y": 85
+          }
+        ]
+      },
+      "description": "."
+    },
+    {
+      "boundingPoly": {
+        "vertices": [
+          {
+            "x": 1398,
+            "y": 12
+          },
+          {
+            "x": 1543,
+            "y": 13
+          },
+          {
+            "x": 1542,
+            "y": 87
+          },
+          {
+            "x": 1397,
+            "y": 86
+          }
+        ]
+      },
+      "description": "함부르크"
+    },
+    {
+      "boundingPoly": {
+        "vertices": [
+          {
+            "x": 1551,
+            "y": 14
+          },
+          {
+            "x": 1629,
+            "y": 15
+          },
+          {
+            "x": 1628,
+            "y": 88
+          },
+          {
+            "x": 1550,
+            "y": 87
+          }
+        ]
+      },
+      "description": "에서"
+    },
+    {
+      "boundingPoly": {
+        "vertices": [
+          {
+            "x": 1657,
+            "y": 14
+          },
+          {
+            "x": 1831,
+            "y": 15
+          },
+          {
+            "x": 1830,
+            "y": 89
+          },
+          {
+            "x": 1656,
+            "y": 88
+          }
+        ]
+      },
+      "description": "프로그래머"
+    },
+    {
+      "boundingPoly": {
+        "vertices": [
+          {
+            "x": 1843,
+            "y": 16
+          },
+          {
+            "x": 1863,
+            "y": 16
+          },
+          {
+            "x": 1862,
+            "y": 89
+          },
+          {
+            "x": 1842,
+            "y": 89
+          }
+        ]
+      },
+      "description": "로"
+    },
+    {
+      "boundingPoly": {
+        "vertices": [
+          {
+            "x": 1877,
+            "y": 16
+          },
+          {
+            "x": 1908,
+            "y": 16
+          },
+          {
+            "x": 1907,
+            "y": 89
+          },
+          {
+            "x": 1876,
+            "y": 89
+          }
+        ]
+      },
+      "description": "일"
+    },
+    {
+      "boundingPoly": {
+        "vertices": [
+          {
+            "x": 1919,
+            "y": 17
+          },
+          {
+            "x": 1989,
+            "y": 18
+          },
+          {
+            "x": 1988,
+            "y": 91
+          },
+          {
+            "x": 1918,
+            "y": 90
+          }
+        ]
+      },
+      "description": "해요"
+    },
+    {
+      "boundingPoly": {
+        "vertices": [
+          {
+            "x": -6,
+            "y": 118
+          },
+          {
+            "x": 102,
+            "y": 119
+          },
+          {
+            "x": 101,
+            "y": 194
+          },
+          {
+            "x": -7,
+            "y": 193
+          }
+        ]
+      },
+      "description": "저는"
+    },
+    {
+      "boundingPoly": {
+        "vertices": [
+          {
+            "x": 135,
+            "y": 120
+          },
+          {
+            "x": 234,
+            "y": 121
+          },
+          {
+            "x": 233,
+            "y": 195
+          },
+          {
+            "x": 134,
+            "y": 194
+          }
+        ]
+      },
+      "description": "서른"
+    },
+    {
+      "boundingPoly": {
+        "vertices": [
+          {
+            "x": 255,
+            "y": 121
+          },
+          {
+            "x": 331,
+            "y": 122
+          },
+          {
+            "x": 330,
+            "y": 197
+          },
+          {
+            "x": 254,
+            "y": 196
+          }
+        ]
+      },
+      "description": "여덟"
+    },
+    {
+      "boundingPoly": {
+        "vertices": [
+          {
+            "x": 363,
+            "y": 122
+          },
+          {
+            "x": 401,
+            "y": 122
+          },
+          {
+            "x": 400,
+            "y": 196
+          },
+          {
+            "x": 362,
+            "y": 196
+          }
+        ]
+      },
+      "description": "살"
+    },
+    {
+      "boundingPoly": {
+        "vertices": [
+          {
+            "x": 403,
+            "y": 122
+          },
+          {
+            "x": 511,
+            "y": 123
+          },
+          {
+            "x": 510,
+            "y": 198
+          },
+          {
+            "x": 402,
+            "y": 197
+          }
+        ]
+      },
+      "description": "이에요"
+    },
+    {
+      "boundingPoly": {
+        "vertices": [
+          {
+            "x": 513,
+            "y": 124
+          },
+          {
+            "x": 513,
+            "y": 124
+          },
+          {
+            "x": 512,
+            "y": 198
+          },
+          {
+            "x": 512,
+            "y": 198
+          }
+        ]
+      },
+      "description": "."
+    },
+    {
+      "boundingPoly": {
+        "vertices": [
+          {
+            "x": 547,
+            "y": 124
+          },
+          {
+            "x": 632,
+            "y": 125
+          },
+          {
+            "x": 631,
+            "y": 199
+          },
+          {
+            "x": 546,
+            "y": 198
+          }
+        ]
+      },
+      "description": "한국"
+    },
+    {
+      "boundingPoly": {
+        "vertices": [
+          {
+            "x": 658,
+            "y": 125
+          },
+          {
+            "x": 752,
+            "y": 126
+          },
+          {
+            "x": 751,
+            "y": 201
+          },
+          {
+            "x": 657,
+            "y": 200
+          }
+        ]
+      },
+      "description": "영화"
+    },
+    {
+      "boundingPoly": {
+        "vertices": [
+          {
+            "x": 764,
+            "y": 126
+          },
+          {
+            "x": 802,
+            "y": 126
+          },
+          {
+            "x": 801,
+            "y": 200
+          },
+          {
+            "x": 763,
+            "y": 200
+          }
+        ]
+      },
+      "description": "와"
+    },
+    {
+      "boundingPoly": {
+        "vertices": [
+          {
+            "x": 840,
+            "y": 127
+          },
+          {
+            "x": 979,
+            "y": 128
+          },
+          {
+            "x": 978,
+            "y": 202
+          },
+          {
+            "x": 839,
+            "y": 201
+          }
+        ]
+      },
+      "description": "무에타이"
+    },
+    {
+      "boundingPoly": {
+        "vertices": [
+          {
+            "x": 996,
+            "y": 128
+          },
+          {
+            "x": 1070,
+            "y": 129
+          },
+          {
+            "x": 1069,
+            "y": 204
+          },
+          {
+            "x": 995,
+            "y": 203
+          }
+        ]
+      },
+      "description": "보싱"
+    },
+    {
+      "boundingPoly": {
+        "vertices": [
+          {
+            "x": 1087,
+            "y": 129
+          },
+          {
+            "x": 1108,
+            "y": 129
+          },
+          {
+            "x": 1107,
+            "y": 203
+          },
+          {
+            "x": 1086,
+            "y": 203
+          }
+        ]
+      },
+      "description": "을"
+    },
+    {
+      "boundingPoly": {
+        "vertices": [
+          {
+            "x": 1142,
+            "y": 130
+          },
+          {
+            "x": 1291,
+            "y": 131
+          },
+          {
+            "x": 1290,
+            "y": 205
+          },
+          {
+            "x": 1141,
+            "y": 204
+          }
+        ]
+      },
+      "description": "좋아해요"
+    },
+    {
+      "boundingPoly": {
+        "vertices": [
+          {
+            "x": 1300,
+            "y": 132
+          },
+          {
+            "x": 1300,
+            "y": 132
+          },
+          {
+            "x": 1299,
+            "y": 206
+          },
+          {
+            "x": 1299,
+            "y": 206
+          }
+        ]
+      },
+      "description": "."
+    }
+  ]
+}

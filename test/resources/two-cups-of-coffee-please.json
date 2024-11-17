@@ -1,0 +1,4723 @@
+{
+  "response": {
+    "analysis": [
+      {
+        "continued": true,
+        "part": 0,
+        "subparts": [
+          {
+            "analyzer": "khaiii:0.5",
+            "inputText": "커피 두 잔 주세요.",
+            "options": {
+              "allParseTreeLevels": false,
+              "autoCorrectSpacingErrors": false,
+              "checkForGrammarUpdates": false,
+              "checkForPatternUpdates": true,
+              "disableCorrections": false,
+              "enableAutoScaleToFit": true,
+              "enableCompactParseTree": true,
+              "enableDebugging": false,
+              "enablePartialParseOnError": false,
+              "enableTranslation": true,
+              "enabledTranslation": true,
+              "forceReanalyze": true,
+              "ignoreSpacingErrors": false,
+              "language": "en",
+              "logLevel": 1,
+              "zoomedPatterns": []
+            },
+            "sentence": {
+              "analyzerVersion": "Mirinae NLP v0.80",
+              "correctedPosString": "커피:NNG;두:MM;잔:NNG;주:VV;시:EP;어요:EF;.:SF",
+              "displayDefs": {
+                "두:MM": {
+                  "_id": {
+                    "$oid": "5e48c95c29df039420b3c31c"
+                  },
+                  "attribution": "NIKL",
+                  "attributionURL": "https://krdict.korean.go.kr/eng/mainAction?nation=eng",
+                  "audio": "http://dicmedia.korean.go.kr:8899/multimedia/multimedia_files/convert/20160913/20000/19000/327378/SND000336732.mp3",
+                  "created": {
+                    "$date": 1648283339216
+                  },
+                  "matchedPosLabel": "Determiner",
+                  "notes": [],
+                  "posList": [
+                    {
+                      "posLabel": "Determiner",
+                      "senses": [
+                        {
+                          "key": 276,
+                          "meanings": [
+                            {
+                              "POS": "MM",
+                              "_id": {
+                                "$oid": "5e631a439b7fee2eabc413ed"
+                              },
+                              "created": {
+                                "$date": 1648283339241
+                              },
+                              "defHTML": "<p>Two</p>",
+                              "examples": [
+                                {
+                                  "example": "두 사람.",
+                                  "parts": {
+                                    "end": " 사람.",
+                                    "main": "두",
+                                    "start": ""
+                                  },
+                                  "translations": {}
+                                },
+                                {
+                                  "example": "두 나라.",
+                                  "parts": {
+                                    "end": " 나라.",
+                                    "main": "두",
+                                    "start": ""
+                                  },
+                                  "translations": {}
+                                },
+                                {
+                                  "example": "두 달.",
+                                  "parts": {
+                                    "end": " 달.",
+                                    "main": "두",
+                                    "start": ""
+                                  },
+                                  "translations": {}
+                                },
+                                {
+                                  "example": "두 볼.",
+                                  "parts": {
+                                    "end": " 볼.",
+                                    "main": "두",
+                                    "start": ""
+                                  },
+                                  "translations": {}
+                                },
+                                {
+                                  "example": "두 손.",
+                                  "parts": {
+                                    "end": " 손.",
+                                    "main": "두",
+                                    "start": ""
+                                  },
+                                  "translations": {}
+                                },
+                                {
+                                  "example": "두 지역.",
+                                  "parts": {
+                                    "end": " 지역.",
+                                    "main": "두",
+                                    "start": ""
+                                  },
+                                  "translations": {}
+                                }
+                              ],
+                              "extRefs": [],
+                              "index": 0,
+                              "key": 275,
+                              "language": "en",
+                              "posLabel": "Determiner",
+                              "relatedPatterns": [],
+                              "relatedWords": [],
+                              "sense": "2",
+                              "shortDef": "two",
+                              "sourcePOS": "determiner",
+                              "vocabID": {
+                                "$oid": "5e48c95c29df039420b3c31c"
+                              }
+                            }
+                          ],
+                          "sense": "two"
+                        }
+                      ]
+                    }
+                  ],
+                  "pronunciation": "두ː",
+                  "source": {
+                    "$oid": "5e51c02df55e49defc7a2536"
+                  },
+                  "word": "두",
+                  "wordDefs": [
+                    [
+                      {
+                        "POS": "MM",
+                        "_id": {
+                          "$oid": "5e631a439b7fee2eabc413ed"
+                        },
+                        "created": {
+                          "$date": 1648283339241
+                        },
+                        "defHTML": "<p>Two</p>",
+                        "examples": [
+                          {
+                            "example": "두 사람.",
+                            "parts": {
+                              "end": " 사람.",
+                              "main": "두",
+                              "start": ""
+                            },
+                            "translations": {}
+                          },
+                          {
+                            "example": "두 나라.",
+                            "parts": {
+                              "end": " 나라.",
+                              "main": "두",
+                              "start": ""
+                            },
+                            "translations": {}
+                          },
+                          {
+                            "example": "두 달.",
+                            "parts": {
+                              "end": " 달.",
+                              "main": "두",
+                              "start": ""
+                            },
+                            "translations": {}
+                          },
+                          {
+                            "example": "두 볼.",
+                            "parts": {
+                              "end": " 볼.",
+                              "main": "두",
+                              "start": ""
+                            },
+                            "translations": {}
+                          },
+                          {
+                            "example": "두 손.",
+                            "parts": {
+                              "end": " 손.",
+                              "main": "두",
+                              "start": ""
+                            },
+                            "translations": {}
+                          },
+                          {
+                            "example": "두 지역.",
+                            "parts": {
+                              "end": " 지역.",
+                              "main": "두",
+                              "start": ""
+                            },
+                            "translations": {}
+                          }
+                        ],
+                        "extRefs": [],
+                        "index": 0,
+                        "key": 275,
+                        "language": "en",
+                        "posLabel": "Determiner",
+                        "relatedPatterns": [],
+                        "relatedWords": [],
+                        "sense": "2",
+                        "shortDef": "two",
+                        "sourcePOS": "determiner",
+                        "vocabID": {
+                          "$oid": "5e48c95c29df039420b3c31c"
+                        }
+                      }
+                    ]
+                  ]
+                },
+                "잔:NNG": {
+                  "_id": {
+                    "$oid": "5e48e8bc29df039420b3d6e1"
+                  },
+                  "attribution": "NIKL",
+                  "attributionURL": "https://krdict.korean.go.kr/eng/mainAction?nation=eng",
+                  "audio": "http://dicmedia.korean.go.kr:8899/multimedia/multimedia_files/convert/20120420/66560/SND000055263.mp3",
+                  "created": {
+                    "$date": 1648283339306
+                  },
+                  "hanja": "盞",
+                  "matchedPosLabel": "Noun",
+                  "notes": [],
+                  "posList": [
+                    {
+                      "posLabel": "Noun",
+                      "senses": [
+                        {
+                          "key": 909,
+                          "meanings": [
+                            {
+                              "POS": "NNG",
+                              "_id": {
+                                "$oid": "5e631a6e9b7fee2eabc421d8"
+                              },
+                              "created": {
+                                "$date": 1648283339323
+                              },
+                              "defHTML": "<p>A small container that is used for drinking water, tea, etc.</p>",
+                              "examples": [
+                                {
+                                  "example": "물 잔.",
+                                  "parts": {
+                                    "end": ".",
+                                    "main": "잔",
+                                    "start": "물 "
+                                  },
+                                  "translations": {}
+                                },
+                                {
+                                  "example": "커피 잔.",
+                                  "parts": {
+                                    "end": ".",
+                                    "main": "잔",
+                                    "start": "커피 "
+                                  },
+                                  "translations": {}
+                                },
+                                {
+                                  "example": "빈 잔.",
+                                  "parts": {
+                                    "end": ".",
+                                    "main": "잔",
+                                    "start": "빈 "
+                                  },
+                                  "translations": {}
+                                },
+                                {
+                                  "example": "차가 든 잔.",
+                                  "parts": {
+                                    "end": ".",
+                                    "main": "잔",
+                                    "start": "차가 든 "
+                                  },
+                                  "translations": {}
+                                },
+                                {
+                                  "example": "잔이 깨지다.",
+                                  "parts": {
+                                    "end": "이 깨지다.",
+                                    "main": "잔",
+                                    "start": ""
+                                  },
+                                  "translations": {}
+                                },
+                                {
+                                  "example": "잔을 깨뜨리다.",
+                                  "parts": {
+                                    "end": "을 깨뜨리다.",
+                                    "main": "잔",
+                                    "start": ""
+                                  },
+                                  "translations": {}
+                                }
+                              ],
+                              "extRefs": [],
+                              "index": 0,
+                              "key": 906,
+                              "language": "en",
+                              "posLabel": "Noun",
+                              "relatedPatterns": [],
+                              "relatedWords": [],
+                              "sense": "1",
+                              "shortDef": "cup",
+                              "sourcePOS": "noun",
+                              "vocabID": {
+                                "$oid": "5e48e8bc29df039420b3d6e1"
+                              }
+                            },
+                            {
+                              "POS": "NNG",
+                              "_id": {
+                                "$oid": "5e631a6e9b7fee2eabc421d9"
+                              },
+                              "created": {
+                                "$date": 1648283339326
+                              },
+                              "defHTML": "<p>A small container that is used for drinking alcoholic beverages.</p>",
+                              "examples": [
+                                {
+                                  "example": "잔이 돌다.",
+                                  "parts": {
+                                    "end": "이 돌다.",
+                                    "main": "잔",
+                                    "start": ""
+                                  },
+                                  "translations": {}
+                                },
+                                {
+                                  "example": "잔을 거절하다.",
+                                  "parts": {
+                                    "end": "을 거절하다.",
+                                    "main": "잔",
+                                    "start": ""
+                                  },
+                                  "translations": {}
+                                },
+                                {
+                                  "example": "잔을 꺾다.",
+                                  "parts": {
+                                    "end": "을 꺾다.",
+                                    "main": "잔",
+                                    "start": ""
+                                  },
+                                  "translations": {}
+                                },
+                                {
+                                  "example": "잔을 돌리다.",
+                                  "parts": {
+                                    "end": "을 돌리다.",
+                                    "main": "잔",
+                                    "start": ""
+                                  },
+                                  "translations": {}
+                                },
+                                {
+                                  "example": "잔을 받다.",
+                                  "parts": {
+                                    "end": "을 받다.",
+                                    "main": "잔",
+                                    "start": ""
+                                  },
+                                  "translations": {}
+                                },
+                                {
+                                  "example": "잔을 부딪치다.",
+                                  "parts": {
+                                    "end": "을 부딪치다.",
+                                    "main": "잔",
+                                    "start": ""
+                                  },
+                                  "translations": {}
+                                }
+                              ],
+                              "extRefs": [],
+                              "index": 1,
+                              "key": 907,
+                              "language": "en",
+                              "posLabel": "Noun",
+                              "relatedPatterns": [],
+                              "relatedWords": [],
+                              "sense": "1",
+                              "shortDef": "cup, glass",
+                              "sourcePOS": "noun",
+                              "subscript": 1,
+                              "vocabID": {
+                                "$oid": "5e48e8bc29df039420b3d6e1"
+                              }
+                            },
+                            {
+                              "POS": "NNG",
+                              "_id": {
+                                "$oid": "5e631a6e9b7fee2eabc421da"
+                              },
+                              "created": {
+                                "$date": 1648283339328
+                              },
+                              "defHTML": "<p>A unit that measures the amount of alcoholic and non-alcoholic beverages by counting the number of containers holding the beverage.</p>",
+                              "examples": [
+                                {
+                                  "example": "소주 석 잔.",
+                                  "parts": {
+                                    "end": ".",
+                                    "main": "잔",
+                                    "start": "소주 석 "
+                                  },
+                                  "translations": {}
+                                },
+                                {
+                                  "example": "술 한 잔.",
+                                  "parts": {
+                                    "end": ".",
+                                    "main": "잔",
+                                    "start": "술 한 "
+                                  },
+                                  "translations": {}
+                                },
+                                {
+                                  "example": "와인 두 잔.",
+                                  "parts": {
+                                    "end": ".",
+                                    "main": "잔",
+                                    "start": "와인 두 "
+                                  },
+                                  "translations": {}
+                                },
+                                {
+                                  "example": "우유 한 잔.",
+                                  "parts": {
+                                    "end": ".",
+                                    "main": "잔",
+                                    "start": "우유 한 "
+                                  },
+                                  "translations": {}
+                                },
+                                {
+                                  "example": "차 한 잔.",
+                                  "parts": {
+                                    "end": ".",
+                                    "main": "잔",
+                                    "start": "차 한 "
+                                  },
+                                  "translations": {}
+                                },
+                                {
+                                  "example": "커피 두 잔.",
+                                  "parts": {
+                                    "end": ".",
+                                    "main": "잔",
+                                    "start": "커피 두 "
+                                  },
+                                  "translations": {}
+                                }
+                              ],
+                              "extRefs": [],
+                              "index": 2,
+                              "key": 908,
+                              "language": "en",
+                              "posLabel": "Noun",
+                              "relatedPatterns": [],
+                              "relatedWords": [],
+                              "sense": "1",
+                              "shortDef": "cup, glass",
+                              "sourcePOS": "noun",
+                              "subscript": 2,
+                              "vocabID": {
+                                "$oid": "5e48e8bc29df039420b3d6e1"
+                              }
+                            }
+                          ],
+                          "sense": "cup"
+                        }
+                      ]
+                    },
+                    {
+                      "posLabel": "?",
+                      "senses": [
+                        {
+                          "key": 910,
+                          "meanings": [
+                            {
+                              "POS": "",
+                              "_id": {
+                                "$oid": "5e631a6e9b7fee2eabc421db"
+                              },
+                              "created": {
+                                "$date": 1648283339328
+                              },
+                              "defHTML": "<p>An expression used to quote a remark such as a suggestion, recommendation, etc., while modifying the following noun.</p>",
+                              "examples": [
+                                {
+                                  "example": "내가 보잔 영화를 보면 후회는 하지 않는다니까.",
+                                  "parts": {
+                                    "end": " 영화를 보면 후회는 하지 않는다니까.",
+                                    "main": "보잔",
+                                    "start": "내가 "
+                                  },
+                                  "translations": {}
+                                },
+                                {
+                                  "example": "나는 남편에게 이제 그만 집에 돌아가잔 눈빛을 보냈다.",
+                                  "parts": {
+                                    "end": " 눈빛을 보냈다.",
+                                    "main": "돌아가잔",
+                                    "start": "나는 남편에게 이제 그만 집에 "
+                                  },
+                                  "translations": {}
+                                },
+                                {
+                                  "example": "그러니까 앞으로 아는 척하지 말잔 뜻이니?",
+                                  "parts": {
+                                    "end": " 뜻이니?",
+                                    "main": "말잔",
+                                    "start": "그러니까 앞으로 아는 척하지 "
+                                  },
+                                  "translations": {}
+                                },
+                                {
+                                  "example": "가: 늦었으니까 이제 그만 가자.\n나: 파티는 이제 시작인데 벌써 가잔 말이야?",
+                                  "parts": {
+                                    "end": " 말이야?",
+                                    "main": "가잔",
+                                    "start": "가: 늦었으니까 이제 그만 가자.\n나: 파티는 이제 시작인데 벌써 "
+                                  },
+                                  "translations": {}
+                                },
+                                {
+                                  "example": "가: 갑자기 나를 만나잔 이유가 뭐야?\n나: 그냥 오랜만에 보고 싶어서.",
+                                  "parts": {
+                                    "end": " 이유가 뭐야?\n나: 그냥 오랜만에 보고 싶어서.",
+                                    "main": "만나잔",
+                                    "start": "가: 갑자기 나를 "
+                                  },
+                                  "translations": {}
+                                }
+                              ],
+                              "extRefs": [],
+                              "index": 3,
+                              "key": 904,
+                              "language": "en",
+                              "posLabel": "?",
+                              "relatedPatterns": [],
+                              "relatedWords": [],
+                              "sense": "2",
+                              "shortDef": "-jan",
+                              "sourcePOS": "",
+                              "vocabID": {
+                                "$oid": "5e48e8bc29df039420b3d6e1"
+                              }
+                            }
+                          ],
+                          "sense": "-jan"
+                        }
+                      ]
+                    },
+                    {
+                      "posLabel": "Affix",
+                      "senses": [
+                        {
+                          "key": 911,
+                          "meanings": [
+                            {
+                              "POS": "",
+                              "_id": {
+                                "$oid": "5e631a6e9b7fee2eabc421dc"
+                              },
+                              "created": {
+                                "$date": 1648283339329
+                              },
+                              "defHTML": "<p>A prefix used to mean \"thin and small\" or \"small, trivial, and thus insignificant.\"</p>",
+                              "examples": [
+                                {
+                                  "example": "잔가지",
+                                  "parts": {
+                                    "end": "",
+                                    "main": "잔가지",
+                                    "start": ""
+                                  },
+                                  "translations": {}
+                                },
+                                {
+                                  "example": "잔꾀",
+                                  "parts": {
+                                    "end": "",
+                                    "main": "잔꾀",
+                                    "start": ""
+                                  },
+                                  "translations": {}
+                                },
+                                {
+                                  "example": "잔말",
+                                  "parts": {
+                                    "end": "",
+                                    "main": "잔말",
+                                    "start": ""
+                                  },
+                                  "translations": {}
+                                },
+                                {
+                                  "example": "잔소리",
+                                  "parts": {
+                                    "end": "",
+                                    "main": "잔소리",
+                                    "start": ""
+                                  },
+                                  "translations": {}
+                                },
+                                {
+                                  "example": "잔심부름",
+                                  "parts": {
+                                    "end": "",
+                                    "main": "잔심부름",
+                                    "start": ""
+                                  },
+                                  "translations": {}
+                                },
+                                {
+                                  "example": "잔재주",
+                                  "parts": {
+                                    "end": "",
+                                    "main": "잔재주",
+                                    "start": ""
+                                  },
+                                  "translations": {}
+                                }
+                              ],
+                              "extRefs": [],
+                              "index": 4,
+                              "key": 905,
+                              "language": "en",
+                              "posLabel": "Affix",
+                              "relatedPatterns": [],
+                              "relatedWords": [],
+                              "sense": "3",
+                              "shortDef": "잔",
+                              "sourcePOS": "affix",
+                              "vocabID": {
+                                "$oid": "5e48e8bc29df039420b3d6e1"
+                              }
+                            }
+                          ],
+                          "sense": "잔"
+                        }
+                      ]
+                    }
+                  ],
+                  "pronunciation": "잔",
+                  "source": {
+                    "$oid": "5e51c02df55e49defc7a2536"
+                  },
+                  "word": "잔",
+                  "wordDefs": [
+                    [
+                      {
+                        "POS": "",
+                        "_id": {
+                          "$oid": "5e631a6e9b7fee2eabc421db"
+                        },
+                        "created": {
+                          "$date": 1648283339328
+                        },
+                        "defHTML": "<p>An expression used to quote a remark such as a suggestion, recommendation, etc., while modifying the following noun.</p>",
+                        "examples": [
+                          {
+                            "example": "내가 보잔 영화를 보면 후회는 하지 않는다니까.",
+                            "parts": {
+                              "end": " 영화를 보면 후회는 하지 않는다니까.",
+                              "main": "보잔",
+                              "start": "내가 "
+                            },
+                            "translations": {}
+                          },
+                          {
+                            "example": "나는 남편에게 이제 그만 집에 돌아가잔 눈빛을 보냈다.",
+                            "parts": {
+                              "end": " 눈빛을 보냈다.",
+                              "main": "돌아가잔",
+                              "start": "나는 남편에게 이제 그만 집에 "
+                            },
+                            "translations": {}
+                          },
+                          {
+                            "example": "그러니까 앞으로 아는 척하지 말잔 뜻이니?",
+                            "parts": {
+                              "end": " 뜻이니?",
+                              "main": "말잔",
+                              "start": "그러니까 앞으로 아는 척하지 "
+                            },
+                            "translations": {}
+                          },
+                          {
+                            "example": "가: 늦었으니까 이제 그만 가자.\n나: 파티는 이제 시작인데 벌써 가잔 말이야?",
+                            "parts": {
+                              "end": " 말이야?",
+                              "main": "가잔",
+                              "start": "가: 늦었으니까 이제 그만 가자.\n나: 파티는 이제 시작인데 벌써 "
+                            },
+                            "translations": {}
+                          },
+                          {
+                            "example": "가: 갑자기 나를 만나잔 이유가 뭐야?\n나: 그냥 오랜만에 보고 싶어서.",
+                            "parts": {
+                              "end": " 이유가 뭐야?\n나: 그냥 오랜만에 보고 싶어서.",
+                              "main": "만나잔",
+                              "start": "가: 갑자기 나를 "
+                            },
+                            "translations": {}
+                          }
+                        ],
+                        "extRefs": [],
+                        "index": 3,
+                        "key": 904,
+                        "language": "en",
+                        "posLabel": "?",
+                        "relatedPatterns": [],
+                        "relatedWords": [],
+                        "sense": "2",
+                        "shortDef": "-jan",
+                        "sourcePOS": "",
+                        "vocabID": {
+                          "$oid": "5e48e8bc29df039420b3d6e1"
+                        }
+                      }
+                    ],
+                    [
+                      {
+                        "POS": "",
+                        "_id": {
+                          "$oid": "5e631a6e9b7fee2eabc421dc"
+                        },
+                        "created": {
+                          "$date": 1648283339329
+                        },
+                        "defHTML": "<p>A prefix used to mean \"thin and small\" or \"small, trivial, and thus insignificant.\"</p>",
+                        "examples": [
+                          {
+                            "example": "잔가지",
+                            "parts": {
+                              "end": "",
+                              "main": "잔가지",
+                              "start": ""
+                            },
+                            "translations": {}
+                          },
+                          {
+                            "example": "잔꾀",
+                            "parts": {
+                              "end": "",
+                              "main": "잔꾀",
+                              "start": ""
+                            },
+                            "translations": {}
+                          },
+                          {
+                            "example": "잔말",
+                            "parts": {
+                              "end": "",
+                              "main": "잔말",
+                              "start": ""
+                            },
+                            "translations": {}
+                          },
+                          {
+                            "example": "잔소리",
+                            "parts": {
+                              "end": "",
+                              "main": "잔소리",
+                              "start": ""
+                            },
+                            "translations": {}
+                          },
+                          {
+                            "example": "잔심부름",
+                            "parts": {
+                              "end": "",
+                              "main": "잔심부름",
+                              "start": ""
+                            },
+                            "translations": {}
+                          },
+                          {
+                            "example": "잔재주",
+                            "parts": {
+                              "end": "",
+                              "main": "잔재주",
+                              "start": ""
+                            },
+                            "translations": {}
+                          }
+                        ],
+                        "extRefs": [],
+                        "index": 4,
+                        "key": 905,
+                        "language": "en",
+                        "posLabel": "Affix",
+                        "relatedPatterns": [],
+                        "relatedWords": [],
+                        "sense": "3",
+                        "shortDef": "잔",
+                        "sourcePOS": "affix",
+                        "vocabID": {
+                          "$oid": "5e48e8bc29df039420b3d6e1"
+                        }
+                      }
+                    ],
+                    [
+                      {
+                        "POS": "NNG",
+                        "_id": {
+                          "$oid": "5e631a6e9b7fee2eabc421d8"
+                        },
+                        "created": {
+                          "$date": 1648283339323
+                        },
+                        "defHTML": "<p>A small container that is used for drinking water, tea, etc.</p>",
+                        "examples": [
+                          {
+                            "example": "물 잔.",
+                            "parts": {
+                              "end": ".",
+                              "main": "잔",
+                              "start": "물 "
+                            },
+                            "translations": {}
+                          },
+                          {
+                            "example": "커피 잔.",
+                            "parts": {
+                              "end": ".",
+                              "main": "잔",
+                              "start": "커피 "
+                            },
+                            "translations": {}
+                          },
+                          {
+                            "example": "빈 잔.",
+                            "parts": {
+                              "end": ".",
+                              "main": "잔",
+                              "start": "빈 "
+                            },
+                            "translations": {}
+                          },
+                          {
+                            "example": "차가 든 잔.",
+                            "parts": {
+                              "end": ".",
+                              "main": "잔",
+                              "start": "차가 든 "
+                            },
+                            "translations": {}
+                          },
+                          {
+                            "example": "잔이 깨지다.",
+                            "parts": {
+                              "end": "이 깨지다.",
+                              "main": "잔",
+                              "start": ""
+                            },
+                            "translations": {}
+                          },
+                          {
+                            "example": "잔을 깨뜨리다.",
+                            "parts": {
+                              "end": "을 깨뜨리다.",
+                              "main": "잔",
+                              "start": ""
+                            },
+                            "translations": {}
+                          }
+                        ],
+                        "extRefs": [],
+                        "index": 0,
+                        "key": 906,
+                        "language": "en",
+                        "posLabel": "Noun",
+                        "relatedPatterns": [],
+                        "relatedWords": [],
+                        "sense": "1",
+                        "shortDef": "cup",
+                        "sourcePOS": "noun",
+                        "vocabID": {
+                          "$oid": "5e48e8bc29df039420b3d6e1"
+                        }
+                      },
+                      {
+                        "POS": "NNG",
+                        "_id": {
+                          "$oid": "5e631a6e9b7fee2eabc421d9"
+                        },
+                        "created": {
+                          "$date": 1648283339326
+                        },
+                        "defHTML": "<p>A small container that is used for drinking alcoholic beverages.</p>",
+                        "examples": [
+                          {
+                            "example": "잔이 돌다.",
+                            "parts": {
+                              "end": "이 돌다.",
+                              "main": "잔",
+                              "start": ""
+                            },
+                            "translations": {}
+                          },
+                          {
+                            "example": "잔을 거절하다.",
+                            "parts": {
+                              "end": "을 거절하다.",
+                              "main": "잔",
+                              "start": ""
+                            },
+                            "translations": {}
+                          },
+                          {
+                            "example": "잔을 꺾다.",
+                            "parts": {
+                              "end": "을 꺾다.",
+                              "main": "잔",
+                              "start": ""
+                            },
+                            "translations": {}
+                          },
+                          {
+                            "example": "잔을 돌리다.",
+                            "parts": {
+                              "end": "을 돌리다.",
+                              "main": "잔",
+                              "start": ""
+                            },
+                            "translations": {}
+                          },
+                          {
+                            "example": "잔을 받다.",
+                            "parts": {
+                              "end": "을 받다.",
+                              "main": "잔",
+                              "start": ""
+                            },
+                            "translations": {}
+                          },
+                          {
+                            "example": "잔을 부딪치다.",
+                            "parts": {
+                              "end": "을 부딪치다.",
+                              "main": "잔",
+                              "start": ""
+                            },
+                            "translations": {}
+                          }
+                        ],
+                        "extRefs": [],
+                        "index": 1,
+                        "key": 907,
+                        "language": "en",
+                        "posLabel": "Noun",
+                        "relatedPatterns": [],
+                        "relatedWords": [],
+                        "sense": "1",
+                        "shortDef": "cup, glass",
+                        "sourcePOS": "noun",
+                        "subscript": 1,
+                        "vocabID": {
+                          "$oid": "5e48e8bc29df039420b3d6e1"
+                        }
+                      },
+                      {
+                        "POS": "NNG",
+                        "_id": {
+                          "$oid": "5e631a6e9b7fee2eabc421da"
+                        },
+                        "created": {
+                          "$date": 1648283339328
+                        },
+                        "defHTML": "<p>A unit that measures the amount of alcoholic and non-alcoholic beverages by counting the number of containers holding the beverage.</p>",
+                        "examples": [
+                          {
+                            "example": "소주 석 잔.",
+                            "parts": {
+                              "end": ".",
+                              "main": "잔",
+                              "start": "소주 석 "
+                            },
+                            "translations": {}
+                          },
+                          {
+                            "example": "술 한 잔.",
+                            "parts": {
+                              "end": ".",
+                              "main": "잔",
+                              "start": "술 한 "
+                            },
+                            "translations": {}
+                          },
+                          {
+                            "example": "와인 두 잔.",
+                            "parts": {
+                              "end": ".",
+                              "main": "잔",
+                              "start": "와인 두 "
+                            },
+                            "translations": {}
+                          },
+                          {
+                            "example": "우유 한 잔.",
+                            "parts": {
+                              "end": ".",
+                              "main": "잔",
+                              "start": "우유 한 "
+                            },
+                            "translations": {}
+                          },
+                          {
+                            "example": "차 한 잔.",
+                            "parts": {
+                              "end": ".",
+                              "main": "잔",
+                              "start": "차 한 "
+                            },
+                            "translations": {}
+                          },
+                          {
+                            "example": "커피 두 잔.",
+                            "parts": {
+                              "end": ".",
+                              "main": "잔",
+                              "start": "커피 두 "
+                            },
+                            "translations": {}
+                          }
+                        ],
+                        "extRefs": [],
+                        "index": 2,
+                        "key": 908,
+                        "language": "en",
+                        "posLabel": "Noun",
+                        "relatedPatterns": [],
+                        "relatedWords": [],
+                        "sense": "1",
+                        "shortDef": "cup, glass",
+                        "sourcePOS": "noun",
+                        "subscript": 2,
+                        "vocabID": {
+                          "$oid": "5e48e8bc29df039420b3d6e1"
+                        }
+                      }
+                    ]
+                  ]
+                },
+                "주:VV": {
+                  "_id": {
+                    "$oid": "5e48c7be29df039420b3c14b"
+                  },
+                  "attribution": "NIKL",
+                  "attributionURL": "https://krdict.korean.go.kr/eng/mainAction?nation=eng",
+                  "audio": "http://dicmedia.korean.go.kr:8899/multimedia/multimedia_files/convert/20160913/30000/26000/332067/SND000341421.mp3",
+                  "created": {
+                    "$date": 1648283339344
+                  },
+                  "matchedPosLabel": null,
+                  "notes": [],
+                  "posList": [
+                    {
+                      "posLabel": "Action Verb",
+                      "senses": [
+                        {
+                          "key": 953,
+                          "meanings": [
+                            {
+                              "POS": "VV",
+                              "_id": {
+                                "$oid": "5e631a3f9b7fee2eabc41268"
+                              },
+                              "created": {
+                                "$date": 1648283339364
+                              },
+                              "defHTML": "<p>To give an item to someone else so he/she can have or use it.</p>",
+                              "examples": [
+                                {
+                                  "example": "가방을 주다.",
+                                  "parts": {
+                                    "end": ".",
+                                    "main": "주다",
+                                    "start": "가방을 "
+                                  },
+                                  "translations": {}
+                                },
+                                {
+                                  "example": "공책을 주다.",
+                                  "parts": {
+                                    "end": ".",
+                                    "main": "주다",
+                                    "start": "공책을 "
+                                  },
+                                  "translations": {}
+                                },
+                                {
+                                  "example": "먹이를 주다.",
+                                  "parts": {
+                                    "end": ".",
+                                    "main": "주다",
+                                    "start": "먹이를 "
+                                  },
+                                  "translations": {}
+                                },
+                                {
+                                  "example": "선물을 주다.",
+                                  "parts": {
+                                    "end": ".",
+                                    "main": "주다",
+                                    "start": "선물을 "
+                                  },
+                                  "translations": {}
+                                },
+                                {
+                                  "example": "집어서 주다.",
+                                  "parts": {
+                                    "end": ".",
+                                    "main": "주다",
+                                    "start": "집어서 "
+                                  },
+                                  "translations": {}
+                                },
+                                {
+                                  "example": "조심스럽게 주다.",
+                                  "parts": {
+                                    "end": ".",
+                                    "main": "주다",
+                                    "start": "조심스럽게 "
+                                  },
+                                  "translations": {}
+                                }
+                              ],
+                              "extRefs": [],
+                              "index": 0,
+                              "key": 941,
+                              "language": "en",
+                              "posLabel": "Action Verb",
+                              "relatedPatterns": [],
+                              "relatedWords": [],
+                              "sense": "1",
+                              "shortDef": "give",
+                              "sourcePOS": "verb",
+                              "subscript": 1,
+                              "vocabID": {
+                                "$oid": "5e48c7be29df039420b3c14b"
+                              }
+                            },
+                            {
+                              "POS": "VV",
+                              "_id": {
+                                "$oid": "5e631a3f9b7fee2eabc41269"
+                              },
+                              "created": {
+                                "$date": 1648283339365
+                              },
+                              "defHTML": "<p>To allow something such as time for him/her to enjoy or to have.</p>",
+                              "examples": [
+                                {
+                                  "example": "너에게 3일의 시간을 주겠다.",
+                                  "parts": {
+                                    "end": ".",
+                                    "main": "주겠다",
+                                    "start": "너에게 3일의 시간을 "
+                                  },
+                                  "translations": {}
+                                },
+                                {
+                                  "example": "바쁜 일상이지만 나는 나 자신에게 여유를 주려고 노력한다.",
+                                  "parts": {
+                                    "end": " 노력한다.",
+                                    "main": "주려고",
+                                    "start": "바쁜 일상이지만 나는 나 자신에게 여유를 "
+                                  },
+                                  "translations": {}
+                                },
+                                {
+                                  "example": "나에게 며칠 말미를 주면 그것에 대해 생각해 보겠다.",
+                                  "parts": {
+                                    "end": " 그것에 대해 생각해 보겠다.",
+                                    "main": "주면",
+                                    "start": "나에게 며칠 말미를 "
+                                  },
+                                  "translations": {}
+                                },
+                                {
+                                  "example": "가: 어떻게 숨 쉴 틈도 주지 않고 일을 시켜?\n나: 미안해. 그렇지만 시간이 정말 촉박해서 나도 어쩔 수가 없어.",
+                                  "parts": {
+                                    "end": " 않고 일을 시켜?\n나: 미안해. 그렇지만 시간이 정말 촉박해서 나도 어쩔 수가 없어.",
+                                    "main": "주지",
+                                    "start": "가: 어떻게 숨 쉴 틈도 "
+                                  },
+                                  "translations": {}
+                                }
+                              ],
+                              "extRefs": [],
+                              "index": 1,
+                              "key": 942,
+                              "language": "en",
+                              "posLabel": "Action Verb",
+                              "relatedPatterns": [],
+                              "relatedWords": [],
+                              "sense": "1",
+                              "shortDef": "give",
+                              "sourcePOS": "verb",
+                              "subscript": 2,
+                              "vocabID": {
+                                "$oid": "5e48c7be29df039420b3c14b"
+                              }
+                            },
+                            {
+                              "POS": "VV",
+                              "_id": {
+                                "$oid": "5e631a3f9b7fee2eabc4126a"
+                              },
+                              "created": {
+                                "$date": 1648283339367
+                              },
+                              "defHTML": "<p>To give someone a qualification, right or score.</p>",
+                              "examples": [
+                                {
+                                  "example": "가산점을 주다.",
+                                  "parts": {
+                                    "end": ".",
+                                    "main": "주다",
+                                    "start": "가산점을 "
+                                  },
+                                  "translations": {}
+                                },
+                                {
+                                  "example": "결정권을 주다.",
+                                  "parts": {
+                                    "end": ".",
+                                    "main": "주다",
+                                    "start": "결정권을 "
+                                  },
+                                  "translations": {}
+                                },
+                                {
+                                  "example": "선거권을 주다.",
+                                  "parts": {
+                                    "end": ".",
+                                    "main": "주다",
+                                    "start": "선거권을 "
+                                  },
+                                  "translations": {}
+                                },
+                                {
+                                  "example": "선택권을 주다.",
+                                  "parts": {
+                                    "end": ".",
+                                    "main": "주다",
+                                    "start": "선택권을 "
+                                  },
+                                  "translations": {}
+                                },
+                                {
+                                  "example": "투표권을 주다.",
+                                  "parts": {
+                                    "end": ".",
+                                    "main": "주다",
+                                    "start": "투표권을 "
+                                  },
+                                  "translations": {}
+                                },
+                                {
+                                  "example": "추가 점수를 주다.",
+                                  "parts": {
+                                    "end": ".",
+                                    "main": "주다",
+                                    "start": "추가 점수를 "
+                                  },
+                                  "translations": {}
+                                }
+                              ],
+                              "extRefs": [],
+                              "index": 2,
+                              "key": 943,
+                              "language": "en",
+                              "posLabel": "Action Verb",
+                              "relatedPatterns": [],
+                              "relatedWords": [],
+                              "sense": "1",
+                              "shortDef": "give",
+                              "sourcePOS": "verb",
+                              "subscript": 3,
+                              "vocabID": {
+                                "$oid": "5e48c7be29df039420b3c14b"
+                              }
+                            },
+                            {
+                              "POS": "VV",
+                              "_id": {
+                                "$oid": "5e631a3f9b7fee2eabc4126b"
+                              },
+                              "created": {
+                                "$date": 1648283339368
+                              },
+                              "defHTML": "<p>To give someone a role or part.</p>",
+                              "examples": [
+                                {
+                                  "example": "너에게 중요한 임무를 주겠다.",
+                                  "parts": {
+                                    "end": ".",
+                                    "main": "주겠다",
+                                    "start": "너에게 중요한 임무를 "
+                                  },
+                                  "translations": {}
+                                },
+                                {
+                                  "example": "가: 이 대리. 나라고 그 임무를 당신에게 주는 것이 즐거울 것 같습니까?\n나: 글쎄요. 저도 아니라고 믿고 싶습니다. 부장님.",
+                                  "parts": {
+                                    "end": " 것이 즐거울 것 같습니까?\n나: 글쎄요. 저도 아니라고 믿고 싶습니다. 부장님.",
+                                    "main": "주는",
+                                    "start": "가: 이 대리. 나라고 그 임무를 당신에게 "
+                                  },
+                                  "translations": {}
+                                }
+                              ],
+                              "extRefs": [],
+                              "index": 3,
+                              "key": 944,
+                              "language": "en",
+                              "posLabel": "Action Verb",
+                              "relatedPatterns": [],
+                              "relatedWords": [],
+                              "sense": "1",
+                              "shortDef": "assign",
+                              "sourcePOS": "verb",
+                              "vocabID": {
+                                "$oid": "5e48c7be29df039420b3c14b"
+                              }
+                            },
+                            {
+                              "POS": "VV",
+                              "_id": {
+                                "$oid": "5e631a3f9b7fee2eabc4126c"
+                              },
+                              "created": {
+                                "$date": 1648283339369
+                              },
+                              "defHTML": "<p>To make someone feel a certain way.</p>",
+                              "examples": [
+                                {
+                                  "example": "고통을 주다.",
+                                  "parts": {
+                                    "end": ".",
+                                    "main": "주다",
+                                    "start": "고통을 "
+                                  },
+                                  "translations": {}
+                                },
+                                {
+                                  "example": "기쁨을 주다.",
+                                  "parts": {
+                                    "end": ".",
+                                    "main": "주다",
+                                    "start": "기쁨을 "
+                                  },
+                                  "translations": {}
+                                },
+                                {
+                                  "example": "상처를 주다.",
+                                  "parts": {
+                                    "end": ".",
+                                    "main": "주다",
+                                    "start": "상처를 "
+                                  },
+                                  "translations": {}
+                                },
+                                {
+                                  "example": "안정을 주다.",
+                                  "parts": {
+                                    "end": ".",
+                                    "main": "주다",
+                                    "start": "안정을 "
+                                  },
+                                  "translations": {}
+                                },
+                                {
+                                  "example": "어머니는 동생과 싸웠다고 나에게 핀잔을 주셨다.",
+                                  "parts": {
+                                    "end": ".",
+                                    "main": "주셨다",
+                                    "start": "어머니는 동생과 싸웠다고 나에게 핀잔을 "
+                                  },
+                                  "translations": {}
+                                },
+                                {
+                                  "example": "그의 흉측한 모습은 여자에게 공포감을 주었다.",
+                                  "parts": {
+                                    "end": ".",
+                                    "main": "주었다",
+                                    "start": "그의 흉측한 모습은 여자에게 공포감을 "
+                                  },
+                                  "translations": {}
+                                }
+                              ],
+                              "extRefs": [],
+                              "index": 4,
+                              "key": 945,
+                              "language": "en",
+                              "posLabel": "Action Verb",
+                              "relatedPatterns": [],
+                              "relatedWords": [],
+                              "sense": "1",
+                              "shortDef": "inflict",
+                              "sourcePOS": "verb",
+                              "vocabID": {
+                                "$oid": "5e48c7be29df039420b3c14b"
+                              }
+                            },
+                            {
+                              "POS": "VV",
+                              "_id": {
+                                "$oid": "5e631a3f9b7fee2eabc4126d"
+                              },
+                              "created": {
+                                "$date": 1648283339371
+                              },
+                              "defHTML": "<p>To unwind a spool of thread or rope further.</p>",
+                              "examples": [
+                                {
+                                  "example": "실을 주다.",
+                                  "parts": {
+                                    "end": ".",
+                                    "main": "주다",
+                                    "start": "실을 "
+                                  },
+                                  "translations": {}
+                                },
+                                {
+                                  "example": "연줄을 주다.",
+                                  "parts": {
+                                    "end": ".",
+                                    "main": "주다",
+                                    "start": "연줄을 "
+                                  },
+                                  "translations": {}
+                                },
+                                {
+                                  "example": "줄을 주다.",
+                                  "parts": {
+                                    "end": ".",
+                                    "main": "주다",
+                                    "start": "줄을 "
+                                  },
+                                  "translations": {}
+                                },
+                                {
+                                  "example": "길게 주다.",
+                                  "parts": {
+                                    "end": ".",
+                                    "main": "주다",
+                                    "start": "길게 "
+                                  },
+                                  "translations": {}
+                                },
+                                {
+                                  "example": "더 주다.",
+                                  "parts": {
+                                    "end": ".",
+                                    "main": "주다",
+                                    "start": "더 "
+                                  },
+                                  "translations": {}
+                                },
+                                {
+                                  "example": "아빠는 타래를 풀어 연줄을 더 주셨다.",
+                                  "parts": {
+                                    "end": ".",
+                                    "main": "주셨다",
+                                    "start": "아빠는 타래를 풀어 연줄을 더 "
+                                  },
+                                  "translations": {}
+                                }
+                              ],
+                              "extRefs": [],
+                              "index": 5,
+                              "key": 946,
+                              "language": "en",
+                              "posLabel": "Action Verb",
+                              "relatedPatterns": [],
+                              "relatedWords": [],
+                              "sense": "1",
+                              "shortDef": "unwind further",
+                              "sourcePOS": "verb",
+                              "vocabID": {
+                                "$oid": "5e48c7be29df039420b3c14b"
+                              }
+                            },
+                            {
+                              "POS": "VV",
+                              "_id": {
+                                "$oid": "5e631a3f9b7fee2eabc4126e"
+                              },
+                              "created": {
+                                "$date": 1648283339372
+                              },
+                              "defHTML": "<p>To give someone a warning or hint, so that he/she understands something.</p>",
+                              "examples": [
+                                {
+                                  "example": "수업 시간에 친구 한 녀석이 계속 떠들자 선생님께서 그에게 주의를 주셨다.",
+                                  "parts": {
+                                    "end": ".",
+                                    "main": "주셨다",
+                                    "start": "수업 시간에 친구 한 녀석이 계속 떠들자 선생님께서 그에게 주의를 "
+                                  },
+                                  "translations": {}
+                                },
+                                {
+                                  "example": "가: 왜 갑자기 남자친구랑 헤어지게 된 거야?\n나: 나도 모르겠어. 그 사람은 나에게 어떠한 여지도 주지 않고 떠났어.",
+                                  "parts": {
+                                    "end": " 않고 떠났어.",
+                                    "main": "주지",
+                                    "start": "가: 왜 갑자기 남자친구랑 헤어지게 된 거야?\n나: 나도 모르겠어. 그 사람은 나에게 어떠한 여지도 "
+                                  },
+                                  "translations": {}
+                                }
+                              ],
+                              "extRefs": [],
+                              "index": 6,
+                              "key": 947,
+                              "language": "en",
+                              "posLabel": "Action Verb",
+                              "relatedPatterns": [],
+                              "relatedWords": [],
+                              "sense": "1",
+                              "shortDef": "warn",
+                              "sourcePOS": "verb",
+                              "vocabID": {
+                                "$oid": "5e48c7be29df039420b3c14b"
+                              }
+                            },
+                            {
+                              "POS": "VV",
+                              "_id": {
+                                "$oid": "5e631a3f9b7fee2eabc4126f"
+                              },
+                              "created": {
+                                "$date": 1648283339373
+                              },
+                              "defHTML": "<p>To direct one's sight or gesture to a certain place.</p>",
+                              "examples": [
+                                {
+                                  "example": "눈을 주다.",
+                                  "parts": {
+                                    "end": ".",
+                                    "main": "주다",
+                                    "start": "눈을 "
+                                  },
+                                  "translations": {}
+                                },
+                                {
+                                  "example": "눈길을 주다.",
+                                  "parts": {
+                                    "end": ".",
+                                    "main": "주다",
+                                    "start": "눈길을 "
+                                  },
+                                  "translations": {}
+                                },
+                                {
+                                  "example": "시선을 주다.",
+                                  "parts": {
+                                    "end": ".",
+                                    "main": "주다",
+                                    "start": "시선을 "
+                                  },
+                                  "translations": {}
+                                },
+                                {
+                                  "example": "잠깐 주다.",
+                                  "parts": {
+                                    "end": ".",
+                                    "main": "주다",
+                                    "start": "잠깐 "
+                                  },
+                                  "translations": {}
+                                },
+                                {
+                                  "example": "그는 아이에게 주던 시선을 이내 거두었다.",
+                                  "parts": {
+                                    "end": " 시선을 이내 거두었다.",
+                                    "main": "주던",
+                                    "start": "그는 아이에게 "
+                                  },
+                                  "translations": {}
+                                },
+                                {
+                                  "example": "아이가 이야기를 하다 말고 하늘로 눈을 주었다.",
+                                  "parts": {
+                                    "end": ".",
+                                    "main": "주었다",
+                                    "start": "아이가 이야기를 하다 말고 하늘로 눈을 "
+                                  },
+                                  "translations": {}
+                                }
+                              ],
+                              "extRefs": [],
+                              "index": 7,
+                              "key": 948,
+                              "language": "en",
+                              "posLabel": "Action Verb",
+                              "relatedPatterns": [],
+                              "relatedWords": [],
+                              "sense": "1",
+                              "shortDef": "give, throw",
+                              "sourcePOS": "verb",
+                              "vocabID": {
+                                "$oid": "5e48c7be29df039420b3c14b"
+                              }
+                            },
+                            {
+                              "POS": "VV",
+                              "_id": {
+                                "$oid": "5e631a3f9b7fee2eabc41270"
+                              },
+                              "created": {
+                                "$date": 1648283339374
+                              },
+                              "defHTML": "<p>To make an injection or apply an acupuncture needle.</p>",
+                              "examples": [
+                                {
+                                  "example": "주사를 주다.",
+                                  "parts": {
+                                    "end": ".",
+                                    "main": "주다",
+                                    "start": "주사를 "
+                                  },
+                                  "translations": {}
+                                },
+                                {
+                                  "example": "침을 주다.",
+                                  "parts": {
+                                    "end": ".",
+                                    "main": "주다",
+                                    "start": "침을 "
+                                  },
+                                  "translations": {}
+                                },
+                                {
+                                  "example": "살살 주다.",
+                                  "parts": {
+                                    "end": ".",
+                                    "main": "주다",
+                                    "start": "살살 "
+                                  },
+                                  "translations": {}
+                                },
+                                {
+                                  "example": "아프게 주다.",
+                                  "parts": {
+                                    "end": ".",
+                                    "main": "주다",
+                                    "start": "아프게 "
+                                  },
+                                  "translations": {}
+                                },
+                                {
+                                  "example": "한의사는 민준이의 다친 다리에 침을 주기 시작했다.",
+                                  "parts": {
+                                    "end": " 시작했다.",
+                                    "main": "주기",
+                                    "start": "한의사는 민준이의 다친 다리에 침을 "
+                                  },
+                                  "translations": {}
+                                },
+                                {
+                                  "example": "간호사가 엉덩이에 주사를 주려고 하자 겁을 먹은 아이가 울기 시작했다.",
+                                  "parts": {
+                                    "end": " 하자 겁을 먹은 아이가 울기 시작했다.",
+                                    "main": "주려고",
+                                    "start": "간호사가 엉덩이에 주사를 "
+                                  },
+                                  "translations": {}
+                                }
+                              ],
+                              "extRefs": [],
+                              "index": 8,
+                              "key": 949,
+                              "language": "en",
+                              "posLabel": "Action Verb",
+                              "relatedPatterns": [],
+                              "relatedWords": [],
+                              "sense": "1",
+                              "shortDef": "inject, apply",
+                              "sourcePOS": "verb",
+                              "vocabID": {
+                                "$oid": "5e48c7be29df039420b3c14b"
+                              }
+                            },
+                            {
+                              "POS": "VV",
+                              "_id": {
+                                "$oid": "5e631a3f9b7fee2eabc41271"
+                              },
+                              "created": {
+                                "$date": 1648283339375
+                              },
+                              "defHTML": "<p>To add to speed or power.</p>",
+                              "examples": [
+                                {
+                                  "example": "속력을 주다.",
+                                  "parts": {
+                                    "end": ".",
+                                    "main": "주다",
+                                    "start": "속력을 "
+                                  },
+                                  "translations": {}
+                                },
+                                {
+                                  "example": "힘을 주다.",
+                                  "parts": {
+                                    "end": ".",
+                                    "main": "주다",
+                                    "start": "힘을 "
+                                  },
+                                  "translations": {}
+                                },
+                                {
+                                  "example": "꽉 주다.",
+                                  "parts": {
+                                    "end": ".",
+                                    "main": "주다",
+                                    "start": "꽉 "
+                                  },
+                                  "translations": {}
+                                },
+                                {
+                                  "example": "더 주다.",
+                                  "parts": {
+                                    "end": ".",
+                                    "main": "주다",
+                                    "start": "더 "
+                                  },
+                                  "translations": {}
+                                },
+                                {
+                                  "example": "그는 속력을 주어 다른 차를 추월했다.",
+                                  "parts": {
+                                    "end": " 다른 차를 추월했다.",
+                                    "main": "주어",
+                                    "start": "그는 속력을 "
+                                  },
+                                  "translations": {}
+                                },
+                                {
+                                  "example": "지수는 그의 옷자락을 놓치지 않으려는 듯 손에 힘을 꽉 주었다.",
+                                  "parts": {
+                                    "end": ".",
+                                    "main": "주었다",
+                                    "start": "지수는 그의 옷자락을 놓치지 않으려는 듯 손에 힘을 꽉 "
+                                  },
+                                  "translations": {}
+                                }
+                              ],
+                              "extRefs": [],
+                              "index": 9,
+                              "key": 950,
+                              "language": "en",
+                              "posLabel": "Action Verb",
+                              "relatedPatterns": [],
+                              "relatedWords": [],
+                              "sense": "1",
+                              "shortDef": "apply, add to",
+                              "sourcePOS": "verb",
+                              "vocabID": {
+                                "$oid": "5e48c7be29df039420b3c14b"
+                              }
+                            },
+                            {
+                              "POS": "VV",
+                              "_id": {
+                                "$oid": "5e631a3f9b7fee2eabc41272"
+                              },
+                              "created": {
+                                "$date": 1648283339376
+                              },
+                              "defHTML": "<p>To do an act of kindness or open one's heart to someone.</p>",
+                              "examples": [
+                                {
+                                  "example": "마음을 주다.",
+                                  "parts": {
+                                    "end": ".",
+                                    "main": "주다",
+                                    "start": "마음을 "
+                                  },
+                                  "translations": {}
+                                },
+                                {
+                                  "example": "사랑을 주다.",
+                                  "parts": {
+                                    "end": ".",
+                                    "main": "주다",
+                                    "start": "사랑을 "
+                                  },
+                                  "translations": {}
+                                },
+                                {
+                                  "example": "정을 주다.",
+                                  "parts": {
+                                    "end": ".",
+                                    "main": "주다",
+                                    "start": "정을 "
+                                  },
+                                  "translations": {}
+                                },
+                                {
+                                  "example": "오래 주다.",
+                                  "parts": {
+                                    "end": ".",
+                                    "main": "주다",
+                                    "start": "오래 "
+                                  },
+                                  "translations": {}
+                                },
+                                {
+                                  "example": "한없이 주다.",
+                                  "parts": {
+                                    "end": ".",
+                                    "main": "주다",
+                                    "start": "한없이 "
+                                  },
+                                  "translations": {}
+                                },
+                                {
+                                  "example": "그는 아무리 친한 친구에게도 쉽게 마음을 주지 않는다.",
+                                  "parts": {
+                                    "end": " 않는다.",
+                                    "main": "주지",
+                                    "start": "그는 아무리 친한 친구에게도 쉽게 마음을 "
+                                  },
+                                  "translations": {}
+                                }
+                              ],
+                              "extRefs": [],
+                              "index": 10,
+                              "key": 951,
+                              "language": "en",
+                              "posLabel": "Action Verb",
+                              "relatedPatterns": [],
+                              "relatedWords": [],
+                              "sense": "1",
+                              "shortDef": "give, open",
+                              "sourcePOS": "verb",
+                              "vocabID": {
+                                "$oid": "5e48c7be29df039420b3c14b"
+                              }
+                            }
+                          ],
+                          "sense": "give"
+                        }
+                      ]
+                    },
+                    {
+                      "posLabel": "Auxiliary Verb",
+                      "senses": [
+                        {
+                          "key": 954,
+                          "meanings": [
+                            {
+                              "POS": "VX",
+                              "_id": {
+                                "$oid": "5e631a3f9b7fee2eabc41273"
+                              },
+                              "created": {
+                                "$date": 1648283339376
+                              },
+                              "defHTML": "<p>An auxiliary verb used to indicate that one performs the action in the preceding statement, which affects another person's action.</p>",
+                              "examples": [
+                                {
+                                  "example": "부족한 저를 항상 바른 길로 이끌어 주시는 선생님께 감사를 드립니다.",
+                                  "parts": {
+                                    "end": " 선생님께 감사를 드립니다.",
+                                    "main": "주시는",
+                                    "start": "부족한 저를 항상 바른 길로 이끌어 "
+                                  },
+                                  "translations": {}
+                                },
+                                {
+                                  "example": "지수는 부모님께서 외출하신 동안 동생을 돌보아 주었다.",
+                                  "parts": {
+                                    "end": ".",
+                                    "main": "주었다",
+                                    "start": "지수는 부모님께서 외출하신 동안 동생을 돌보아 "
+                                  },
+                                  "translations": {}
+                                },
+                                {
+                                  "example": "크리스마스 때 아내는 나에게 따뜻한 목도리를 선물해 줬다.",
+                                  "parts": {
+                                    "end": ".",
+                                    "main": "줬다",
+                                    "start": "크리스마스 때 아내는 나에게 따뜻한 목도리를 선물해 "
+                                  },
+                                  "translations": {}
+                                },
+                                {
+                                  "example": "가: 오늘 즐거웠어. 파티에 초대해 줘서 고마워.\n나: 아니야. 네가 와 줘서 정말 기뻤어.",
+                                  "parts": {
+                                    "end": " 고마워.\n나: 아니야. 네가 와 줘서 정말 기뻤어.",
+                                    "main": "줘서",
+                                    "start": "가: 오늘 즐거웠어. 파티에 초대해 "
+                                  },
+                                  "translations": {}
+                                }
+                              ],
+                              "extRefs": [],
+                              "index": 11,
+                              "key": 952,
+                              "language": "en",
+                              "posLabel": "Auxiliary Verb",
+                              "relatedPatterns": [],
+                              "relatedWords": [],
+                              "sense": "2",
+                              "shortDef": "juda",
+                              "sourcePOS": "auxiliary verb",
+                              "vocabID": {
+                                "$oid": "5e48c7be29df039420b3c14b"
+                              }
+                            }
+                          ],
+                          "sense": "juda"
+                        }
+                      ]
+                    }
+                  ],
+                  "pronunciation": "주다",
+                  "source": {
+                    "$oid": "5e51c02df55e49defc7a2536"
+                  },
+                  "word": "주다",
+                  "wordDefs": [
+                    [
+                      {
+                        "POS": "VV",
+                        "_id": {
+                          "$oid": "5e631a3f9b7fee2eabc41268"
+                        },
+                        "created": {
+                          "$date": 1648283339364
+                        },
+                        "defHTML": "<p>To give an item to someone else so he/she can have or use it.</p>",
+                        "examples": [
+                          {
+                            "example": "가방을 주다.",
+                            "parts": {
+                              "end": ".",
+                              "main": "주다",
+                              "start": "가방을 "
+                            },
+                            "translations": {}
+                          },
+                          {
+                            "example": "공책을 주다.",
+                            "parts": {
+                              "end": ".",
+                              "main": "주다",
+                              "start": "공책을 "
+                            },
+                            "translations": {}
+                          },
+                          {
+                            "example": "먹이를 주다.",
+                            "parts": {
+                              "end": ".",
+                              "main": "주다",
+                              "start": "먹이를 "
+                            },
+                            "translations": {}
+                          },
+                          {
+                            "example": "선물을 주다.",
+                            "parts": {
+                              "end": ".",
+                              "main": "주다",
+                              "start": "선물을 "
+                            },
+                            "translations": {}
+                          },
+                          {
+                            "example": "집어서 주다.",
+                            "parts": {
+                              "end": ".",
+                              "main": "주다",
+                              "start": "집어서 "
+                            },
+                            "translations": {}
+                          },
+                          {
+                            "example": "조심스럽게 주다.",
+                            "parts": {
+                              "end": ".",
+                              "main": "주다",
+                              "start": "조심스럽게 "
+                            },
+                            "translations": {}
+                          }
+                        ],
+                        "extRefs": [],
+                        "index": 0,
+                        "key": 941,
+                        "language": "en",
+                        "posLabel": "Action Verb",
+                        "relatedPatterns": [],
+                        "relatedWords": [],
+                        "sense": "1",
+                        "shortDef": "give",
+                        "sourcePOS": "verb",
+                        "subscript": 1,
+                        "vocabID": {
+                          "$oid": "5e48c7be29df039420b3c14b"
+                        }
+                      },
+                      {
+                        "POS": "VV",
+                        "_id": {
+                          "$oid": "5e631a3f9b7fee2eabc41269"
+                        },
+                        "created": {
+                          "$date": 1648283339365
+                        },
+                        "defHTML": "<p>To allow something such as time for him/her to enjoy or to have.</p>",
+                        "examples": [
+                          {
+                            "example": "너에게 3일의 시간을 주겠다.",
+                            "parts": {
+                              "end": ".",
+                              "main": "주겠다",
+                              "start": "너에게 3일의 시간을 "
+                            },
+                            "translations": {}
+                          },
+                          {
+                            "example": "바쁜 일상이지만 나는 나 자신에게 여유를 주려고 노력한다.",
+                            "parts": {
+                              "end": " 노력한다.",
+                              "main": "주려고",
+                              "start": "바쁜 일상이지만 나는 나 자신에게 여유를 "
+                            },
+                            "translations": {}
+                          },
+                          {
+                            "example": "나에게 며칠 말미를 주면 그것에 대해 생각해 보겠다.",
+                            "parts": {
+                              "end": " 그것에 대해 생각해 보겠다.",
+                              "main": "주면",
+                              "start": "나에게 며칠 말미를 "
+                            },
+                            "translations": {}
+                          },
+                          {
+                            "example": "가: 어떻게 숨 쉴 틈도 주지 않고 일을 시켜?\n나: 미안해. 그렇지만 시간이 정말 촉박해서 나도 어쩔 수가 없어.",
+                            "parts": {
+                              "end": " 않고 일을 시켜?\n나: 미안해. 그렇지만 시간이 정말 촉박해서 나도 어쩔 수가 없어.",
+                              "main": "주지",
+                              "start": "가: 어떻게 숨 쉴 틈도 "
+                            },
+                            "translations": {}
+                          }
+                        ],
+                        "extRefs": [],
+                        "index": 1,
+                        "key": 942,
+                        "language": "en",
+                        "posLabel": "Action Verb",
+                        "relatedPatterns": [],
+                        "relatedWords": [],
+                        "sense": "1",
+                        "shortDef": "give",
+                        "sourcePOS": "verb",
+                        "subscript": 2,
+                        "vocabID": {
+                          "$oid": "5e48c7be29df039420b3c14b"
+                        }
+                      },
+                      {
+                        "POS": "VV",
+                        "_id": {
+                          "$oid": "5e631a3f9b7fee2eabc4126a"
+                        },
+                        "created": {
+                          "$date": 1648283339367
+                        },
+                        "defHTML": "<p>To give someone a qualification, right or score.</p>",
+                        "examples": [
+                          {
+                            "example": "가산점을 주다.",
+                            "parts": {
+                              "end": ".",
+                              "main": "주다",
+                              "start": "가산점을 "
+                            },
+                            "translations": {}
+                          },
+                          {
+                            "example": "결정권을 주다.",
+                            "parts": {
+                              "end": ".",
+                              "main": "주다",
+                              "start": "결정권을 "
+                            },
+                            "translations": {}
+                          },
+                          {
+                            "example": "선거권을 주다.",
+                            "parts": {
+                              "end": ".",
+                              "main": "주다",
+                              "start": "선거권을 "
+                            },
+                            "translations": {}
+                          },
+                          {
+                            "example": "선택권을 주다.",
+                            "parts": {
+                              "end": ".",
+                              "main": "주다",
+                              "start": "선택권을 "
+                            },
+                            "translations": {}
+                          },
+                          {
+                            "example": "투표권을 주다.",
+                            "parts": {
+                              "end": ".",
+                              "main": "주다",
+                              "start": "투표권을 "
+                            },
+                            "translations": {}
+                          },
+                          {
+                            "example": "추가 점수를 주다.",
+                            "parts": {
+                              "end": ".",
+                              "main": "주다",
+                              "start": "추가 점수를 "
+                            },
+                            "translations": {}
+                          }
+                        ],
+                        "extRefs": [],
+                        "index": 2,
+                        "key": 943,
+                        "language": "en",
+                        "posLabel": "Action Verb",
+                        "relatedPatterns": [],
+                        "relatedWords": [],
+                        "sense": "1",
+                        "shortDef": "give",
+                        "sourcePOS": "verb",
+                        "subscript": 3,
+                        "vocabID": {
+                          "$oid": "5e48c7be29df039420b3c14b"
+                        }
+                      },
+                      {
+                        "POS": "VV",
+                        "_id": {
+                          "$oid": "5e631a3f9b7fee2eabc4126b"
+                        },
+                        "created": {
+                          "$date": 1648283339368
+                        },
+                        "defHTML": "<p>To give someone a role or part.</p>",
+                        "examples": [
+                          {
+                            "example": "너에게 중요한 임무를 주겠다.",
+                            "parts": {
+                              "end": ".",
+                              "main": "주겠다",
+                              "start": "너에게 중요한 임무를 "
+                            },
+                            "translations": {}
+                          },
+                          {
+                            "example": "가: 이 대리. 나라고 그 임무를 당신에게 주는 것이 즐거울 것 같습니까?\n나: 글쎄요. 저도 아니라고 믿고 싶습니다. 부장님.",
+                            "parts": {
+                              "end": " 것이 즐거울 것 같습니까?\n나: 글쎄요. 저도 아니라고 믿고 싶습니다. 부장님.",
+                              "main": "주는",
+                              "start": "가: 이 대리. 나라고 그 임무를 당신에게 "
+                            },
+                            "translations": {}
+                          }
+                        ],
+                        "extRefs": [],
+                        "index": 3,
+                        "key": 944,
+                        "language": "en",
+                        "posLabel": "Action Verb",
+                        "relatedPatterns": [],
+                        "relatedWords": [],
+                        "sense": "1",
+                        "shortDef": "assign",
+                        "sourcePOS": "verb",
+                        "vocabID": {
+                          "$oid": "5e48c7be29df039420b3c14b"
+                        }
+                      },
+                      {
+                        "POS": "VV",
+                        "_id": {
+                          "$oid": "5e631a3f9b7fee2eabc4126c"
+                        },
+                        "created": {
+                          "$date": 1648283339369
+                        },
+                        "defHTML": "<p>To make someone feel a certain way.</p>",
+                        "examples": [
+                          {
+                            "example": "고통을 주다.",
+                            "parts": {
+                              "end": ".",
+                              "main": "주다",
+                              "start": "고통을 "
+                            },
+                            "translations": {}
+                          },
+                          {
+                            "example": "기쁨을 주다.",
+                            "parts": {
+                              "end": ".",
+                              "main": "주다",
+                              "start": "기쁨을 "
+                            },
+                            "translations": {}
+                          },
+                          {
+                            "example": "상처를 주다.",
+                            "parts": {
+                              "end": ".",
+                              "main": "주다",
+                              "start": "상처를 "
+                            },
+                            "translations": {}
+                          },
+                          {
+                            "example": "안정을 주다.",
+                            "parts": {
+                              "end": ".",
+                              "main": "주다",
+                              "start": "안정을 "
+                            },
+                            "translations": {}
+                          },
+                          {
+                            "example": "어머니는 동생과 싸웠다고 나에게 핀잔을 주셨다.",
+                            "parts": {
+                              "end": ".",
+                              "main": "주셨다",
+                              "start": "어머니는 동생과 싸웠다고 나에게 핀잔을 "
+                            },
+                            "translations": {}
+                          },
+                          {
+                            "example": "그의 흉측한 모습은 여자에게 공포감을 주었다.",
+                            "parts": {
+                              "end": ".",
+                              "main": "주었다",
+                              "start": "그의 흉측한 모습은 여자에게 공포감을 "
+                            },
+                            "translations": {}
+                          }
+                        ],
+                        "extRefs": [],
+                        "index": 4,
+                        "key": 945,
+                        "language": "en",
+                        "posLabel": "Action Verb",
+                        "relatedPatterns": [],
+                        "relatedWords": [],
+                        "sense": "1",
+                        "shortDef": "inflict",
+                        "sourcePOS": "verb",
+                        "vocabID": {
+                          "$oid": "5e48c7be29df039420b3c14b"
+                        }
+                      },
+                      {
+                        "POS": "VV",
+                        "_id": {
+                          "$oid": "5e631a3f9b7fee2eabc4126d"
+                        },
+                        "created": {
+                          "$date": 1648283339371
+                        },
+                        "defHTML": "<p>To unwind a spool of thread or rope further.</p>",
+                        "examples": [
+                          {
+                            "example": "실을 주다.",
+                            "parts": {
+                              "end": ".",
+                              "main": "주다",
+                              "start": "실을 "
+                            },
+                            "translations": {}
+                          },
+                          {
+                            "example": "연줄을 주다.",
+                            "parts": {
+                              "end": ".",
+                              "main": "주다",
+                              "start": "연줄을 "
+                            },
+                            "translations": {}
+                          },
+                          {
+                            "example": "줄을 주다.",
+                            "parts": {
+                              "end": ".",
+                              "main": "주다",
+                              "start": "줄을 "
+                            },
+                            "translations": {}
+                          },
+                          {
+                            "example": "길게 주다.",
+                            "parts": {
+                              "end": ".",
+                              "main": "주다",
+                              "start": "길게 "
+                            },
+                            "translations": {}
+                          },
+                          {
+                            "example": "더 주다.",
+                            "parts": {
+                              "end": ".",
+                              "main": "주다",
+                              "start": "더 "
+                            },
+                            "translations": {}
+                          },
+                          {
+                            "example": "아빠는 타래를 풀어 연줄을 더 주셨다.",
+                            "parts": {
+                              "end": ".",
+                              "main": "주셨다",
+                              "start": "아빠는 타래를 풀어 연줄을 더 "
+                            },
+                            "translations": {}
+                          }
+                        ],
+                        "extRefs": [],
+                        "index": 5,
+                        "key": 946,
+                        "language": "en",
+                        "posLabel": "Action Verb",
+                        "relatedPatterns": [],
+                        "relatedWords": [],
+                        "sense": "1",
+                        "shortDef": "unwind further",
+                        "sourcePOS": "verb",
+                        "vocabID": {
+                          "$oid": "5e48c7be29df039420b3c14b"
+                        }
+                      },
+                      {
+                        "POS": "VV",
+                        "_id": {
+                          "$oid": "5e631a3f9b7fee2eabc4126e"
+                        },
+                        "created": {
+                          "$date": 1648283339372
+                        },
+                        "defHTML": "<p>To give someone a warning or hint, so that he/she understands something.</p>",
+                        "examples": [
+                          {
+                            "example": "수업 시간에 친구 한 녀석이 계속 떠들자 선생님께서 그에게 주의를 주셨다.",
+                            "parts": {
+                              "end": ".",
+                              "main": "주셨다",
+                              "start": "수업 시간에 친구 한 녀석이 계속 떠들자 선생님께서 그에게 주의를 "
+                            },
+                            "translations": {}
+                          },
+                          {
+                            "example": "가: 왜 갑자기 남자친구랑 헤어지게 된 거야?\n나: 나도 모르겠어. 그 사람은 나에게 어떠한 여지도 주지 않고 떠났어.",
+                            "parts": {
+                              "end": " 않고 떠났어.",
+                              "main": "주지",
+                              "start": "가: 왜 갑자기 남자친구랑 헤어지게 된 거야?\n나: 나도 모르겠어. 그 사람은 나에게 어떠한 여지도 "
+                            },
+                            "translations": {}
+                          }
+                        ],
+                        "extRefs": [],
+                        "index": 6,
+                        "key": 947,
+                        "language": "en",
+                        "posLabel": "Action Verb",
+                        "relatedPatterns": [],
+                        "relatedWords": [],
+                        "sense": "1",
+                        "shortDef": "warn",
+                        "sourcePOS": "verb",
+                        "vocabID": {
+                          "$oid": "5e48c7be29df039420b3c14b"
+                        }
+                      },
+                      {
+                        "POS": "VV",
+                        "_id": {
+                          "$oid": "5e631a3f9b7fee2eabc4126f"
+                        },
+                        "created": {
+                          "$date": 1648283339373
+                        },
+                        "defHTML": "<p>To direct one's sight or gesture to a certain place.</p>",
+                        "examples": [
+                          {
+                            "example": "눈을 주다.",
+                            "parts": {
+                              "end": ".",
+                              "main": "주다",
+                              "start": "눈을 "
+                            },
+                            "translations": {}
+                          },
+                          {
+                            "example": "눈길을 주다.",
+                            "parts": {
+                              "end": ".",
+                              "main": "주다",
+                              "start": "눈길을 "
+                            },
+                            "translations": {}
+                          },
+                          {
+                            "example": "시선을 주다.",
+                            "parts": {
+                              "end": ".",
+                              "main": "주다",
+                              "start": "시선을 "
+                            },
+                            "translations": {}
+                          },
+                          {
+                            "example": "잠깐 주다.",
+                            "parts": {
+                              "end": ".",
+                              "main": "주다",
+                              "start": "잠깐 "
+                            },
+                            "translations": {}
+                          },
+                          {
+                            "example": "그는 아이에게 주던 시선을 이내 거두었다.",
+                            "parts": {
+                              "end": " 시선을 이내 거두었다.",
+                              "main": "주던",
+                              "start": "그는 아이에게 "
+                            },
+                            "translations": {}
+                          },
+                          {
+                            "example": "아이가 이야기를 하다 말고 하늘로 눈을 주었다.",
+                            "parts": {
+                              "end": ".",
+                              "main": "주었다",
+                              "start": "아이가 이야기를 하다 말고 하늘로 눈을 "
+                            },
+                            "translations": {}
+                          }
+                        ],
+                        "extRefs": [],
+                        "index": 7,
+                        "key": 948,
+                        "language": "en",
+                        "posLabel": "Action Verb",
+                        "relatedPatterns": [],
+                        "relatedWords": [],
+                        "sense": "1",
+                        "shortDef": "give, throw",
+                        "sourcePOS": "verb",
+                        "vocabID": {
+                          "$oid": "5e48c7be29df039420b3c14b"
+                        }
+                      },
+                      {
+                        "POS": "VV",
+                        "_id": {
+                          "$oid": "5e631a3f9b7fee2eabc41270"
+                        },
+                        "created": {
+                          "$date": 1648283339374
+                        },
+                        "defHTML": "<p>To make an injection or apply an acupuncture needle.</p>",
+                        "examples": [
+                          {
+                            "example": "주사를 주다.",
+                            "parts": {
+                              "end": ".",
+                              "main": "주다",
+                              "start": "주사를 "
+                            },
+                            "translations": {}
+                          },
+                          {
+                            "example": "침을 주다.",
+                            "parts": {
+                              "end": ".",
+                              "main": "주다",
+                              "start": "침을 "
+                            },
+                            "translations": {}
+                          },
+                          {
+                            "example": "살살 주다.",
+                            "parts": {
+                              "end": ".",
+                              "main": "주다",
+                              "start": "살살 "
+                            },
+                            "translations": {}
+                          },
+                          {
+                            "example": "아프게 주다.",
+                            "parts": {
+                              "end": ".",
+                              "main": "주다",
+                              "start": "아프게 "
+                            },
+                            "translations": {}
+                          },
+                          {
+                            "example": "한의사는 민준이의 다친 다리에 침을 주기 시작했다.",
+                            "parts": {
+                              "end": " 시작했다.",
+                              "main": "주기",
+                              "start": "한의사는 민준이의 다친 다리에 침을 "
+                            },
+                            "translations": {}
+                          },
+                          {
+                            "example": "간호사가 엉덩이에 주사를 주려고 하자 겁을 먹은 아이가 울기 시작했다.",
+                            "parts": {
+                              "end": " 하자 겁을 먹은 아이가 울기 시작했다.",
+                              "main": "주려고",
+                              "start": "간호사가 엉덩이에 주사를 "
+                            },
+                            "translations": {}
+                          }
+                        ],
+                        "extRefs": [],
+                        "index": 8,
+                        "key": 949,
+                        "language": "en",
+                        "posLabel": "Action Verb",
+                        "relatedPatterns": [],
+                        "relatedWords": [],
+                        "sense": "1",
+                        "shortDef": "inject, apply",
+                        "sourcePOS": "verb",
+                        "vocabID": {
+                          "$oid": "5e48c7be29df039420b3c14b"
+                        }
+                      },
+                      {
+                        "POS": "VV",
+                        "_id": {
+                          "$oid": "5e631a3f9b7fee2eabc41271"
+                        },
+                        "created": {
+                          "$date": 1648283339375
+                        },
+                        "defHTML": "<p>To add to speed or power.</p>",
+                        "examples": [
+                          {
+                            "example": "속력을 주다.",
+                            "parts": {
+                              "end": ".",
+                              "main": "주다",
+                              "start": "속력을 "
+                            },
+                            "translations": {}
+                          },
+                          {
+                            "example": "힘을 주다.",
+                            "parts": {
+                              "end": ".",
+                              "main": "주다",
+                              "start": "힘을 "
+                            },
+                            "translations": {}
+                          },
+                          {
+                            "example": "꽉 주다.",
+                            "parts": {
+                              "end": ".",
+                              "main": "주다",
+                              "start": "꽉 "
+                            },
+                            "translations": {}
+                          },
+                          {
+                            "example": "더 주다.",
+                            "parts": {
+                              "end": ".",
+                              "main": "주다",
+                              "start": "더 "
+                            },
+                            "translations": {}
+                          },
+                          {
+                            "example": "그는 속력을 주어 다른 차를 추월했다.",
+                            "parts": {
+                              "end": " 다른 차를 추월했다.",
+                              "main": "주어",
+                              "start": "그는 속력을 "
+                            },
+                            "translations": {}
+                          },
+                          {
+                            "example": "지수는 그의 옷자락을 놓치지 않으려는 듯 손에 힘을 꽉 주었다.",
+                            "parts": {
+                              "end": ".",
+                              "main": "주었다",
+                              "start": "지수는 그의 옷자락을 놓치지 않으려는 듯 손에 힘을 꽉 "
+                            },
+                            "translations": {}
+                          }
+                        ],
+                        "extRefs": [],
+                        "index": 9,
+                        "key": 950,
+                        "language": "en",
+                        "posLabel": "Action Verb",
+                        "relatedPatterns": [],
+                        "relatedWords": [],
+                        "sense": "1",
+                        "shortDef": "apply, add to",
+                        "sourcePOS": "verb",
+                        "vocabID": {
+                          "$oid": "5e48c7be29df039420b3c14b"
+                        }
+                      },
+                      {
+                        "POS": "VV",
+                        "_id": {
+                          "$oid": "5e631a3f9b7fee2eabc41272"
+                        },
+                        "created": {
+                          "$date": 1648283339376
+                        },
+                        "defHTML": "<p>To do an act of kindness or open one's heart to someone.</p>",
+                        "examples": [
+                          {
+                            "example": "마음을 주다.",
+                            "parts": {
+                              "end": ".",
+                              "main": "주다",
+                              "start": "마음을 "
+                            },
+                            "translations": {}
+                          },
+                          {
+                            "example": "사랑을 주다.",
+                            "parts": {
+                              "end": ".",
+                              "main": "주다",
+                              "start": "사랑을 "
+                            },
+                            "translations": {}
+                          },
+                          {
+                            "example": "정을 주다.",
+                            "parts": {
+                              "end": ".",
+                              "main": "주다",
+                              "start": "정을 "
+                            },
+                            "translations": {}
+                          },
+                          {
+                            "example": "오래 주다.",
+                            "parts": {
+                              "end": ".",
+                              "main": "주다",
+                              "start": "오래 "
+                            },
+                            "translations": {}
+                          },
+                          {
+                            "example": "한없이 주다.",
+                            "parts": {
+                              "end": ".",
+                              "main": "주다",
+                              "start": "한없이 "
+                            },
+                            "translations": {}
+                          },
+                          {
+                            "example": "그는 아무리 친한 친구에게도 쉽게 마음을 주지 않는다.",
+                            "parts": {
+                              "end": " 않는다.",
+                              "main": "주지",
+                              "start": "그는 아무리 친한 친구에게도 쉽게 마음을 "
+                            },
+                            "translations": {}
+                          }
+                        ],
+                        "extRefs": [],
+                        "index": 10,
+                        "key": 951,
+                        "language": "en",
+                        "posLabel": "Action Verb",
+                        "relatedPatterns": [],
+                        "relatedWords": [],
+                        "sense": "1",
+                        "shortDef": "give, open",
+                        "sourcePOS": "verb",
+                        "vocabID": {
+                          "$oid": "5e48c7be29df039420b3c14b"
+                        }
+                      }
+                    ],
+                    [
+                      {
+                        "POS": "VX",
+                        "_id": {
+                          "$oid": "5e631a3f9b7fee2eabc41273"
+                        },
+                        "created": {
+                          "$date": 1648283339376
+                        },
+                        "defHTML": "<p>An auxiliary verb used to indicate that one performs the action in the preceding statement, which affects another person's action.</p>",
+                        "examples": [
+                          {
+                            "example": "부족한 저를 항상 바른 길로 이끌어 주시는 선생님께 감사를 드립니다.",
+                            "parts": {
+                              "end": " 선생님께 감사를 드립니다.",
+                              "main": "주시는",
+                              "start": "부족한 저를 항상 바른 길로 이끌어 "
+                            },
+                            "translations": {}
+                          },
+                          {
+                            "example": "지수는 부모님께서 외출하신 동안 동생을 돌보아 주었다.",
+                            "parts": {
+                              "end": ".",
+                              "main": "주었다",
+                              "start": "지수는 부모님께서 외출하신 동안 동생을 돌보아 "
+                            },
+                            "translations": {}
+                          },
+                          {
+                            "example": "크리스마스 때 아내는 나에게 따뜻한 목도리를 선물해 줬다.",
+                            "parts": {
+                              "end": ".",
+                              "main": "줬다",
+                              "start": "크리스마스 때 아내는 나에게 따뜻한 목도리를 선물해 "
+                            },
+                            "translations": {}
+                          },
+                          {
+                            "example": "가: 오늘 즐거웠어. 파티에 초대해 줘서 고마워.\n나: 아니야. 네가 와 줘서 정말 기뻤어.",
+                            "parts": {
+                              "end": " 고마워.\n나: 아니야. 네가 와 줘서 정말 기뻤어.",
+                              "main": "줘서",
+                              "start": "가: 오늘 즐거웠어. 파티에 초대해 "
+                            },
+                            "translations": {}
+                          }
+                        ],
+                        "extRefs": [],
+                        "index": 11,
+                        "key": 952,
+                        "language": "en",
+                        "posLabel": "Auxiliary Verb",
+                        "relatedPatterns": [],
+                        "relatedWords": [],
+                        "sense": "2",
+                        "shortDef": "juda",
+                        "sourcePOS": "auxiliary verb",
+                        "vocabID": {
+                          "$oid": "5e48c7be29df039420b3c14b"
+                        }
+                      }
+                    ]
+                  ]
+                },
+                "커피:NNG": {
+                  "_id": {
+                    "$oid": "5e48d60829df039420b3cc71"
+                  },
+                  "attribution": "NIKL",
+                  "attributionURL": "https://krdict.korean.go.kr/eng/mainAction?nation=eng",
+                  "created": {
+                    "$date": 1648283339040
+                  },
+                  "hanja": "coffee",
+                  "matchedPosLabel": "Noun",
+                  "notes": [],
+                  "posList": [
+                    {
+                      "posLabel": "Noun",
+                      "senses": [
+                        {
+                          "key": 727,
+                          "meanings": [
+                            {
+                              "POS": "NNG",
+                              "_id": {
+                                "$oid": "5e631a589b7fee2eabc41ae6"
+                              },
+                              "created": {
+                                "$date": 1648283339128
+                              },
+                              "defHTML": "<p>The fruit of a coffee tree drunk as a brew, after being roasted, ground, and boiled, or its powder.</p>",
+                              "examples": [
+                                {
+                                  "example": "커피 가루.",
+                                  "parts": {
+                                    "end": " 가루.",
+                                    "main": "커피",
+                                    "start": ""
+                                  },
+                                  "translations": {}
+                                },
+                                {
+                                  "example": "커피 냄새.",
+                                  "parts": {
+                                    "end": " 냄새.",
+                                    "main": "커피",
+                                    "start": ""
+                                  },
+                                  "translations": {}
+                                },
+                                {
+                                  "example": "커피 찌꺼기.",
+                                  "parts": {
+                                    "end": " 찌꺼기.",
+                                    "main": "커피",
+                                    "start": ""
+                                  },
+                                  "translations": {}
+                                },
+                                {
+                                  "example": "커피 향.",
+                                  "parts": {
+                                    "end": " 향.",
+                                    "main": "커피",
+                                    "start": ""
+                                  },
+                                  "translations": {}
+                                },
+                                {
+                                  "example": "커피를 갈다.",
+                                  "parts": {
+                                    "end": "를 갈다.",
+                                    "main": "커피",
+                                    "start": ""
+                                  },
+                                  "translations": {}
+                                },
+                                {
+                                  "example": "커피를 볶다.",
+                                  "parts": {
+                                    "end": "를 볶다.",
+                                    "main": "커피",
+                                    "start": ""
+                                  },
+                                  "translations": {}
+                                }
+                              ],
+                              "extRefs": [],
+                              "index": 0,
+                              "key": 725,
+                              "language": "en",
+                              "posLabel": "Noun",
+                              "relatedPatterns": [],
+                              "relatedWords": [],
+                              "sense": "1",
+                              "shortDef": "coffee fruit, coffee powder",
+                              "sourcePOS": "noun",
+                              "vocabID": {
+                                "$oid": "5e48d60829df039420b3cc71"
+                              }
+                            },
+                            {
+                              "POS": "NNG",
+                              "_id": {
+                                "$oid": "5e631a589b7fee2eabc41ae7"
+                              },
+                              "created": {
+                                "$date": 1648283339138
+                              },
+                              "defHTML": "<p>Thick, brown, aromatic brew, tasting a little bitter and containing caffeine, which is made of the fruits of a coffee tree.</p>",
+                              "examples": [
+                                {
+                                  "example": "고급 커피.",
+                                  "parts": {
+                                    "end": ".",
+                                    "main": "커피",
+                                    "start": "고급 "
+                                  },
+                                  "translations": {}
+                                },
+                                {
+                                  "example": "밀크 커피.",
+                                  "parts": {
+                                    "end": ".",
+                                    "main": "커피",
+                                    "start": "밀크 "
+                                  },
+                                  "translations": {}
+                                },
+                                {
+                                  "example": "따뜻한 커피.",
+                                  "parts": {
+                                    "end": ".",
+                                    "main": "커피",
+                                    "start": "따뜻한 "
+                                  },
+                                  "translations": {}
+                                },
+                                {
+                                  "example": "뜨거운 커피.",
+                                  "parts": {
+                                    "end": ".",
+                                    "main": "커피",
+                                    "start": "뜨거운 "
+                                  },
+                                  "translations": {}
+                                },
+                                {
+                                  "example": "시원한 커피.",
+                                  "parts": {
+                                    "end": ".",
+                                    "main": "커피",
+                                    "start": "시원한 "
+                                  },
+                                  "translations": {}
+                                },
+                                {
+                                  "example": "식은 커피.",
+                                  "parts": {
+                                    "end": ".",
+                                    "main": "커피",
+                                    "start": "식은 "
+                                  },
+                                  "translations": {}
+                                }
+                              ],
+                              "extRefs": [],
+                              "index": 1,
+                              "key": 726,
+                              "language": "en",
+                              "posLabel": "Noun",
+                              "relatedPatterns": [],
+                              "relatedWords": [],
+                              "sense": "1",
+                              "shortDef": "coffee",
+                              "sourcePOS": "noun",
+                              "vocabID": {
+                                "$oid": "5e48d60829df039420b3cc71"
+                              }
+                            }
+                          ],
+                          "sense": "coffee fruit, coffee powder"
+                        }
+                      ]
+                    }
+                  ],
+                  "source": {
+                    "$oid": "5e51c02df55e49defc7a2536"
+                  },
+                  "word": "커피",
+                  "wordDefs": [
+                    [
+                      {
+                        "POS": "NNG",
+                        "_id": {
+                          "$oid": "5e631a589b7fee2eabc41ae6"
+                        },
+                        "created": {
+                          "$date": 1648283339128
+                        },
+                        "defHTML": "<p>The fruit of a coffee tree drunk as a brew, after being roasted, ground, and boiled, or its powder.</p>",
+                        "examples": [
+                          {
+                            "example": "커피 가루.",
+                            "parts": {
+                              "end": " 가루.",
+                              "main": "커피",
+                              "start": ""
+                            },
+                            "translations": {}
+                          },
+                          {
+                            "example": "커피 냄새.",
+                            "parts": {
+                              "end": " 냄새.",
+                              "main": "커피",
+                              "start": ""
+                            },
+                            "translations": {}
+                          },
+                          {
+                            "example": "커피 찌꺼기.",
+                            "parts": {
+                              "end": " 찌꺼기.",
+                              "main": "커피",
+                              "start": ""
+                            },
+                            "translations": {}
+                          },
+                          {
+                            "example": "커피 향.",
+                            "parts": {
+                              "end": " 향.",
+                              "main": "커피",
+                              "start": ""
+                            },
+                            "translations": {}
+                          },
+                          {
+                            "example": "커피를 갈다.",
+                            "parts": {
+                              "end": "를 갈다.",
+                              "main": "커피",
+                              "start": ""
+                            },
+                            "translations": {}
+                          },
+                          {
+                            "example": "커피를 볶다.",
+                            "parts": {
+                              "end": "를 볶다.",
+                              "main": "커피",
+                              "start": ""
+                            },
+                            "translations": {}
+                          }
+                        ],
+                        "extRefs": [],
+                        "index": 0,
+                        "key": 725,
+                        "language": "en",
+                        "posLabel": "Noun",
+                        "relatedPatterns": [],
+                        "relatedWords": [],
+                        "sense": "1",
+                        "shortDef": "coffee fruit, coffee powder",
+                        "sourcePOS": "noun",
+                        "vocabID": {
+                          "$oid": "5e48d60829df039420b3cc71"
+                        }
+                      },
+                      {
+                        "POS": "NNG",
+                        "_id": {
+                          "$oid": "5e631a589b7fee2eabc41ae7"
+                        },
+                        "created": {
+                          "$date": 1648283339138
+                        },
+                        "defHTML": "<p>Thick, brown, aromatic brew, tasting a little bitter and containing caffeine, which is made of the fruits of a coffee tree.</p>",
+                        "examples": [
+                          {
+                            "example": "고급 커피.",
+                            "parts": {
+                              "end": ".",
+                              "main": "커피",
+                              "start": "고급 "
+                            },
+                            "translations": {}
+                          },
+                          {
+                            "example": "밀크 커피.",
+                            "parts": {
+                              "end": ".",
+                              "main": "커피",
+                              "start": "밀크 "
+                            },
+                            "translations": {}
+                          },
+                          {
+                            "example": "따뜻한 커피.",
+                            "parts": {
+                              "end": ".",
+                              "main": "커피",
+                              "start": "따뜻한 "
+                            },
+                            "translations": {}
+                          },
+                          {
+                            "example": "뜨거운 커피.",
+                            "parts": {
+                              "end": ".",
+                              "main": "커피",
+                              "start": "뜨거운 "
+                            },
+                            "translations": {}
+                          },
+                          {
+                            "example": "시원한 커피.",
+                            "parts": {
+                              "end": ".",
+                              "main": "커피",
+                              "start": "시원한 "
+                            },
+                            "translations": {}
+                          },
+                          {
+                            "example": "식은 커피.",
+                            "parts": {
+                              "end": ".",
+                              "main": "커피",
+                              "start": "식은 "
+                            },
+                            "translations": {}
+                          }
+                        ],
+                        "extRefs": [],
+                        "index": 1,
+                        "key": 726,
+                        "language": "en",
+                        "posLabel": "Noun",
+                        "relatedPatterns": [],
+                        "relatedWords": [],
+                        "sense": "1",
+                        "shortDef": "coffee",
+                        "sourcePOS": "noun",
+                        "vocabID": {
+                          "$oid": "5e48d60829df039420b3cc71"
+                        }
+                      }
+                    ]
+                  ]
+                }
+              },
+              "endingPunctuation": "",
+              "error": "",
+              "index": 0,
+              "mappedPosList": [
+                {
+                  "endOfWord": true,
+                  "index": 0,
+                  "isSetMeaning": true,
+                  "label": "Noun",
+                  "morph": "커피:NNG",
+                  "notSure": false,
+                  "phoneme": "커피",
+                  "sourceSpan": [
+                    0,
+                    3
+                  ],
+                  "span": [
+                    1,
+                    7
+                  ],
+                  "tag": "NNG",
+                  "translation": "coffee",
+                  "wordIndex": 0
+                },
+                {
+                  "endOfWord": true,
+                  "index": 1,
+                  "isSetMeaning": true,
+                  "label": "Determiner",
+                  "morph": "두:MM",
+                  "phoneme": "두",
+                  "sourceSpan": [
+                    3,
+                    5
+                  ],
+                  "span": [
+                    8,
+                    12
+                  ],
+                  "tag": "MM",
+                  "translation": "two",
+                  "wordIndex": 1
+                },
+                {
+                  "endOfWord": true,
+                  "index": 2,
+                  "isSetMeaning": true,
+                  "label": "Noun",
+                  "morph": "잔:NNG",
+                  "notSure": false,
+                  "phoneme": "잔",
+                  "sourceSpan": [
+                    5,
+                    7
+                  ],
+                  "span": [
+                    13,
+                    18
+                  ],
+                  "tag": "NNG",
+                  "translation": "glass",
+                  "wordIndex": 2
+                },
+                {
+                  "endOfWord": false,
+                  "index": 3,
+                  "isSetMeaning": true,
+                  "label": "Action Verb",
+                  "morph": "주:VV",
+                  "notSure": true,
+                  "phoneme": "주",
+                  "sourceSpan": [
+                    7,
+                    8
+                  ],
+                  "span": [
+                    19,
+                    23
+                  ],
+                  "tag": "VV",
+                  "translation": "throw",
+                  "wordIndex": 3
+                },
+                {
+                  "endOfWord": true,
+                  "index": 4,
+                  "label": "Sentence end",
+                  "meaning": " Polite Command",
+                  "morph": "시어요:SEF",
+                  "pattern": "5e9b0259671c754395194057",
+                  "phoneme": "시어요",
+                  "sourceSpan": [
+                    8,
+                    11
+                  ],
+                  "span": [
+                    24,
+                    34
+                  ],
+                  "tag": "SEF",
+                  "wordIndex": 3,
+                  "zoomable": true
+                },
+                {
+                  "endOfWord": true,
+                  "index": 5,
+                  "label": ".",
+                  "morph": ".:SF",
+                  "phoneme": ".",
+                  "sourceSpan": [
+                    11,
+                    12
+                  ],
+                  "span": [
+                    35,
+                    39
+                  ],
+                  "tag": "SF",
+                  "wordIndex": 3
+                }
+              ],
+              "mappedPosString": ";커피:NNG;두:MM;잔:NNG;주:VV;시어요:SEF;.:SF;",
+              "matchingLog": [
+                "match  polite command  -(으)세요  prio = 2.02 span= (24, 34) : 시:EP;어요:EF\n",
+                "match Polite informal   -어요  prio = 1.02 span= (29, 34) : 어요:EF\n",
+                " * dropped, spanned by larger or superceded by a more-constrained pattern\n",
+                "match Honorific  -(으)시-  prio = 1.01 span= (24, 28) : 시:EP\n",
+                " * dropped, spanned by larger or superceded by a more-constrained pattern\n"
+              ],
+              "morphemeGroups": [
+                [
+                  "커피",
+                  [
+                    "커피"
+                  ]
+                ],
+                [
+                  "두",
+                  [
+                    "두"
+                  ]
+                ],
+                [
+                  "잔",
+                  [
+                    "잔"
+                  ]
+                ],
+                [
+                  "주세요.",
+                  [
+                    "주",
+                    "시",
+                    "어요"
+                  ]
+                ]
+              ],
+              "parse": null,
+              "parseTrees": [
+                {
+                  "allNodes": [
+                    {
+                      "children": [],
+                      "id": 1,
+                      "layer": 0,
+                      "level": -1,
+                      "parent": 5,
+                      "posIndex": 0,
+                      "tag": "NNG",
+                      "type": "word",
+                      "word": "커피"
+                    },
+                    {
+                      "children": [],
+                      "id": 2,
+                      "layer": 0,
+                      "level": -1,
+                      "parent": 4,
+                      "posIndex": 1,
+                      "tag": "MM",
+                      "type": "word",
+                      "word": "두"
+                    },
+                    {
+                      "children": [],
+                      "id": 3,
+                      "layer": 0,
+                      "level": -1,
+                      "parent": 4,
+                      "posIndex": 2,
+                      "tag": "NNG",
+                      "type": "word",
+                      "word": "잔"
+                    },
+                    {
+                      "children": [
+                        {
+                          "children": [],
+                          "id": 2,
+                          "layer": 0,
+                          "level": -1,
+                          "parent": 4,
+                          "posIndex": 1,
+                          "tag": "MM",
+                          "type": "word",
+                          "word": "두"
+                        },
+                        {
+                          "children": [],
+                          "id": 3,
+                          "layer": 0,
+                          "level": -1,
+                          "parent": 4,
+                          "posIndex": 2,
+                          "tag": "NNG",
+                          "type": "word",
+                          "word": "잔"
+                        }
+                      ],
+                      "collapse": true,
+                      "id": 4,
+                      "layer": 1,
+                      "level": 2,
+                      "parent": 5,
+                      "tag": "Noun Phrase",
+                      "type": "tree"
+                    },
+                    {
+                      "children": [
+                        {
+                          "children": [],
+                          "id": 1,
+                          "layer": 0,
+                          "level": -1,
+                          "parent": 5,
+                          "posIndex": 0,
+                          "tag": "NNG",
+                          "type": "word",
+                          "word": "커피"
+                        },
+                        {
+                          "children": [
+                            {
+                              "children": [],
+                              "id": 2,
+                              "layer": 0,
+                              "level": -1,
+                              "parent": 4,
+                              "posIndex": 1,
+                              "tag": "MM",
+                              "type": "word",
+                              "word": "두"
+                            },
+                            {
+                              "children": [],
+                              "id": 3,
+                              "layer": 0,
+                              "level": -1,
+                              "parent": 4,
+                              "posIndex": 2,
+                              "tag": "NNG",
+                              "type": "word",
+                              "word": "잔"
+                            }
+                          ],
+                          "collapse": true,
+                          "id": 4,
+                          "layer": 1,
+                          "level": 2,
+                          "parent": 5,
+                          "tag": "Noun Phrase",
+                          "type": "tree"
+                        }
+                      ],
+                      "collapse": false,
+                      "id": 5,
+                      "layer": 2,
+                      "level": 1,
+                      "parent": 9,
+                      "tag": "Object Phrase",
+                      "type": "tree"
+                    },
+                    {
+                      "children": [],
+                      "id": 6,
+                      "layer": 0,
+                      "level": -1,
+                      "parent": 8,
+                      "posIndex": 3,
+                      "tag": "VV",
+                      "type": "word",
+                      "word": "주"
+                    },
+                    {
+                      "children": [],
+                      "id": 7,
+                      "layer": 0,
+                      "level": -1,
+                      "parent": 8,
+                      "posIndex": 4,
+                      "tag": "SEF",
+                      "type": "word",
+                      "word": "시어요"
+                    },
+                    {
+                      "children": [
+                        {
+                          "children": [],
+                          "id": 6,
+                          "layer": 0,
+                          "level": -1,
+                          "parent": 8,
+                          "posIndex": 3,
+                          "tag": "VV",
+                          "type": "word",
+                          "word": "주"
+                        },
+                        {
+                          "children": [],
+                          "id": 7,
+                          "layer": 0,
+                          "level": -1,
+                          "parent": 8,
+                          "posIndex": 4,
+                          "tag": "SEF",
+                          "type": "word",
+                          "word": "시어요"
+                        }
+                      ],
+                      "collapse": false,
+                      "id": 8,
+                      "layer": 1,
+                      "level": 1,
+                      "parent": 9,
+                      "tag": "Verb Phrase",
+                      "type": "tree"
+                    },
+                    {
+                      "children": [
+                        {
+                          "children": [
+                            {
+                              "children": [],
+                              "id": 1,
+                              "layer": 0,
+                              "level": -1,
+                              "parent": 5,
+                              "posIndex": 0,
+                              "tag": "NNG",
+                              "type": "word",
+                              "word": "커피"
+                            },
+                            {
+                              "children": [
+                                {
+                                  "children": [],
+                                  "id": 2,
+                                  "layer": 0,
+                                  "level": -1,
+                                  "parent": 4,
+                                  "posIndex": 1,
+                                  "tag": "MM",
+                                  "type": "word",
+                                  "word": "두"
+                                },
+                                {
+                                  "children": [],
+                                  "id": 3,
+                                  "layer": 0,
+                                  "level": -1,
+                                  "parent": 4,
+                                  "posIndex": 2,
+                                  "tag": "NNG",
+                                  "type": "word",
+                                  "word": "잔"
+                                }
+                              ],
+                              "collapse": true,
+                              "id": 4,
+                              "layer": 1,
+                              "level": 2,
+                              "parent": 5,
+                              "tag": "Noun Phrase",
+                              "type": "tree"
+                            }
+                          ],
+                          "collapse": false,
+                          "id": 5,
+                          "layer": 2,
+                          "level": 1,
+                          "parent": 9,
+                          "tag": "Object Phrase",
+                          "type": "tree"
+                        },
+                        {
+                          "children": [
+                            {
+                              "children": [],
+                              "id": 6,
+                              "layer": 0,
+                              "level": -1,
+                              "parent": 8,
+                              "posIndex": 3,
+                              "tag": "VV",
+                              "type": "word",
+                              "word": "주"
+                            },
+                            {
+                              "children": [],
+                              "id": 7,
+                              "layer": 0,
+                              "level": -1,
+                              "parent": 8,
+                              "posIndex": 4,
+                              "tag": "SEF",
+                              "type": "word",
+                              "word": "시어요"
+                            }
+                          ],
+                          "collapse": false,
+                          "id": 8,
+                          "layer": 1,
+                          "level": 1,
+                          "parent": 9,
+                          "tag": "Verb Phrase",
+                          "type": "tree"
+                        }
+                      ],
+                      "collapse": false,
+                      "id": 9,
+                      "layer": 3,
+                      "level": 0,
+                      "parent": null,
+                      "tag": "Sentence",
+                      "type": "tree"
+                    }
+                  ],
+                  "hash": "f5ba73d74b5f27186c9473bb6498773e",
+                  "layers": [
+                    [
+                      1,
+                      2,
+                      3,
+                      6,
+                      7
+                    ],
+                    [
+                      4,
+                      8
+                    ],
+                    [
+                      5
+                    ],
+                    [
+                      9
+                    ]
+                  ],
+                  "rank": 13.458207925802013,
+                  "spans": {
+                    "Noun Phrase": [
+                      [
+                        1,
+                        3
+                      ],
+                      [
+                        0,
+                        3
+                      ]
+                    ],
+                    "Sentence": [
+                      [
+                        3,
+                        5
+                      ]
+                    ],
+                    "Verb Phrase": [
+                      [
+                        3,
+                        5
+                      ]
+                    ]
+                  },
+                  "tree": {
+                    "children": [
+                      {
+                        "children": [
+                          {
+                            "children": [],
+                            "id": 1,
+                            "layer": 0,
+                            "level": -1,
+                            "parent": 5,
+                            "posIndex": 0,
+                            "tag": "NNG",
+                            "type": "word",
+                            "word": "커피"
+                          },
+                          {
+                            "children": [
+                              {
+                                "children": [],
+                                "id": 2,
+                                "layer": 0,
+                                "level": -1,
+                                "parent": 4,
+                                "posIndex": 1,
+                                "tag": "MM",
+                                "type": "word",
+                                "word": "두"
+                              },
+                              {
+                                "children": [],
+                                "id": 3,
+                                "layer": 0,
+                                "level": -1,
+                                "parent": 4,
+                                "posIndex": 2,
+                                "tag": "NNG",
+                                "type": "word",
+                                "word": "잔"
+                              }
+                            ],
+                            "collapse": true,
+                            "id": 4,
+                            "layer": 1,
+                            "level": 2,
+                            "parent": 5,
+                            "tag": "Noun Phrase",
+                            "type": "tree"
+                          }
+                        ],
+                        "collapse": false,
+                        "id": 5,
+                        "layer": 2,
+                        "level": 1,
+                        "parent": 9,
+                        "tag": "Object Phrase",
+                        "type": "tree"
+                      },
+                      {
+                        "children": [
+                          {
+                            "children": [],
+                            "id": 6,
+                            "layer": 0,
+                            "level": -1,
+                            "parent": 8,
+                            "posIndex": 3,
+                            "tag": "VV",
+                            "type": "word",
+                            "word": "주"
+                          },
+                          {
+                            "children": [],
+                            "id": 7,
+                            "layer": 0,
+                            "level": -1,
+                            "parent": 8,
+                            "posIndex": 4,
+                            "tag": "SEF",
+                            "type": "word",
+                            "word": "시어요"
+                          }
+                        ],
+                        "collapse": false,
+                        "id": 8,
+                        "layer": 1,
+                        "level": 1,
+                        "parent": 9,
+                        "tag": "Verb Phrase",
+                        "type": "tree"
+                      }
+                    ],
+                    "collapse": false,
+                    "id": 9,
+                    "layer": 3,
+                    "level": 0,
+                    "parent": null,
+                    "tag": "Sentence",
+                    "type": "tree"
+                  }
+                },
+                {
+                  "allNodes": [
+                    {
+                      "children": [],
+                      "id": 1,
+                      "layer": 0,
+                      "level": -1,
+                      "parent": 8,
+                      "posIndex": 0,
+                      "tag": "NNG",
+                      "type": "word",
+                      "word": "커피"
+                    },
+                    {
+                      "children": [],
+                      "id": 2,
+                      "layer": 0,
+                      "level": -1,
+                      "parent": 4,
+                      "posIndex": 1,
+                      "tag": "MM",
+                      "type": "word",
+                      "word": "두"
+                    },
+                    {
+                      "children": [],
+                      "id": 3,
+                      "layer": 0,
+                      "level": -1,
+                      "parent": 4,
+                      "posIndex": 2,
+                      "tag": "NNG",
+                      "type": "word",
+                      "word": "잔"
+                    },
+                    {
+                      "children": [
+                        {
+                          "children": [],
+                          "id": 2,
+                          "layer": 0,
+                          "level": -1,
+                          "parent": 4,
+                          "posIndex": 1,
+                          "tag": "MM",
+                          "type": "word",
+                          "word": "두"
+                        },
+                        {
+                          "children": [],
+                          "id": 3,
+                          "layer": 0,
+                          "level": -1,
+                          "parent": 4,
+                          "posIndex": 2,
+                          "tag": "NNG",
+                          "type": "word",
+                          "word": "잔"
+                        }
+                      ],
+                      "collapse": false,
+                      "id": 4,
+                      "layer": 1,
+                      "level": 1,
+                      "parent": 8,
+                      "tag": "Object Phrase",
+                      "type": "tree"
+                    },
+                    {
+                      "children": [],
+                      "id": 5,
+                      "layer": 0,
+                      "level": -1,
+                      "parent": 7,
+                      "posIndex": 3,
+                      "tag": "VV",
+                      "type": "word",
+                      "word": "주"
+                    },
+                    {
+                      "children": [],
+                      "id": 6,
+                      "layer": 0,
+                      "level": -1,
+                      "parent": 7,
+                      "posIndex": 4,
+                      "tag": "SEF",
+                      "type": "word",
+                      "word": "시어요"
+                    },
+                    {
+                      "children": [
+                        {
+                          "children": [],
+                          "id": 5,
+                          "layer": 0,
+                          "level": -1,
+                          "parent": 7,
+                          "posIndex": 3,
+                          "tag": "VV",
+                          "type": "word",
+                          "word": "주"
+                        },
+                        {
+                          "children": [],
+                          "id": 6,
+                          "layer": 0,
+                          "level": -1,
+                          "parent": 7,
+                          "posIndex": 4,
+                          "tag": "SEF",
+                          "type": "word",
+                          "word": "시어요"
+                        }
+                      ],
+                      "collapse": false,
+                      "id": 7,
+                      "layer": 1,
+                      "level": 1,
+                      "parent": 8,
+                      "tag": "Verb Phrase",
+                      "type": "tree"
+                    },
+                    {
+                      "children": [
+                        {
+                          "children": [],
+                          "id": 1,
+                          "layer": 0,
+                          "level": -1,
+                          "parent": 8,
+                          "posIndex": 0,
+                          "tag": "NNG",
+                          "type": "word",
+                          "word": "커피"
+                        },
+                        {
+                          "children": [
+                            {
+                              "children": [],
+                              "id": 2,
+                              "layer": 0,
+                              "level": -1,
+                              "parent": 4,
+                              "posIndex": 1,
+                              "tag": "MM",
+                              "type": "word",
+                              "word": "두"
+                            },
+                            {
+                              "children": [],
+                              "id": 3,
+                              "layer": 0,
+                              "level": -1,
+                              "parent": 4,
+                              "posIndex": 2,
+                              "tag": "NNG",
+                              "type": "word",
+                              "word": "잔"
+                            }
+                          ],
+                          "collapse": false,
+                          "id": 4,
+                          "layer": 1,
+                          "level": 1,
+                          "parent": 8,
+                          "tag": "Object Phrase",
+                          "type": "tree"
+                        },
+                        {
+                          "children": [
+                            {
+                              "children": [],
+                              "id": 5,
+                              "layer": 0,
+                              "level": -1,
+                              "parent": 7,
+                              "posIndex": 3,
+                              "tag": "VV",
+                              "type": "word",
+                              "word": "주"
+                            },
+                            {
+                              "children": [],
+                              "id": 6,
+                              "layer": 0,
+                              "level": -1,
+                              "parent": 7,
+                              "posIndex": 4,
+                              "tag": "SEF",
+                              "type": "word",
+                              "word": "시어요"
+                            }
+                          ],
+                          "collapse": false,
+                          "id": 7,
+                          "layer": 1,
+                          "level": 1,
+                          "parent": 8,
+                          "tag": "Verb Phrase",
+                          "type": "tree"
+                        }
+                      ],
+                      "collapse": false,
+                      "id": 8,
+                      "layer": 2,
+                      "level": 0,
+                      "parent": null,
+                      "tag": "Sentence",
+                      "type": "tree"
+                    }
+                  ],
+                  "hash": "f1fdbcd84e50963e898ca8e03d485342",
+                  "layers": [
+                    [
+                      1,
+                      2,
+                      3,
+                      5,
+                      6
+                    ],
+                    [
+                      4,
+                      7
+                    ],
+                    [
+                      8
+                    ]
+                  ],
+                  "rank": 3.4582079258020126,
+                  "spans": {
+                    "Noun Phrase": [
+                      [
+                        1,
+                        3
+                      ]
+                    ],
+                    "Sentence": [
+                      [
+                        3,
+                        5
+                      ]
+                    ],
+                    "Verb Phrase": [
+                      [
+                        3,
+                        5
+                      ]
+                    ]
+                  },
+                  "tree": {
+                    "children": [
+                      {
+                        "children": [],
+                        "id": 1,
+                        "layer": 0,
+                        "level": -1,
+                        "parent": 8,
+                        "posIndex": 0,
+                        "tag": "NNG",
+                        "type": "word",
+                        "word": "커피"
+                      },
+                      {
+                        "children": [
+                          {
+                            "children": [],
+                            "id": 2,
+                            "layer": 0,
+                            "level": -1,
+                            "parent": 4,
+                            "posIndex": 1,
+                            "tag": "MM",
+                            "type": "word",
+                            "word": "두"
+                          },
+                          {
+                            "children": [],
+                            "id": 3,
+                            "layer": 0,
+                            "level": -1,
+                            "parent": 4,
+                            "posIndex": 2,
+                            "tag": "NNG",
+                            "type": "word",
+                            "word": "잔"
+                          }
+                        ],
+                        "collapse": false,
+                        "id": 4,
+                        "layer": 1,
+                        "level": 1,
+                        "parent": 8,
+                        "tag": "Object Phrase",
+                        "type": "tree"
+                      },
+                      {
+                        "children": [
+                          {
+                            "children": [],
+                            "id": 5,
+                            "layer": 0,
+                            "level": -1,
+                            "parent": 7,
+                            "posIndex": 3,
+                            "tag": "VV",
+                            "type": "word",
+                            "word": "주"
+                          },
+                          {
+                            "children": [],
+                            "id": 6,
+                            "layer": 0,
+                            "level": -1,
+                            "parent": 7,
+                            "posIndex": 4,
+                            "tag": "SEF",
+                            "type": "word",
+                            "word": "시어요"
+                          }
+                        ],
+                        "collapse": false,
+                        "id": 7,
+                        "layer": 1,
+                        "level": 1,
+                        "parent": 8,
+                        "tag": "Verb Phrase",
+                        "type": "tree"
+                      }
+                    ],
+                    "collapse": false,
+                    "id": 8,
+                    "layer": 2,
+                    "level": 0,
+                    "parent": null,
+                    "tag": "Sentence",
+                    "type": "tree"
+                  }
+                }
+              ],
+              "patterns": {
+                "5e9b0259671c754395194057": {
+                  "gp": {
+                    "_id": {
+                      "$oid": "5e9b0259671c754395194057"
+                    },
+                    "analyzer": "khaiii:0.5",
+                    "changeIndex": 12,
+                    "id": "5e9b0259671c754395194057",
+                    "patternFunction": "",
+                    "patternSig": "(([^:]+):(VV|VHV|VX))(으시|시):EP;어요:EF?Sentence-ending form",
+                    "patternType": "Sentence-ending form",
+                    "patterns": [
+                      {
+                        "matchExpr": {
+                          "main": "(으시|시):EP;어요:EF",
+                          "pre": "(([^:]+):(VV|VHV|VX))"
+                        },
+                        "sourceSample": "여기에서 조금만 기다리세요. "
+                      }
+                    ],
+                    "priority": 2.02,
+                    "referenceDef": {
+                      "main": "-(으)세요",
+                      "pre": ""
+                    },
+                    "relatedPatterns": [
+                      {
+                        "index": 0,
+                        "notes": "See releated pattern notes",
+                        "patternDescr": "Formal command : ~ (으)십시오  (Sentence-ending form)",
+                        "relatedPatternID": {
+                          "$oid": "5e7afb91cdcbc12952efb7be"
+                        },
+                        "relationship": "Related meaning"
+                      },
+                      {
+                        "index": 1,
+                        "notes": "See releated pattern notes",
+                        "patternDescr": "semi-formal command :  -구려  (Sentence-ending form)",
+                        "relatedPatternID": {
+                          "$oid": "6038959f1e773063519748c7"
+                        },
+                        "relationship": "Similar meaning"
+                      }
+                    ],
+                    "replacement": ""
+                  },
+                  "gr": {
+                    "_id": {
+                      "$oid": "5e9b0259671c754395194059"
+                    },
+                    "changeIndex": 12,
+                    "created": {
+                      "$date": 1587216985177
+                    },
+                    "defHTML": "<p><strong>-(으)세요</strong> is actually an adopted pronunciation and spelling of the polite ending <strong>-(으)셔요</strong> which is itself the natural contraction of <strong>-(으)시어요.  </strong></p><p><br></p><p>It is a very commonly-used sentence-ending form can be used in a number of situations:</p><p><br></p><ol><li>As a gentle and polite command or request</li><li>As a polite-style speech statement or question that honors the subject</li></ol><p><br></p><p>When the verb-stem to which it is attached ends in a consonant, the 으 is inserted, and dropped when it ends in a vowel.</p>",
+                    "examples": [
+                      {
+                        "example": "여기에 앉으세요.",
+                        "index": 0,
+                        "parts": {
+                          "end": ".",
+                          "main": "으세요",
+                          "pre": "앉",
+                          "start": "여기에 "
+                        },
+                        "translation": "Please sit down here.",
+                        "translations": {}
+                      },
+                      {
+                        "example": "아버님, 어디 가세요?",
+                        "index": 1,
+                        "parts": {
+                          "end": "?",
+                          "main": "세요",
+                          "pre": "가",
+                          "start": "아버님, 어디 "
+                        },
+                        "translation": "Father, where are you going?",
+                        "translations": {}
+                      },
+                      {
+                        "example": "여기에서 잠시 기다리세요. ",
+                        "index": 2,
+                        "parts": {
+                          "end": ".",
+                          "main": "세요",
+                          "pre": "기다리",
+                          "start": "여기에서 잠시 "
+                        },
+                        "translation": "Please wait here for a moment.",
+                        "translations": {}
+                      }
+                    ],
+                    "extRefs": [
+                      {
+                        "extRefID": "5dcad46a343c991c58b93de1",
+                        "index": 0,
+                        "path": "/unit-2-lower-intermediate-korean-grammar/unit-2-lessons-34-41/lesson-40/#404"
+                      },
+                      {
+                        "citation": "Sec. 6.2.1.1. p.273",
+                        "extRefID": "5dfa29003bbf00c732e63441",
+                        "index": 1
+                      },
+                      {
+                        "citation": "Unit 7, Sec. 01, p.166",
+                        "extRefID": "5dcad4f2343c991c58b93de2",
+                        "index": 2
+                      }
+                    ],
+                    "idiom": {},
+                    "intention": "None",
+                    "language": "en",
+                    "niklLevel": "1",
+                    "niklNumber": "32",
+                    "notes": [],
+                    "origin": "",
+                    "patternClass": "pat",
+                    "patternID": {
+                      "$oid": "5e9b0259671c754395194057"
+                    },
+                    "referenceDefStr": " -(으)세요 ",
+                    "shortDescr": "Please do / please answer (polite request)",
+                    "tags": "",
+                    "title": " polite command",
+                    "updated": {
+                      "$date": 1634025970299
+                    },
+                    "useCategories": [
+                      "Honorific level",
+                      "Request or assistance",
+                      "Command or obligation",
+                      "Sentence ending"
+                    ]
+                  },
+                  "spans": [
+                    {
+                      "main": [
+                        24,
+                        34
+                      ],
+                      "pre": [
+                        19,
+                        23
+                      ]
+                    }
+                  ]
+                }
+              },
+              "posList": [
+                {
+                  "endOfWord": true,
+                  "index": 0,
+                  "isSetMeaning": true,
+                  "label": "Noun",
+                  "morph": "커피:NNG",
+                  "notSure": false,
+                  "phoneme": "커피",
+                  "sourceSpan": [
+                    0,
+                    3
+                  ],
+                  "span": [
+                    1,
+                    7
+                  ],
+                  "tag": "NNG",
+                  "translation": "coffee",
+                  "wordIndex": 0
+                },
+                {
+                  "endOfWord": true,
+                  "index": 1,
+                  "isSetMeaning": true,
+                  "label": "Determiner",
+                  "morph": "두:MM",
+                  "phoneme": "두",
+                  "sourceSpan": [
+                    3,
+                    5
+                  ],
+                  "span": [
+                    8,
+                    12
+                  ],
+                  "tag": "MM",
+                  "translation": "two",
+                  "wordIndex": 1
+                },
+                {
+                  "endOfWord": true,
+                  "index": 2,
+                  "isSetMeaning": true,
+                  "label": "Noun",
+                  "morph": "잔:NNG",
+                  "notSure": false,
+                  "phoneme": "잔",
+                  "sourceSpan": [
+                    5,
+                    7
+                  ],
+                  "span": [
+                    13,
+                    18
+                  ],
+                  "tag": "NNG",
+                  "translation": "glass",
+                  "wordIndex": 2
+                },
+                {
+                  "endOfWord": false,
+                  "index": 3,
+                  "isSetMeaning": true,
+                  "label": "Action Verb",
+                  "morph": "주:VV",
+                  "notSure": true,
+                  "phoneme": "주",
+                  "sourceSpan": [
+                    7,
+                    8
+                  ],
+                  "span": [
+                    19,
+                    23
+                  ],
+                  "tag": "VV",
+                  "translation": "throw",
+                  "wordIndex": 3
+                },
+                {
+                  "endOfWord": false,
+                  "index": 4,
+                  "label": "Suffix-head",
+                  "morph": "시:EP",
+                  "phoneme": "시",
+                  "span": [
+                    24,
+                    28
+                  ],
+                  "tag": "EP",
+                  "wordIndex": 3
+                },
+                {
+                  "endOfWord": false,
+                  "index": 5,
+                  "label": "Predicate-ending Suffix",
+                  "morph": "어요:EF",
+                  "phoneme": "어요",
+                  "span": [
+                    29,
+                    34
+                  ],
+                  "tag": "EF",
+                  "wordIndex": 3
+                },
+                {
+                  "endOfWord": true,
+                  "index": 5,
+                  "label": ".",
+                  "morph": ".:SF",
+                  "phoneme": ".",
+                  "sourceSpan": [
+                    11,
+                    12
+                  ],
+                  "span": [
+                    35,
+                    39
+                  ],
+                  "tag": "SF",
+                  "wordIndex": 3
+                }
+              ],
+              "posListWithSpaces": [
+                {
+                  "phoneme": "커피",
+                  "sourceSpan": [
+                    0,
+                    2
+                  ],
+                  "tag": "NNG"
+                },
+                {
+                  "offset": 2,
+                  "phoneme": " ",
+                  "sourceSpan": [
+                    2,
+                    3
+                  ],
+                  "tag": "SPACE"
+                },
+                {
+                  "phoneme": "두",
+                  "sourceSpan": [
+                    3,
+                    4
+                  ],
+                  "tag": "MM"
+                },
+                {
+                  "offset": 4,
+                  "phoneme": " ",
+                  "sourceSpan": [
+                    4,
+                    5
+                  ],
+                  "tag": "SPACE"
+                },
+                {
+                  "phoneme": "잔",
+                  "sourceSpan": [
+                    5,
+                    6
+                  ],
+                  "tag": "NNG"
+                },
+                {
+                  "offset": 6,
+                  "phoneme": " ",
+                  "sourceSpan": [
+                    6,
+                    7
+                  ],
+                  "tag": "SPACE"
+                },
+                {
+                  "phoneme": "주",
+                  "sourceSpan": [
+                    7,
+                    8
+                  ],
+                  "tag": "VV"
+                },
+                {
+                  "phoneme": "시",
+                  "sourceSpan": [
+                    8,
+                    9
+                  ],
+                  "tag": "EP"
+                },
+                {
+                  "phoneme": "어요",
+                  "sourceSpan": [
+                    8,
+                    10
+                  ],
+                  "tag": "EF"
+                },
+                {
+                  "phoneme": ".",
+                  "sourceSpan": [
+                    10,
+                    11
+                  ],
+                  "tag": "SF"
+                }
+              ],
+              "posString": ";커피:NNG;두:MM;잔:NNG;주:VV;시:EP;어요:EF;.:SF;",
+              "sourceSpan": [
+                0,
+                11
+              ],
+              "sourceText": "커피 두 잔 주세요.",
+              "syllableList": [
+                {
+                  "eow": false,
+                  "sow": true,
+                  "syllable": "커",
+                  "wordIndex": 0
+                },
+                {
+                  "eow": true,
+                  "sow": false,
+                  "syllable": "피",
+                  "wordIndex": 0
+                },
+                {
+                  "eow": true,
+                  "sow": true,
+                  "syllable": "두",
+                  "wordIndex": 1
+                },
+                {
+                  "eow": true,
+                  "sow": true,
+                  "syllable": "잔",
+                  "wordIndex": 2
+                },
+                {
+                  "eow": false,
+                  "sow": true,
+                  "syllable": "주",
+                  "wordIndex": 3
+                },
+                {
+                  "eow": false,
+                  "sow": false,
+                  "syllable": "시",
+                  "wordIndex": 3
+                },
+                {
+                  "eow": false,
+                  "sow": false,
+                  "syllable": "어",
+                  "wordIndex": 3
+                },
+                {
+                  "eow": true,
+                  "sow": false,
+                  "syllable": "요",
+                  "wordIndex": 3
+                },
+                {
+                  "eow": true,
+                  "sow": false,
+                  "syllable": ".",
+                  "wordIndex": 3
+                }
+              ],
+              "translation": "Two coffees, please.",
+              "treeIndex": 0,
+              "uncorrectedPosString": ";커피:NNG;두:MM;잔:NNG;주:VV;시:EP;어요:EF;.:SF;",
+              "words": [
+                {
+                  "index": 0,
+                  "posList": [
+                    {
+                      "endOfWord": true,
+                      "index": 0,
+                      "isSetMeaning": true,
+                      "label": "Noun",
+                      "morph": "커피:NNG",
+                      "notSure": false,
+                      "phoneme": "커피",
+                      "sourceSpan": [
+                        0,
+                        3
+                      ],
+                      "span": [
+                        1,
+                        7
+                      ],
+                      "tag": "NNG",
+                      "translation": "coffee",
+                      "wordIndex": 0
+                    }
+                  ],
+                  "sourceSpan": [
+                    0,
+                    2
+                  ],
+                  "word": "커피",
+                  "wordSpan": [
+                    [
+                      0,
+                      0
+                    ],
+                    [
+                      0,
+                      1
+                    ]
+                  ]
+                },
+                {
+                  "index": 1,
+                  "posList": [
+                    {
+                      "endOfWord": true,
+                      "index": 1,
+                      "isSetMeaning": true,
+                      "label": "Determiner",
+                      "morph": "두:MM",
+                      "phoneme": "두",
+                      "sourceSpan": [
+                        3,
+                        5
+                      ],
+                      "span": [
+                        8,
+                        12
+                      ],
+                      "tag": "MM",
+                      "translation": "two",
+                      "wordIndex": 1
+                    }
+                  ],
+                  "sourceSpan": [
+                    3,
+                    4
+                  ],
+                  "word": "두",
+                  "wordSpan": [
+                    [
+                      1,
+                      0
+                    ],
+                    [
+                      1,
+                      0
+                    ]
+                  ]
+                },
+                {
+                  "index": 2,
+                  "posList": [
+                    {
+                      "endOfWord": true,
+                      "index": 2,
+                      "isSetMeaning": true,
+                      "label": "Noun",
+                      "morph": "잔:NNG",
+                      "notSure": false,
+                      "phoneme": "잔",
+                      "sourceSpan": [
+                        5,
+                        7
+                      ],
+                      "span": [
+                        13,
+                        18
+                      ],
+                      "tag": "NNG",
+                      "translation": "glass",
+                      "wordIndex": 2
+                    }
+                  ],
+                  "sourceSpan": [
+                    5,
+                    6
+                  ],
+                  "word": "잔",
+                  "wordSpan": [
+                    [
+                      2,
+                      0
+                    ],
+                    [
+                      2,
+                      0
+                    ]
+                  ]
+                },
+                {
+                  "index": 3,
+                  "posList": [
+                    {
+                      "endOfWord": false,
+                      "index": 3,
+                      "isSetMeaning": true,
+                      "label": "Action Verb",
+                      "morph": "주:VV",
+                      "notSure": true,
+                      "phoneme": "주",
+                      "sourceSpan": [
+                        7,
+                        8
+                      ],
+                      "span": [
+                        19,
+                        23
+                      ],
+                      "tag": "VV",
+                      "translation": "throw",
+                      "wordIndex": 3
+                    },
+                    {
+                      "endOfWord": false,
+                      "index": 4,
+                      "label": "Suffix-head",
+                      "morph": "시:EP",
+                      "phoneme": "시",
+                      "span": [
+                        24,
+                        28
+                      ],
+                      "tag": "EP",
+                      "wordIndex": 3
+                    },
+                    {
+                      "endOfWord": false,
+                      "index": 5,
+                      "label": "Predicate-ending Suffix",
+                      "morph": "어요:EF",
+                      "phoneme": "어요",
+                      "span": [
+                        29,
+                        34
+                      ],
+                      "tag": "EF",
+                      "wordIndex": 3
+                    },
+                    {
+                      "endOfWord": true,
+                      "index": 5,
+                      "label": ".",
+                      "morph": ".:SF",
+                      "phoneme": ".",
+                      "sourceSpan": [
+                        11,
+                        12
+                      ],
+                      "span": [
+                        35,
+                        39
+                      ],
+                      "tag": "SF",
+                      "wordIndex": 3
+                    }
+                  ],
+                  "sourceSpan": [
+                    7,
+                    11
+                  ],
+                  "word": "주세요.",
+                  "wordSpan": [
+                    [
+                      3,
+                      0
+                    ],
+                    [
+                      4,
+                      2
+                    ],
+                    [
+                      5,
+                      0
+                    ]
+                  ]
+                }
+              ],
+              "zoomedPatterns": []
+            },
+            "sourceSpans": [
+              {
+                "span": [
+                  0,
+                  11
+                ],
+                "text": "커피 두 잔 주세요."
+              }
+            ],
+            "sourceText": "커피 두 잔 주세요."
+          }
+        ]
+      }
+    ],
+    "session": "623ececa8cf78a83bdbe54f8"
+  },
+  "success": true
+}
