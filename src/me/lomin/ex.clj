@@ -132,72 +132,6 @@
              (into (->exception-clauses (:catch-clauses parsed-try)))
              (into (->finally-clause (:finally-clause parsed-try)))))))
 
-(def ^:private ex-meta-key? #{:ex.gen/exits
-                              :ex.gen/samples
-                              :malli/schema
-                              :ex.gen/provider})
-
-(defn- ex-fn-var?? [a-var]
-  (when (and a-var (ifn? a-var) (some ex-meta-key? (keys (meta a-var))))
-    a-var))
-
-(defn- ex-fn-var2?? [a-var]
-  (and a-var (ifn? a-var) (:ex/id (meta a-var))))
-
-(defn generate-fn
-  [a-var choice]
-  (let [meta*   (meta a-var)
-        choices (into #{:ex.gen/default}
-                      (filter ex-meta-key?)
-                      (keys meta*))]
-    (if (= :ex.gen/random choice)
-      (recur a-var (-> choices
-                       (cond->
-                         (not (choices :ex.gen/samples)) (disj :ex.gen/provider)
-                         :always (disj :ex.gen/random))
-                       (vec)
-                       (rand-nth)))
-      (case (choices choice)
-        :ex.gen/exits (fn [& _args] (let [ex (rand-nth (vec (:ex.gen/exits meta*)))]
-                                      (exit ex (str ex))))
-        :ex.gen/samples (fn [& _args] (rand-nth (vec (:ex.gen/samples meta*))))
-        :ex.gen/provider (fn [& args] (mg/generate ((:ex.gen/provider meta*)
-                                                    (conj (:ex.gen/samples meta*)
-                                                          (apply a-var args)))))
-        :malli/schema (mg/generate (:malli/schema meta*))
-        a-var))))
-
-(defn ->fn [a-var system]
-  (let [f (get system (symbol a-var))]
-    (cond
-      #_? f
-      #_=> f
-      #_? (:ex/gen system)
-      #_=> (generate-fn a-var (:ex/gen system))
-      :else a-var)))
-
-(defn- replace-ex-fns [system body]
-  (walk/postwalk
-    (fn [x]
-      (if (and (symbol? x) (ex-fn-var?? (resolve x)))
-        `(->fn (var ~x) ~system)
-        x))
-    body))
-
-(defmacro try-with [system & body]
-  (let [body' (replace-ex-fns system body)]
-    `(try+ ~@body')))
-
-(defn- replace-ex-fns2 [body]
-  (walk/postwalk
-    (fn [x]
-      (if-let [replace (and (seq? x) (and (symbol? (first x))) (:ex/replace (meta (resolve (first x)))))]
-        (replace (rest x))
-        (if-let [id (and (symbol? x) (ex-fn-var2?? (resolve x)))]
-          `(system ~id (var ~x))
-          x)))
-    body))
-
 (defmacro protect-var [sym-str]
   `(var ~(symbol sym-str)))
 
@@ -210,24 +144,10 @@
          x))
      body)))
 
-(defmacro with-try [& body]
-  (let [body' (replace-ex-fns2 body)]
-    `(try+ ~@body')))
-
 (defmacro with-examples
-  {:ex/replace (fn [args] (cons 'do (rest args)))}
-  [bindings & body]
-  `(let ~bindings ~@body))
-
-(defmacro with-examples2
   {:ex/replace (fn [_ args config _env] (cons 'do (rest args)))}
   [bindings & body]
   `(let ~bindings ~@body))
-
-(defmacro example
-  {:ex/replace first}
-  [sym example]
-  (if (and (symbol? sym) (or (resolve sym) (get &env sym))) sym example))
 
 (defn analyze [body local-env extra-env]
   (let [env (assoc (ana.jvm/empty-env)
@@ -258,10 +178,6 @@
 
 (defmacro resolve-shallow [x]
   `~(resolve-shallow* &env x))
-
-(defmacro with-ex [& [config & body]]
-  (let [body' (replace-ex-fns4 config body &env)]
-    `(try+ ~@body')))
 
 (defn replace-exchange [_ [trace-key sym & {:as opts}] config _env]
   (let [delayed-opts (reduce-kv (fn [m k v] (assoc m k (list 'delay v))) {} opts)]
@@ -328,7 +244,7 @@
                    replacement
                    m))))
 
-(defmacro with-ex2 [var-or-expr name-or-expr & body]
+(defmacro with-ex [var-or-expr name-or-expr & body]
   (let [sym      (gensym "with_ex_")
         destr    (destruct var-or-expr name-or-expr body)
         forms    (:ex.as/forms destr)

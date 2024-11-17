@@ -5,12 +5,10 @@
             [me.lomin.ex :as ex]
             [malli.core :as m]
             [malli.generator :as mg]
-            [malli.provider :as mp]
             [clojure.edn :as edn]
             [me.lomin.sinho.matcher :refer [=*]])
   (:import (javax.xml.parsers SAXParserFactory)
            (java.util Calendar Date)))
-
 
 (defn- non-validating [s ch]
   (-> (doto
@@ -66,18 +64,7 @@
 (defn ->xml-file-input-stream [path]
   (-> (slurp path) .getBytes io/input-stream))
 
-(comment
-  (mg/generate (mp/provide [{:USD 1.0385 :KRW 1330.83}
-                            {:USD 1.0662 :KRW 1.0662}])))
-
-(defn ^{:ex/id           ::retrieve-currencies!
-        :ex.gen/exits    #{:currencies.retrieve/failed}
-        :ex.gen/samples  [{:USD 1.0385 :KRW 1330.83}
-                          {:USD 1.0662 :KRW 1.0662}]
-        :ex.gen/provider (mp/provider)
-        :malli/schema    [:=> [:cat]
-                          [:map-of currencies double?]]}
-  retrieve-currencies!
+(defn retrieve-currencies!
   "simulating retrieval from https://www.ecb.europa.eu/stats/policy_and_exchange_rates/euro_reference_exchange_rates/html/index.en.html"
   []
   (retrieve-currencies (->xml-file-input-stream "test/resources/exchange.xml")))
@@ -101,21 +88,12 @@
 
 (defn valid-request? [exchange-request] (m/validate request-schema exchange-request))
 
-(comment
-  (valid-request? {:from   :EUR
-                   :to     :USD
-                   :amount 100.0}))
-
 (def inst<= (comp not pos? compare))
-
-(defn invalid-offer? [offer now] (inst<= now (:valid-until offer)))
 
 (defn valid-offer? [offer now]
   (inst<= now (:valid-until offer)))
 
-(defn ^{:ex/id        ::save-order!
-        :ex.gen/exits #{:order.save/failed}}
-  save-order!
+(defn save-order!
   [& [_exchange-request]]
   #uuid"767df20e-93dd-4312-9258-c0f06216fffa")
 
@@ -129,27 +107,18 @@
          {:status :error
           :msg    msg}))
 
-(defn ^{:ex/id          ::now!
-        :ex.gen/samples [#inst"2023-05-15T09:18:05.099-00:00"]}
-  now! []
+(defn now! []
   #inst"2022-05-15T09:18:05.099-00:00")
 
-(defn retrieve-offer!
-  {:ex/id        ::retrieve-offer!
-   :malli/schema [:=> [:cat request-schema] request-schema]}
-  [exchange-request]
+(defn retrieve-offer! [exchange-request]
   exchange-request)
 
-(defn save-offer!
-  {:ex/id        ::save-offer!
-   :ex.gen/exits #{:offer.save/failed}
-   :malli/schema [:=> [:cat :any] :map]}
-  [offer]
+(defn save-offer! [offer]
   offer)
 
 (defn offer-exchange [exchange-request]
-  (ex/with-ex2 exchange-request
-               (ex/with-examples2 [exchange-request (mg/generate request-schema)]
+  (ex/with-ex exchange-request
+              (ex/with-examples [exchange-request (mg/generate request-schema)]
                  (when (not (valid-request? exchange-request))
                    (ex/exit :request/invalid))
                  (let [offer (ex/exchange :offer (retrieve-offer! exchange-request)
@@ -161,13 +130,13 @@
                          :order-id order-id)
                      (ok "Based on your request, we would like to make you the following offer:"
                          :offer (save-offer! (calculate-offer exchange-request (now!) (retrieve-currencies!)))))))
-               (catch :request/invalid _e
+              (catch :request/invalid _e
                  (error "Request is not valid."))
-               (catch :currencies.retrieve/failed e
+              (catch :currencies.retrieve/failed e
                  (error "We are currently unable to make an offer. Try later." :fail e))
-               (catch :offer.save/failed e
+              (catch :offer.save/failed e
                  (error "Your offer could not be saved. Try later." :fail e))
-               (catch :order.save/failed e
+              (catch :order.save/failed e
                  (error "Your order could not be saved. Try later." :fail e))))
 
 
@@ -272,22 +241,7 @@
 
   (underive ::bar ::foo))
 
-(deftest validation-test
-  (is (= true
-         (m/validate
-           (:malli/schema (meta (var retrieve-currencies!)))
-           ((ex/generate-fn (var retrieve-currencies!) :ex.gen/default)))))
-
-  (is (= true
-         (m/validate
-           (:malli/schema (meta (var retrieve-currencies!)))
-           (ex/try+ ((ex/generate-fn (var retrieve-currencies!) :ex.gen/random))
-                    (catch :currencies.retrieve/failed _ [])))))
-
-  (is (= (retrieve-currencies!)
-         ((ex/generate-fn (var retrieve-currencies!) :ex.gen/default)))))
-
-(deftest try-with-test
+(deftest integration-test
   (is (= {:status :error, :msg "Request is not valid."}
          (offer-exchange {})))
   (is (= {:order-id #uuid"767df20e-93dd-4312-9258-c0f06216fffa",
@@ -316,13 +270,13 @@
 (declare side-effects)
 
 (defn traced-test-function-0 [opts]
-  (ex/with-ex2 opts (let [x 1] (ex/exchange :ex-traced (do (swap! side-effects conj "side-effect!") (+ x 0))
+  (ex/with-ex opts (let [x 1] (ex/exchange :ex-traced (do (swap! side-effects conj "side-effect!") (+ x 0))
                                            :some-key 2
                                            :some-other-key 3
                                            :lazy (swap! side-effects conj "not allowed!")))))
 
 (defn traced-test-function-1 [opts]
-  (ex/with-ex2 opts (let [x 1] (ex/exchange :ex-traced-2 (+ x 0)
+  (ex/with-ex opts (let [x 1] (ex/exchange :ex-traced-2 (+ x 0)
                                            :some-key 2
                                            :some-other-key 3))))
 
@@ -417,18 +371,18 @@
   (swap! id-sequence inc))
 
 (defn nested-1 [ctx]
-  (ex/with-ex2 ctx ctx))
+  (ex/with-ex ctx ctx))
 
 (defn nested-0 [ctx]
-  (ex/with-ex2 ctx
-               (nested-1 ctx)))
+  (ex/with-ex ctx
+              (nested-1 ctx)))
 
 (deftest with-ex-tracing-test
   (is (=* {:ex.trace/parent-id nil,
            :ex.trace/id        0}
           (do (reset! id-sequence -1)
-              (ex/with-ex2 {:ex/generate-id! next-id!} $
-                           $))))
+              (ex/with-ex {:ex/generate-id! next-id!} $
+                          $))))
 
   (is (=* {:ex.trace/parent-id 0,
            :ex.trace/id        1}
