@@ -145,10 +145,12 @@
 (defn analyze [body local-env extra-env]
   (let [env (assoc (ana.jvm/empty-env)
               :locals (merge (reduce-kv (fn [m k v]
-                                          (assoc m k {:op    :binding
-                                                      :name  (.-sym v)
-                                                      :form  (.-sym v)
-                                                      :local :let}))
+                                          (assoc m k (if (:op v)
+                                                       v
+                                                       {:op    :binding
+                                                        :name  (.-sym v)
+                                                        :form  (.-sym v)
+                                                        :local :let})))
                                         {}
                                         local-env)
                              extra-env))]

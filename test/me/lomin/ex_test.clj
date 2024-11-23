@@ -377,6 +377,11 @@
   (let [state (atom -1)]
     (assoc m :ex/generate-id! (fn [] (swap! state inc)))))
 
+(def trace-state (atom []))
+
+(defn with-trace [m]
+  (assoc m :ex/trace! (fn [x] (swap! trace-state conj x))))
+
 (deftest with-ex-tracing-test
   (is (=* {:ex.trace/parent-id nil,
            :ex.trace/id        0}
@@ -406,4 +411,22 @@
             (ex/with-ex (with-id-seq {:actual 1}) $ (merge $ {:expected 1})))))
 
   (is (= 3
-         (ex/with-ex {:actual 1} (+ 1 2)))))
+         (ex/with-ex {:actual 1} (+ 1 2))))
+
+  (is (=* [{:ex.trace/parent-id nil
+            :ex.trace/id 0}
+            {:ex.trace/parent-id 0
+            :ex.trace/id 1}
+            {:ex.trace/parent-id 1
+            :ex.trace/id 2}]
+         (let [_   (reset! trace-state [])
+               ctx (-> {}
+                       (with-trace)
+                       (with-id-seq))]
+           (ex/with-ex ctx
+                       ((:ex/trace! ctx) ctx)
+                       (ex/with-ex ctx
+                                   ((:ex/trace! ctx) ctx)
+                                   (ex/with-ex ctx
+                                               ((:ex/trace! ctx) ctx))))
+           @trace-state))))
