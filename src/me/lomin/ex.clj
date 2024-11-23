@@ -9,6 +9,8 @@
 (declare catch-clause-validator)
 (declare finally-clause-validator)
 
+(defmulti ex (fn [_context k] k))
+
 (defn- token-schema [token?] (m/-simple-schema {:type :catch, :pred token?}))
 
 (def ^:private registry
@@ -174,16 +176,22 @@
 (defmacro resolve-shallow [x]
   `~(resolve-shallow* &env x))
 
+
+(defmethod ex :default [context k]
+  (k (:ex.ex/opts context) context))
+
 (defn replace-exchange [_ [trace-key sym & {:as opts}] context _env]
   (let [delayed-opts (reduce-kv (fn [m k v] (assoc m k (list 'delay v))) {} opts)]
     `(let [trace!#  (get ~context :ex/trace!)
-           context# {:ex.ex/form    (quote ~sym)
-                     :ex.ex/context ~context
-                     :ex.ex/code    (resolve-shallow ~sym)}
+           context# (merge ~context {:ex.ex/form (quote ~sym)
+                                     :ex.ex/code (resolve-shallow ~sym)})
            result#  (or (when-let [selector# (get ~context ~trace-key)]
                           (if trace!#
                             (try
-                              (let [result# (selector# ~delayed-opts context#)]
+                              (let [result# (me.lomin.ex/ex (-> context#
+                                                                (assoc :ex.ex/opts ~delayed-opts)
+                                                                (assoc :ex.ex/trace-key ~trace-key))
+                                                            selector#)]
                                 (if (delay? result#) @result# result#))
                               (catch Exception e#
                                 (trace!# [~trace-key (assoc context# :ex.ex/result e#)])
@@ -197,7 +205,9 @@
 
 (defmacro exchange {:ex/replace replace-exchange}
   [_trace-key form & {:as opts}]
-  (rand-nth (filterv (partial deeply-resolvable? &env) (conj (vals opts) form))))
+  (if-let [options (seq (filter (partial deeply-resolvable? &env) (conj (vals opts) form)))]
+    (rand-nth options)
+    ::unresolvable))
 
 (defn destruct [var-or-expr name-or-expr body]
   (if (seq body)

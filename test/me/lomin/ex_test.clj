@@ -271,7 +271,7 @@
 (declare side-effects)
 
 (defn traced-test-function-0 [opts]
-  (ex/with-ex opts (let [x 1] (ex/exchange :ex-traced (do (swap! side-effects conj "side-effect!") (+ x 0))
+  (ex/with-ex opts (let [x 1] (ex/exchange :ex-test/traced (do (swap! side-effects conj "side-effect!") (+ x 0))
                                            :some-key 2
                                            :some-other-key 3
                                            :lazy (swap! side-effects conj "not allowed!")))))
@@ -284,41 +284,52 @@
 (declare test-log)
 (declare test-opts)
 
-(deftest exchange-test
-  (def test-log (atom []))
-  (def side-effects (atom []))
-  (def test-opts {:ex/trace! #(swap! test-log conj %)})
+(derive :ex-test.traced/child :ex-test/traced)
+(defmethod ex/ex :ex-test.traced/child [context k]
+  :multi-method)
 
-  (is (= (let [minus (ex/exchange :minus (- a b)
-                                  :default- -100)]
-           (ex/exchange :multiply (* minus 2)))
+(def trace-state (atom []))
+(def side-effects (atom []))
+
+(defn init-test-ctx [m]
+  (reset! trace-state [])
+  (reset! side-effects [])
+  (assoc m :ex/trace! (fn [x] (swap! trace-state conj x))))
+
+(defn add-logs [x]
+  [x @trace-state @side-effects])
+
+(deftest exchange-test
+  (is (= (let [minus (ex/exchange2 :minus (- a b)
+                                   :default- -100)]
+           (ex/exchange2 :multiply (* minus 2)))
          -200))
 
-  (is (= (traced-test-function-0 (merge test-opts {:ex-traced false})) 1))
-  (is (=* [[:ex-traced #:ex.ex{:result 1 :code '(do (swap! side-effects conj "side-effect!") (+ 1 0))}]]
-          @test-log))
-  (is (=* ["side-effect!"] @side-effects))
+  (is (=* [1
+           [[:ex-test/traced #:ex.ex{:result 1 :code '(do (swap! side-effects conj "side-effect!") (+ 1 0))}]]
+           ["side-effect!"]]
+          (add-logs (traced-test-function-0 (init-test-ctx {:ex-test/traced false}))) 1))
 
-  (is (= (traced-test-function-1 test-opts) 1))
-  (is (=* [[:ex-traced #:ex.ex{:result 1}]
-           [:ex-traced-2 #:ex.ex{:result 1 :code '(+ 1 0)}]]
-          @test-log))
-  (is (=* ["side-effect!"] @side-effects))
+  (is (=* [1
+           [
+            [:ex-traced-2 #:ex.ex{:result 1 :code '(+ 1 0)}]]
+           []]
+          (add-logs (traced-test-function-1 (init-test-ctx {}))) 1))
 
-  (is (= (traced-test-function-0 (merge test-opts {:ex-traced (fn [_opts _config] 22)})) 22))
-  (is (=* '[[:ex-traced #:ex.ex{:result 1}]
-            [:ex-traced-2 #:ex.ex{:result 1}]
-            [:ex-traced #:ex.ex{:result 22}]]
-          @test-log))
-  (is (=* ["side-effect!"] @side-effects))
+  (is (=* [22
+           [[:ex-test/traced #:ex.ex{:result 22}]]
+           []]
+          (add-logs (traced-test-function-0 (init-test-ctx {:ex-test/traced (fn [_opts _config] 22)})))))
 
-  (is (= (traced-test-function-0 (merge test-opts {:ex-traced :some-key})) 2))
-  (is (=* [[:ex-traced #:ex.ex{:result 1}]
-           [:ex-traced-2 #:ex.ex{:result 1}]
-           [:ex-traced #:ex.ex{:result 22}]
-           [:ex-traced #:ex.ex{:result 2}]]
-          @test-log))
-  (is (=* ["side-effect!"] @side-effects)))
+  (is (=* [2
+           [[:ex-test/traced #:ex.ex{:result 2}]]
+           []]
+           (add-logs (traced-test-function-0 (init-test-ctx {:ex-test/traced :some-key}))) 2))
+
+  (is (=* [:multi-method
+          [[:ex-test/traced {}]]
+          []]
+          (add-logs (traced-test-function-0 (init-test-ctx {:ex-test/traced :ex-test.traced/child}))))))
 
 (defmacro demonstrate [var-or-expr name-or-expr & body]
   (mapv (comp type) [var-or-expr name-or-expr body]))
@@ -377,10 +388,6 @@
   (let [state (atom -1)]
     (assoc m :ex/generate-id! (fn [] (swap! state inc)))))
 
-(def trace-state (atom []))
-
-(defn with-trace [m]
-  (assoc m :ex/trace! (fn [x] (swap! trace-state conj x))))
 
 (deftest with-ex-tracing-test
   (is (=* {:ex.trace/parent-id nil,
@@ -414,19 +421,19 @@
          (ex/with-ex {:actual 1} (+ 1 2))))
 
   (is (=* [{:ex.trace/parent-id nil
-            :ex.trace/id 0}
-            {:ex.trace/parent-id 0
-            :ex.trace/id 1}
-            {:ex.trace/parent-id 1
-            :ex.trace/id 2}]
-         (let [_   (reset! trace-state [])
-               ctx (-> {}
-                       (with-trace)
-                       (with-id-seq))]
-           (ex/with-ex ctx
-                       ((:ex/trace! ctx) ctx)
-                       (ex/with-ex ctx
-                                   ((:ex/trace! ctx) ctx)
-                                   (ex/with-ex ctx
-                                               ((:ex/trace! ctx) ctx))))
-           @trace-state))))
+            :ex.trace/id        0}
+           {:ex.trace/parent-id 0
+            :ex.trace/id        1}
+           {:ex.trace/parent-id 1
+            :ex.trace/id        2}]
+          (let [_   (reset! trace-state [])
+                ctx (-> {}
+                        (init-test-ctx)
+                        (with-id-seq))]
+            (ex/with-ex ctx
+                        ((:ex/trace! ctx) ctx)
+                        (ex/with-ex ctx
+                                    ((:ex/trace! ctx) ctx)
+                                    (ex/with-ex ctx
+                                                ((:ex/trace! ctx) ctx))))
+            @trace-state))))
