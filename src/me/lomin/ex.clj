@@ -144,6 +144,11 @@
   [bindings & body]
   `(let ~bindings ~@body))
 
+(defmacro example
+  {:ex/replace first}
+  [sym example]
+  (if (and (symbol? sym) (or (resolve sym) (get &env sym))) sym example))
+
 (defn analyze [body local-env extra-env]
   (let [env (assoc (ana.jvm/empty-env)
               :locals (merge (reduce-kv (fn [m k v]
