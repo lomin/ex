@@ -13,9 +13,9 @@
 
 (defn- non-validating [s ch]
   (-> (doto
-        (SAXParserFactory/newInstance)
+       (SAXParserFactory/newInstance)
         (.setFeature
-          "http://apache.org/xml/features/nonvalidating/load-external-dtd" false))
+         "http://apache.org/xml/features/nonvalidating/load-external-dtd" false))
       (.newSAXParser)
       (.parse s ch)))
 
@@ -55,12 +55,12 @@
 
 (defn retrieve-currencies [xml-input-stream]
   (reduce
-    (fn [m {:keys [rate currency]}] (assoc m (keyword currency) rate))
-    {}
-    (sequence
-      (comp (map :attrs)
-            (map #(update % :rate edn/read-string)))
-      (get-in (xml/parse xml-input-stream non-validating) [:content 2 :content 0 :content]))))
+   (fn [m {:keys [rate currency]}] (assoc m (keyword currency) rate))
+   {}
+   (sequence
+    (comp (map :attrs)
+          (map #(update % :rate edn/read-string)))
+    (get-in (xml/parse xml-input-stream non-validating) [:content 2 :content 0 :content]))))
 
 (defn ->xml-file-input-stream [path]
   (-> (slurp path) .getBytes io/input-stream))
@@ -119,26 +119,26 @@
 
 (defn offer-exchange [exchange-request]
   (ex/with-ex exchange-request
-              (ex/with-examples [exchange-request (mg/generate request-schema)]
-                (when (not (valid-request? exchange-request))
-                  (ex/exit :request/invalid))
-                (let [offer (ex/exchange :offer (retrieve-offer! exchange-request)
-                                         :valid-offer (assoc exchange-request :valid-until #inst"2030-05-15T09:18:05.099-00:00")
-                                         :invalid-offer (mg/generate request-schema)
-                                         :currencies.retrieve/failed (ex/exit :currencies.retrieve/failed "test error"))]
-                  (if-let [order-id (and (valid-offer? offer (now!)) (save-order! exchange-request))]
-                    (ok (str "Your order with the id " order-id " has been saved!")
-                        :order-id order-id)
-                    (ok "Based on your request, we would like to make you the following offer:"
-                        :offer (save-offer! (calculate-offer exchange-request (now!) (retrieve-currencies!)))))))
-              (catch :request/invalid _e
-                (error "Request is not valid."))
-              (catch :currencies.retrieve/failed e
-                (error "We are currently unable to make an offer. Try later." :fail e))
-              (catch :offer.save/failed e
-                (error "Your offer could not be saved. Try later." :fail e))
-              (catch :order.save/failed e
-                (error "Your order could not be saved. Try later." :fail e))))
+    (ex/with-examples [exchange-request (mg/generate request-schema)]
+      (when (not (valid-request? exchange-request))
+        (ex/exit :request/invalid))
+      (let [offer (ex/exchange :offer (retrieve-offer! exchange-request)
+                               :valid-offer (assoc exchange-request :valid-until #inst"2030-05-15T09:18:05.099-00:00")
+                               :invalid-offer (mg/generate request-schema)
+                               :currencies.retrieve/failed (ex/exit :currencies.retrieve/failed "test error"))]
+        (if-let [order-id (and (valid-offer? offer (now!)) (save-order! exchange-request))]
+          (ok (str "Your order with the id " order-id " has been saved!")
+              :order-id order-id)
+          (ok "Based on your request, we would like to make you the following offer:"
+              :offer (save-offer! (calculate-offer exchange-request (now!) (retrieve-currencies!)))))))
+    (catch :request/invalid _e
+      (error "Request is not valid."))
+    (catch :currencies.retrieve/failed e
+      (error "We are currently unable to make an offer. Try later." :fail e))
+    (catch :offer.save/failed e
+      (error "Your offer could not be saved. Try later." :fail e))
+    (catch :order.save/failed e
+      (error "Your order could not be saved. Try later." :fail e))))
 
 
 (deftest catch-parsing-test
@@ -175,30 +175,30 @@
                             (do-something foo bar))))))
 
   (is (=
-        {:body           '[(throw (ex-info "ex-msg" {:a 1}))],
-         :catch-clauses  '[{:token            catch,
-                            :exits+exceptions [[:exit ::foo]],
-                            :binding          data,
-                            :body             [(swap! state conj [::foo data])]}
-                           {:token            catch,
-                            :exits+exceptions [[:exit ::bar]],
-                            :binding          {:as data, :keys [foo]},
-                            :body             [(swap! state conj [::bar data foo])]}
-                           {:token            catch,
-                            :exits+exceptions [[:exception clojure.lang.ExceptionInfo]],
-                            :binding          e,
-                            :body             [(swap! state conj [:exception-info (ex-data e)])]}
-                           {:token            catch,
-                            :exits+exceptions [[:exception Exception]],
-                            :binding          e,
-                            :body             [(swap! state conj :exception)]}],
-         :finally-clause '{:token finally, :body [(swap! state conj :finally)]}}
-        (ex/parse-try '((throw (ex-info "ex-msg" {:a 1}))
-                        (catch ::foo data (swap! state conj [::foo data]))
-                        (catch ::bar {:as data :keys [foo]} (swap! state conj [::bar data foo]))
-                        (catch clojure.lang.ExceptionInfo e (swap! state conj [:exception-info (ex-data e)]))
-                        (catch Exception e (swap! state conj :exception))
-                        (finally (swap! state conj :finally)))))))
+       {:body           '[(throw (ex-info "ex-msg" {:a 1}))],
+        :catch-clauses  '[{:token            catch,
+                           :exits+exceptions [[:exit ::foo]],
+                           :binding          data,
+                           :body             [(swap! state conj [::foo data])]}
+                          {:token            catch,
+                           :exits+exceptions [[:exit ::bar]],
+                           :binding          {:as data, :keys [foo]},
+                           :body             [(swap! state conj [::bar data foo])]}
+                          {:token            catch,
+                           :exits+exceptions [[:exception clojure.lang.ExceptionInfo]],
+                           :binding          e,
+                           :body             [(swap! state conj [:exception-info (ex-data e)])]}
+                          {:token            catch,
+                           :exits+exceptions [[:exception Exception]],
+                           :binding          e,
+                           :body             [(swap! state conj :exception)]}],
+        :finally-clause '{:token finally, :body [(swap! state conj :finally)]}}
+       (ex/parse-try '((throw (ex-info "ex-msg" {:a 1}))
+                       (catch ::foo data (swap! state conj [::foo data]))
+                       (catch ::bar {:as data :keys [foo]} (swap! state conj [::bar data foo]))
+                       (catch clojure.lang.ExceptionInfo e (swap! state conj [:exception-info (ex-data e)]))
+                       (catch Exception e (swap! state conj :exception))
+                       (finally (swap! state conj :finally)))))))
 
 
 (deftest try+-test
@@ -207,23 +207,23 @@
 
   (let [state (atom [])]
     (ex/try+
-      (throw (ex-info "ex-msg" {:a 1}))
-      (catch ::foo data (swap! state conj [::foo data]))
-      (catch ::bar {:as data :keys [foo]} (swap! state conj [::bar data foo]))
-      (catch clojure.lang.ExceptionInfo e (swap! state conj [:exception-info (ex-data e)]))
-      (catch Exception e (swap! state conj :exception))
-      (finally (swap! state conj :finally)))
+     (throw (ex-info "ex-msg" {:a 1}))
+     (catch ::foo data (swap! state conj [::foo data]))
+     (catch ::bar {:as data :keys [foo]} (swap! state conj [::bar data foo]))
+     (catch clojure.lang.ExceptionInfo e (swap! state conj [:exception-info (ex-data e)]))
+     (catch Exception e (swap! state conj :exception))
+     (finally (swap! state conj :finally)))
     (is (= [[:exception-info {:a 1}] :finally] @state)))
 
   (let [state (atom [])]
     (ex/try+
-      (derive ::bar ::foo)
-      (ex/exit ::bar "fail-msg" {:b 2 :c 3})
-      (catch ::bar {:as data :keys [c]} (swap! state conj [::bar data c]))
-      (catch ::foo data (swap! state conj [::foo data]))
-      (catch clojure.lang.ExceptionInfo e (swap! state conj [:exception-info (ex-data e)]))
-      (catch Exception _e (swap! state conj :exception))
-      (finally (swap! state conj :finally)))
+     (derive ::bar ::foo)
+     (ex/exit ::bar "fail-msg" {:b 2 :c 3})
+     (catch ::bar {:as data :keys [c]} (swap! state conj [::bar data c]))
+     (catch ::foo data (swap! state conj [::foo data]))
+     (catch clojure.lang.ExceptionInfo e (swap! state conj [:exception-info (ex-data e)]))
+     (catch Exception _e (swap! state conj :exception))
+     (finally (swap! state conj :finally)))
     (is (= [[::bar
              {:b        2
               :c        3
@@ -234,8 +234,8 @@
 
   (let [state (atom [])]
     (ex/try+
-      (ex/exit ::bar "fail-msg" {:b 2 :c 3})
-      (catch ::bar data (swap! state conj [::foo data])))
+     (ex/exit ::bar "fail-msg" {:b 2 :c 3})
+     (catch ::bar data (swap! state conj [::foo data])))
     (is (= [[::foo
              {:b 2, :c 3, :exit/msg "fail-msg", :type ::bar}]]
            @state)))
@@ -300,9 +300,9 @@
   [x @trace-state @side-effects])
 
 (deftest exchange-test
-  (is (= (let [minus (ex/exchange2 :minus (- a b)
-                                   :default- -100)]
-           (ex/exchange2 :multiply (* minus 2)))
+  (is (= (let [minus (ex/exchange :minus (- a b)
+                                  :default- -100)]
+           (ex/exchange :multiply (* minus 2)))
          -200))
 
   (is (=* [1
@@ -311,8 +311,7 @@
           (add-logs (traced-test-function-0 (init-test-ctx {:ex-test/traced false}))) 1))
 
   (is (=* [1
-           [
-            [:ex-traced-2 #:ex.ex{:result 1 :code '(+ 1 0)}]]
+           [[:ex-traced-2 #:ex.ex{:result 1 :code '(+ 1 0)}]]
            []]
           (add-logs (traced-test-function-1 (init-test-ctx {}))) 1))
 
@@ -324,11 +323,11 @@
   (is (=* [2
            [[:ex-test/traced #:ex.ex{:result 2}]]
            []]
-           (add-logs (traced-test-function-0 (init-test-ctx {:ex-test/traced :some-key}))) 2))
+          (add-logs (traced-test-function-0 (init-test-ctx {:ex-test/traced :some-key}))) 2))
 
   (is (=* [:multi-method
-          [[:ex-test/traced {}]]
-          []]
+           [[:ex-test/traced {}]]
+           []]
           (add-logs (traced-test-function-0 (init-test-ctx {:ex-test/traced :ex-test.traced/child}))))))
 
 (defmacro demonstrate [var-or-expr name-or-expr & body]
@@ -352,37 +351,37 @@
           nil]
          (demonstrate $ $)))
   (is (=
-        {:ex.as/expr  '(+ 1 2)
-         :ex.as/sym   '$
-         :ex.as/forms '[(prn $)]}
-        (ex/destruct '(+ 1 2) '$ '[(prn $)])))
+       {:ex.as/expr  '(+ 1 2)
+        :ex.as/sym   '$
+        :ex.as/forms '[(prn $)]}
+       (ex/destruct '(+ 1 2) '$ '[(prn $)])))
   (is (=
-        {:ex.as/expr  '$
-         :ex.as/sym   '$
-         :ex.as/forms '[(+ 1 2)]}
-        (ex/destruct '$ '(+ 1 2) nil)))
+       {:ex.as/expr  '$
+        :ex.as/sym   '$
+        :ex.as/forms '[(+ 1 2)]}
+       (ex/destruct '$ '(+ 1 2) nil)))
   (is (=
-        {:ex.as/expr  '$
-         :ex.as/sym   '$
-         :ex.as/forms '[(prn 1 2) (+ 3 4)]}
-        (ex/destruct '$ '(prn 1 2) '[(+ 3 4)])))
+       {:ex.as/expr  '$
+        :ex.as/sym   '$
+        :ex.as/forms '[(prn 1 2) (+ 3 4)]}
+       (ex/destruct '$ '(prn 1 2) '[(+ 3 4)])))
   (is (=
-        {:ex.as/expr  '(+ 1 2)
-         :ex.as/sym   '$
-         :ex.as/forms '[$]}
-        (ex/destruct '(+ 1 2) '$ nil)))
+       {:ex.as/expr  '(+ 1 2)
+        :ex.as/sym   '$
+        :ex.as/forms '[$]}
+       (ex/destruct '(+ 1 2) '$ nil)))
   (is (=
-        {:ex.as/expr  '$
-         :ex.as/sym   '$
-         :ex.as/forms '[$]}
-        (ex/destruct '$ '$ nil))))
+       {:ex.as/expr  '$
+        :ex.as/sym   '$
+        :ex.as/forms '[$]}
+       (ex/destruct '$ '$ nil))))
 
 (defn nested-1 [ctx]
   (ex/with-ex ctx ctx))
 
 (defn nested-0 [ctx]
   (ex/with-ex ctx
-              (nested-1 ctx)))
+    (nested-1 ctx)))
 
 (defn with-id-seq [m]
   (let [state (atom -1)]
@@ -393,7 +392,7 @@
   (is (=* {:ex.trace/parent-id nil,
            :ex.trace/id        0}
           (ex/with-ex (with-id-seq {}) $
-                      $)))
+            $)))
 
   (is (=* {:ex.trace/parent-id 0,
            :ex.trace/id        1}
@@ -403,12 +402,12 @@
            :ex.trace/parent-id nil,
            :ex.trace/id        0}
           (ex/with-ex (with-id-seq {:outer [{:inner [1 2]}]}) $
-                      (sp/transform [:outer sp/FIRST :inner sp/ALL] inc $))))
+            (sp/transform [:outer sp/FIRST :inner sp/ALL] inc $))))
 
   (is (= 2
          (ex/with-ex {:test 1} $
-                     (let [$ {:test 2}]
-                       (:test $)))))
+           (let [$ {:test 2}]
+             (:test $)))))
 
   (is (=* {:ex.trace/id        0
            :ex.trace/parent-id nil
@@ -431,9 +430,12 @@
                         (init-test-ctx)
                         (with-id-seq))]
             (ex/with-ex ctx
-                        ((:ex/trace! ctx) ctx)
-                        (ex/with-ex ctx
-                                    ((:ex/trace! ctx) ctx)
-                                    (ex/with-ex ctx
-                                                ((:ex/trace! ctx) ctx))))
+              ((:ex/trace! ctx) ctx)
+              (ex/with-ex ctx
+                ((:ex/trace! ctx) ctx)
+                (ex/with-ex ctx
+                  ((:ex/trace! ctx) ctx))))
             @trace-state))))
+
+(deftest example-test
+  (is (= "a" (ex/with-ex {} (ex/example "a" 1)))))

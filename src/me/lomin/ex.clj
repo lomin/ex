@@ -145,7 +145,7 @@
   `(let ~bindings ~@body))
 
 (defmacro example
-  {:ex/replace first}
+  {:ex/replace (fn [_ args _context _env] (first args))}
   [sym example]
   (if (and (symbol? sym) (or (resolve sym) (get &env sym))) sym example))
 
