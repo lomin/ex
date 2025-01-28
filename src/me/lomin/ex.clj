@@ -134,7 +134,7 @@
   ([context body env]
    (walk/postwalk
      (fn [x]
-       (if-let [replace (and (seq? x) (and (symbol? (first x))) (:ex/replace (meta (resolve (first x)))))]
+       (if-let [replace (and (seq? x) (symbol? (first x)) (:ex/replace (meta (resolve (first x)))))]
          (replace (first x) (rest x) context env)
          x))
      body)))
@@ -146,8 +146,7 @@
 
 (defmacro example
   {:ex/replace (fn [_ args _context _env] (first args))}
-  [sym example]
-  (if (and (symbol? sym) (or (resolve sym) (get &env sym))) sym example))
+  [_sym example] example)
 
 (defn analyze [body local-env extra-env]
   (let [env (assoc (ana.jvm/empty-env)
