@@ -274,7 +274,8 @@
   (ex/with-ex opts (let [x 1] (ex/exchange :ex-test/traced (do (swap! side-effects conj "side-effect!") (+ x 0))
                                            :some-key 2
                                            :some-other-key 3
-                                           :lazy (swap! side-effects conj "not allowed!")))))
+                                           :lazy (swap! side-effects conj "not allowed!")
+                                           :nil nil))))
 
 (defn traced-test-function-1 [opts]
   (ex/with-ex opts (let [x 1] (ex/exchange :ex-traced-2 (+ x 0)
@@ -297,6 +298,7 @@
   (assoc m :ex/trace! (fn [x] (swap! trace-state conj x))))
 
 (defn add-logs [x]
+  (prn x)
   [x @trace-state @side-effects])
 
 (deftest exchange-test
@@ -308,7 +310,7 @@
   (is (=* [1
            [[:ex-test/traced #:ex.ex{:result 1 :code '(do (swap! side-effects conj "side-effect!") (+ 1 0))}]]
            ["side-effect!"]]
-          (add-logs (traced-test-function-0 (init-test-ctx {:ex-test/traced false}))) 1))
+          (add-logs (traced-test-function-0 (init-test-ctx {}))) 1))
 
   (is (=* [1
            [[:ex-traced-2 #:ex.ex{:result 1 :code '(+ 1 0)}]]
@@ -328,7 +330,12 @@
   (is (=* [:multi-method
            [[:ex-test/traced {}]]
            []]
-          (add-logs (traced-test-function-0 (init-test-ctx {:ex-test/traced :ex-test.traced/child}))))))
+          (add-logs (traced-test-function-0 (init-test-ctx {:ex-test/traced :ex-test.traced/child})))))
+
+  (is (=* [nil
+           [[:ex-test/traced #:ex.ex{:result nil}]]
+           []]
+          (add-logs (traced-test-function-0 (init-test-ctx {:ex-test/traced :nil}))) 1)))
 
 (defmacro demonstrate [var-or-expr name-or-expr & body]
   (mapv (comp type) [var-or-expr name-or-expr body]))

@@ -189,7 +189,8 @@
     `(let [trace!#  (get ~context :ex/trace!)
            context# (merge ~context {:ex.ex/form (quote ~sym)
                                      :ex.ex/code (resolve-shallow ~sym)})
-           result#  (or (when-let [selector# (get ~context ~trace-key)]
+           result#  (if (contains? ~context ~trace-key)
+                      (let [selector# (get ~context ~trace-key)]
                           (if trace!#
                             (try
                               (let [result# (me.lomin.ex/ex (-> context#
