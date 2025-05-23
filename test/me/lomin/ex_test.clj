@@ -145,34 +145,78 @@
   (is (=* :malli.core/invalid
           (ex/parse-try '((catch RuntimeException e e)))))
 
-  (is (=* {:catch-clauses [{:token            'catch
-                            :body             '[body]
-                            :exits+exceptions '[[:exception RuntimeException]],
-                            :binding          'data}]}
-          (ex/parse-try '(do (catch RuntimeException data body)))))
+  (let [form '(do (catch RuntimeException data body))]
+    (is (= '{:body [do],
+             :catch-clauses
+             [{:binding data,
+               :body [body],
+               :exits+exceptions [[:exception RuntimeException]],
+               :token catch}],
+             :finally-clause nil}
+           (ex/parse-try form)))
+    (is (= nil
+           (ex/->exit-dispatch (ex/parse-try form))))
+    (is (= nil
+           (ex/->ex-info-dispatch (ex/parse-try form))))
+    (is (= nil
+           (ex/->ex-info-dispatch (ex/parse-try form))))
+    (is (= '((catch RuntimeException data body))
+           (ex/->exception-clauses (ex/parse-try form))))
+    (is (= nil
+           (ex/->finally-clause (ex/parse-try form)))))
 
-  (is (=* {:catch-clauses [{:token            'catch
-                            :exits+exceptions [[:exception 'IllegalArgumentException]
-                                               [:exit :test/failure]]
-                            :binding          'data
-                            :body             '[(prn "test") data]}]}
-          (ex/parse-try '(do (catch IllegalArgumentException :test/failure data (prn "test") data)))))
+  (let [form '(do (catch IllegalArgumentException :test/failure data (prn "test") data))]
+    (is (= '{:body [do],
+             :catch-clauses
+             [{:token catch,
+               :exits+exceptions [[:exception IllegalArgumentException] [:exit :test/failure]],
+               :binding data,
+               :body [(prn "test") data]}],
+             :finally-clause nil}
+           (ex/parse-try form)))
 
-  (is (=* {:catch-clauses [{:token            'catch
-                            :body             '[body]
-                            :exits+exceptions '[[:ex-info-navigators [:data :var]]],
-                            :binding          'data}]}
-          (ex/parse-try '(do (catch [:data :var] data body)))))
+    (is (= nil
+           (ex/->ex-info-dispatch (ex/parse-try form))))
+    (is (= nil
+           (ex/->ex-info-dispatch (ex/parse-try form))))
+    (is (= '((catch IllegalArgumentException data (prn "test") data))
+           (ex/->exception-clauses (ex/parse-try form))))
+    (is (= nil
+           (ex/->finally-clause (ex/parse-try form)))))
 
-  (is (=* {:body          '[(do this) (then that)]
-           :catch-clauses [{:token            'catch,
-                            :exits+exceptions [[:exit ::something-else]],
-                            :binding          '{:as my-ex-data, :keys [foo bar]},
-                            :body             '[(do-something foo bar)]}]}
-          (ex/parse-try '((do this)
-                          (then that)
-                          (catch ::something-else {:as my-ex-data :keys [foo bar]}
-                            (do-something foo bar))))))
+  (let [form '(do (catch [:data :var] data body))]
+    (is (=* {:catch-clauses [{:token            'catch
+                              :body             '[body]
+                              :exits+exceptions '[[:ex-info-navigators [:data :var]]],
+                              :binding          'data}]}
+            (ex/parse-try form)))
+
+    (is (= nil
+           (ex/->exit-dispatch (ex/parse-try form))))
+    (is (= '()
+           (ex/->exception-clauses (ex/parse-try form))))
+    (is (= nil
+           (ex/->finally-clause (ex/parse-try form)))))
+
+  (let [form '((do this)
+               (then that)
+               (catch ::something-else {:as my-ex-data :keys [foo bar]}
+                 (do-something foo bar)))]
+    (is (=* {:body          '[(do this) (then that)]
+             :catch-clauses [{:token            'catch,
+                              :exits+exceptions [[:exit ::something-else]],
+                              :binding          '{:as my-ex-data, :keys [foo bar]},
+                              :body             '[(do-something foo bar)]}]}
+            (ex/parse-try form)))
+
+    (is (= nil
+           (ex/->ex-info-dispatch (ex/parse-try form))))
+    (is (= nil
+           (ex/->ex-info-dispatch (ex/parse-try form))))
+    (is (= '()
+           (ex/->exception-clauses (ex/parse-try form))))
+    (is (= nil
+           (ex/->finally-clause (ex/parse-try form)))))
 
   (is (=
        {:body           '[(throw (ex-info "ex-msg" {:a 1}))],

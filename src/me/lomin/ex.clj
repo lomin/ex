@@ -71,7 +71,7 @@
        (ex-type)
        (map second)))
 
-(defn- ->exception-clauses [clauses]
+(defn ->exception-clauses [{clauses :catch-clauses}]
   (for [{:keys [token exits+exceptions binding body]} clauses
         e (select-ex-type exits+exceptions :exception)]
     `(~token ~e ~binding ~@body)))
@@ -85,7 +85,7 @@
         (let [~binding ~data-sym]
           ~@body)])))
 
-(defn- ->exit-dispatch [clauses]
+(defn ->exit-dispatch [{clauses :catch-clauses}]
   (let [data-sym (gensym "ex-data-")]
     (when-let [exit-clauses (seq (->exit-clauses clauses data-sym))]
       [`(catch ~ex-class ex-sym#
@@ -105,7 +105,7 @@
                                          :message     (ex-message ~ex-sym)})]
           ~@body)])))
 
-(defn- ->ex-info-dispatch [clauses]
+(defn ->ex-info-dispatch [{clauses :catch-clauses}]
   (let [data-sym (gensym "ex-data-")
         ex-sym   (gensym "ex-ex-info")]
     (when-let [exit-clauses (seq (->ex-info-clauses clauses data-sym ex-sym))]
@@ -115,7 +115,7 @@
               ~@exit-clauses
               :else (throw ~ex-sym))))])))
 
-(defn- ->finally-clause [{:keys [token body] :as clause}]
+(defn ->finally-clause [{{:keys [token body] :as clause} :finally-clause}]
   (when clause
     [`(~token ~@body)]))
 
@@ -125,10 +125,10 @@
     `(try
        ~@(:body parsed-try)
        ~@(-> []
-             (into (->exit-dispatch (:catch-clauses parsed-try)))
-             (into (->ex-info-dispatch (:catch-clauses parsed-try)))
-             (into (->exception-clauses (:catch-clauses parsed-try)))
-             (into (->finally-clause (:finally-clause parsed-try)))))))
+             (into (->exit-dispatch parsed-try))
+             (into (->ex-info-dispatch parsed-try))
+             (into (->exception-clauses parsed-try))
+             (into (->finally-clause parsed-try))))))
 
 (defn replace-ex-fns
   ([context body env]
