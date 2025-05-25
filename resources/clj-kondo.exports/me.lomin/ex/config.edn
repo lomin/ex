@@ -1,0 +1,3 @@
+{:hooks
+ {:analyze-call
+  {me.lomin.ex/with-ex   hooks.me.lomin.ex/with-ex}}}
