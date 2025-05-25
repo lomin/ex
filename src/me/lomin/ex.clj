@@ -1,39 +1,46 @@
 (ns me.lomin.ex
-  (:require [com.rpl.specter :as sp]
-            [malli.core :as m]
-            [clojure.tools.analyzer.ast :as ast]
-            [clojure.tools.analyzer.jvm :as ana.jvm]
-            [clojure.tools.analyzer.passes.jvm.emit-form :as emit]
-            [clojure.walk :as walk]))
+  (:require
+   [clojure.tools.analyzer.ast :as ast]
+   [clojure.tools.analyzer.jvm :as ana.jvm]
+   [clojure.tools.analyzer.passes.jvm.emit-form :as emit]
+   [clojure.walk :as walk]
+   [com.rpl.specter :as sp]
+   [malli.core :as m]))
+
 
 (declare catch-clause-validator)
 (declare finally-clause-validator)
 
 (defmulti ex (fn [_context k] k))
 
-(defn- token-schema [token?] (m/-simple-schema {:type :catch, :pred token?}))
+
+(defn- token-schema
+  [token?]
+  (m/-simple-schema {:type :catch, :pred token?}))
+
 
 (def ^:private registry
   (merge
-    (m/base-schemas)
-    (m/type-schemas)
-    (m/sequence-schemas)
-    {:catch          (token-schema #{'catch})
-     :catch-clause   [:catn
-                      [:token :catch]
-                      [:exits+exceptions [:+ [:altn
-                                              [:exit :keyword]
-                                              [:ex-info-navigators [:vector :any]]
-                                              [:exception :class-symbol]]]]
-                      [:binding :any]
-                      [:body [:* :any]]]
-     :finally        (token-schema #{'finally})
-     :finally-clause [:catn
-                      [:token :finally]
-                      [:body [:* :any]]]
-     :not-a-token    (m/-simple-schema {:type :not-a-token
-                                        :pred #(not (or (catch-clause-validator %) (finally-clause-validator %)))})
-     :class-symbol   (m/-simple-schema {:type :class-symbol, :pred #(and (symbol? %) (isa? (resolve %) Exception))})}))
+   (m/base-schemas)
+   (m/type-schemas)
+   (m/sequence-schemas)
+   {:catch          (token-schema #{'catch})
+    :catch-clause   [:catn
+                     [:token :catch]
+                     [:exits+exceptions [:+ [:altn
+                                             [:exit :keyword]
+                                             [:ex-info-navigators [:vector :any]]
+                                             [:exception :class-symbol]]]]
+                     [:binding :any]
+                     [:body [:* :any]]]
+    :finally        (token-schema #{'finally})
+    :finally-clause [:catn
+                     [:token :finally]
+                     [:body [:* :any]]]
+    :not-a-token    (m/-simple-schema {:type :not-a-token
+                                       :pred #(not (or (catch-clause-validator %) (finally-clause-validator %)))})
+    :class-symbol   (m/-simple-schema {:type :class-symbol, :pred #(and (symbol? %) (isa? (resolve %) Exception))})}))
+
 
 (def ^:private catch-clause-validator (m/validator :catch-clause {:registry registry}))
 (def ^:private finally-clause-validator (m/validator :finally-clause {:registry registry}))
@@ -45,13 +52,18 @@
    [:catch-clauses [:* [:schema :catch-clause]]]
    [:finally-clause [:? [:schema :finally-clause]]]])
 
-(def parse-try (m/parser try-schema {:registry registry}))
 
-(defn ex- [message cause data]
+(def parse-try (comp :values (m/parser try-schema {:registry registry})))
+
+
+(defn ex-
+  [message cause data]
   (proxy [java.lang.RuntimeException clojure.lang.IExceptionInfo] [message cause true false]
     (getData [] data)))
 
+
 (def ex-class (class (ex- nil nil nil)))
+
 
 (defn exit
   ([type] (exit type nil))
@@ -61,31 +73,39 @@
    (throw (ex- msg
                cause
                (cond-> {:type type}
-                       msg (assoc :exit/msg msg)
-                       cause (assoc :exit/cause cause)
-                       :always (merge data))))))
+                 msg (assoc :exit/msg msg)
+                 cause (assoc :exit/cause cause)
+                 :always (merge data))))))
 
-(defn- select-ex-type [exits+exceptions ex-type]
+
+(defn- select-ex-type
+  [exits+exceptions ex-type]
   (->> exits+exceptions
-       (group-by first)
+       (group-by :key)
        (ex-type)
-       (map second)))
+       (map :value)))
 
-(defn ->exception-clauses [{clauses :catch-clauses}]
-  (for [{:keys [token exits+exceptions binding body]} clauses
+
+(defn ->exception-clauses
+  [{clauses :catch-clauses}]
+  (for [{:keys [token exits+exceptions binding body]} (map :values clauses)
         e (select-ex-type exits+exceptions :exception)]
     `(~token ~e ~binding ~@body)))
 
-(defn- ->exit-clauses [clauses data-sym]
-  (sequence
-    cat
-    (for [{:keys [exits+exceptions binding body]} clauses
-          exit (select-ex-type exits+exceptions :exit)]
-      `[(isa? (:type ~data-sym) ~exit)
-        (let [~binding ~data-sym]
-          ~@body)])))
 
-(defn ->exit-dispatch [{clauses :catch-clauses}]
+(defn- ->exit-clauses
+  [clauses data-sym]
+  (sequence
+   cat
+   (for [{:keys [exits+exceptions binding body]} (map :values clauses)
+         exit (select-ex-type exits+exceptions :exit)]
+     `[(isa? (:type ~data-sym) ~exit)
+       (let [~binding ~data-sym]
+         ~@body)])))
+
+
+(defn ->exit-dispatch
+  [{clauses :catch-clauses}]
   (let [data-sym (gensym "ex-data-")]
     (when-let [exit-clauses (seq (->exit-clauses clauses data-sym))]
       [`(catch ~ex-class ex-sym#
@@ -94,30 +114,38 @@
               ~@exit-clauses
               :else (throw ex-sym#))))])))
 
-(defn- ->ex-info-clauses [clauses data-sym ex-sym]
-  (sequence
-    cat
-    (for [{:keys [exits+exceptions binding body]} clauses
-          exit (select-ex-type exits+exceptions :ex-info-navigators)]
-      `[(sp/select-first ~exit ~data-sym)
-        (let [~binding (merge ~data-sym {:ex/selected (sp/select-first ~exit ~data-sym)
-                                         :cause       (ex-cause ~ex-sym)
-                                         :message     (ex-message ~ex-sym)})]
-          ~@body)])))
 
-(defn ->ex-info-dispatch [{clauses :catch-clauses}]
+(defn- ->ex-info-clauses
+  [clauses data-sym ex-sym]
+  (sequence
+   cat
+   (for [{:keys [exits+exceptions binding body]} clauses
+         exit (select-ex-type exits+exceptions :ex-info-navigators)]
+     `[(sp/select-first ~exit ~data-sym)
+       (let [~binding (merge ~data-sym {:ex/selected (sp/select-first ~exit ~data-sym)
+                                        :cause       (ex-cause ~ex-sym)
+                                        :message     (ex-message ~ex-sym)})]
+         ~@body)])))
+
+
+(defn ->ex-info-dispatch
+  [{clauses :catch-clauses}]
   (let [data-sym (gensym "ex-data-")
         ex-sym   (gensym "ex-ex-info")]
-    (when-let [exit-clauses (seq (->ex-info-clauses clauses data-sym ex-sym))]
+    (when-let [exit-clauses (seq (->ex-info-clauses (:values clauses) data-sym ex-sym))]
       [`(catch clojure.lang.ExceptionInfo ~ex-sym
           (let [~data-sym (ex-data ~ex-sym)]
             (cond
               ~@exit-clauses
               :else (throw ~ex-sym))))])))
 
-(defn ->finally-clause [{{:keys [token body] :as clause} :finally-clause}]
-  (when clause
-    [`(~token ~@body)]))
+
+(defn ->finally-clause
+  [{finally-clause :finally-clause}]
+  (let [{:keys [token body]} (:values finally-clause)]
+    (when finally-clause
+      [`(~token ~@body)])))
+
 
 (defmacro try+
   [& try-body]
@@ -130,45 +158,55 @@
              (into (->exception-clauses parsed-try))
              (into (->finally-clause parsed-try))))))
 
+
 (defn replace-ex-fns
   ([context body env]
    (walk/postwalk
-     (fn [x]
-       (if-let [replace (and (seq? x) (symbol? (first x)) (:ex/replace (meta (resolve (first x)))))]
-         (replace (first x) (rest x) context env)
-         x))
-     body)))
+    (fn [x]
+      (if-let [replace (and (seq? x) (symbol? (first x)) (:ex/replace (meta (resolve (first x)))))]
+        (replace (first x) (rest x) context env)
+        x))
+    body)))
+
 
 (defmacro with-examples
   {:ex/replace (fn [_ args _context _env] (cons 'do (rest args)))}
   [bindings & body]
   `(let ~bindings ~@body))
 
+
 (defmacro example
   {:ex/replace (fn [_ args _context _env] (first args))}
-  [_sym example] example)
+  [_sym example]
+  example)
 
-(defn analyze [body local-env extra-env]
+
+(defn analyze
+  [body local-env extra-env]
   (let [env (assoc (ana.jvm/empty-env)
-              :locals (merge (reduce-kv (fn [m k v]
-                                          (assoc m k (if (:op v)
-                                                       v
-                                                       {:op    :binding
-                                                        :name  (.-sym v)
-                                                        :form  (.-sym v)
-                                                        :local :let})))
-                                        {}
-                                        local-env)
-                             extra-env))]
+                   :locals (merge (reduce-kv (fn [m k v]
+                                               (assoc m k (if (:op v)
+                                                            v
+                                                            {:op    :binding
+                                                             :name  (.-sym v)
+                                                             :form  (.-sym v)
+                                                             :local :let})))
+                                             {}
+                                             local-env)
+                                  extra-env))]
     (ana.jvm/analyze body env {})))
 
-(defn deeply-resolvable? [env body]
-  (some?
-    (try
-      (analyze body env {})
-      (catch Exception _))))
 
-(defn resolve-shallow* [env x]
+(defn deeply-resolvable?
+  [env body]
+  (some?
+   (try
+     (analyze body env {})
+     (catch Exception _))))
+
+
+(defn resolve-shallow*
+  [env x]
   (cond (symbol? x)
         (if (get env x)
           x
@@ -177,44 +215,52 @@
         (cons 'list (map (partial resolve-shallow* env) x))
         :else x))
 
-(defmacro resolve-shallow [x]
+
+(defmacro resolve-shallow
+  [x]
   `~(resolve-shallow* &env x))
 
 
 (defmethod ex :default [context k]
   (k (:ex.ex/opts context) context))
 
-(defn replace-exchange [_ [trace-key sym & {:as opts}] context _env]
+
+(defn replace-exchange
+  [_ [trace-key sym & {:as opts}] context _env]
   (let [delayed-opts (reduce-kv (fn [m k v] (assoc m k (list 'delay v))) {} opts)]
     `(let [trace!#  (get ~context :ex/trace!)
            context# (merge ~context {:ex.ex/form (quote ~sym)
                                      :ex.ex/code (resolve-shallow ~sym)})
            result#  (if (contains? ~context ~trace-key)
                       (let [selector# (get ~context ~trace-key)]
-                          (if trace!#
-                            (try
-                              (let [result# (me.lomin.ex/ex (-> context#
-                                                                (assoc :ex.ex/opts ~delayed-opts)
-                                                                (assoc :ex.ex/trace-key ~trace-key))
-                                                            selector#)]
-                                (if (delay? result#) @result# result#))
-                              (catch Exception e#
-                                (trace!# [~trace-key (assoc context# :ex.ex/result e#)])
-                                (throw e#)))
-                            (let [result# (selector# ~delayed-opts context#)]
-                              (if (delay? result#) @result# result#))))
-                        ~sym)]
+                        (if trace!#
+                          (try
+                            (let [result# (me.lomin.ex/ex (-> context#
+                                                              (assoc :ex.ex/opts ~delayed-opts)
+                                                              (assoc :ex.ex/trace-key ~trace-key))
+                                                          selector#)]
+                              (if (delay? result#) @result# result#))
+                            (catch Exception e#
+                              (trace!# [~trace-key (assoc context# :ex.ex/result e#)])
+                              (throw e#)))
+                          (let [result# (selector# ~delayed-opts context#)]
+                            (if (delay? result#) @result# result#))))
+                      ~sym)]
        (when trace!#
          (trace!# [~trace-key (assoc context# :ex.ex/result result#)]))
        result#)))
 
-(defmacro exchange {:ex/replace replace-exchange}
+
+(defmacro exchange
+  {:ex/replace replace-exchange}
   [_trace-key form & {:as opts}]
   (if-let [options (seq (filter (partial deeply-resolvable? &env) (conj (vals opts) form)))]
     (rand-nth options)
     ::unresolvable))
 
-(defn destruct [var-or-expr name-or-expr body]
+
+(defn destruct
+  [var-or-expr name-or-expr body]
   (if (seq body)
     (if (symbol? name-or-expr)
       {:ex.as/expr  var-or-expr
@@ -231,7 +277,9 @@
        :ex.as/sym   name-or-expr
        :ex.as/forms [name-or-expr]})))
 
-(defn ->replacement-ast-node [sym]
+
+(defn ->replacement-ast-node
+  [sym]
   {:children    [],
    :name        sym,
    :op          :local,
@@ -242,19 +290,25 @@
    :local       :let,
    :assignable? false})
 
-(defn update-context [ctx]
+
+(defn update-context
+  [ctx]
   (-> ctx
       (assoc :ex.trace/parent-id (:ex.trace/id ctx))
       (assoc :ex.trace/id ((:ex/generate-id! ctx random-uuid)))))
 
-(defn transform-ast [ex-sym name ast]
+
+(defn transform-ast
+  [ex-sym name ast]
   (ast/prewalk ast
                (fn [m]
                  (if (= (:name m) name)
                    (assoc m :name ex-sym)
                    m))))
 
-(defmacro with-ex [var-or-expr name-or-expr & body]
+
+(defmacro with-ex
+  [var-or-expr name-or-expr & body]
   (let [ex-sym   (gensym "with_ex_")
         {:ex.as/keys [sym forms expr]} (destruct var-or-expr name-or-expr body)
         body'    `(try+ ~@(replace-ex-fns ex-sym forms &env))
@@ -265,4 +319,4 @@
                         (analyze body' &env {ex-sym (->replacement-ast-node ex-sym)
                                              sym    (->replacement-ast-node ex-sym)})))]
     `(as-> (update-context ~expr) ~ex-sym
-           ~(emit/emit-hygienic-form analysis))))
+       ~(emit/emit-hygienic-form analysis))))
