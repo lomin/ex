@@ -482,30 +482,49 @@
           nil]
          (demonstrate $ $)))
   (is (=
-       {:ex.as/expr  '(+ 1 2)
-        :ex.as/sym   '$
-        :ex.as/forms '[(prn $)]}
+       {:ex.as/expr          '(+ 1 2)
+        :ex.as/sym           '(+ 1 2)
+        :ex.as/other-bindings []
+        :ex.as/forms         '($ [(prn $)])}
        (ex/destruct '(+ 1 2) '$ '[(prn $)])))
   (is (=
-       {:ex.as/expr  '$
-        :ex.as/sym   '$
-        :ex.as/forms '[(+ 1 2)]}
+       {:ex.as/expr          '$
+        :ex.as/sym           '$
+        :ex.as/other-bindings []
+        :ex.as/forms         '((+ 1 2) nil)}
        (ex/destruct '$ '(+ 1 2) nil)))
   (is (=
-       {:ex.as/expr  '$
-        :ex.as/sym   '$
-        :ex.as/forms '[(prn 1 2) (+ 3 4)]}
+       {:ex.as/expr          '$
+        :ex.as/sym           '$
+        :ex.as/other-bindings []
+        :ex.as/forms         '((prn 1 2) [(+ 3 4)])}
        (ex/destruct '$ '(prn 1 2) '[(+ 3 4)])))
   (is (=
-       {:ex.as/expr  '(+ 1 2)
-        :ex.as/sym   '$
-        :ex.as/forms '[$]}
+       {:ex.as/expr          '(+ 1 2)
+        :ex.as/sym           '(+ 1 2)
+        :ex.as/other-bindings []
+        :ex.as/forms         '($ nil)}
        (ex/destruct '(+ 1 2) '$ nil)))
   (is (=
-       {:ex.as/expr  '$
-        :ex.as/sym   '$
-        :ex.as/forms '[$]}
+       {:ex.as/expr          '$
+        :ex.as/sym           '$
+        :ex.as/other-bindings []
+        :ex.as/forms         '($ nil)}
        (ex/destruct '$ '$ nil))))
+
+  (is (=
+       {:ex.as/expr          'system
+        :ex.as/sym           '$
+        :ex.as/other-bindings []
+        :ex.as/forms         '((prn $))}
+       (ex/destruct '[$ system] '(prn $))))
+
+  (is (=
+       {:ex.as/expr          'system
+        :ex.as/sym           '$
+        :ex.as/other-bindings '[x 1 y 2]
+        :ex.as/forms         '((+ $ x y))}
+       (ex/destruct '[$ system x 1 y 2] '(+ $ x y))))
 
 
 (defn nested-1
@@ -528,7 +547,7 @@
 (deftest with-ex-tracing-test
   (is (=* {:ex.trace/parent-id nil,
            :ex.trace/id        0}
-          (ex/with-ex (with-id-seq {}) $
+          (ex/with-ex [$ (with-id-seq {})]
             $)))
 
   (is (=* {:ex.trace/parent-id 0,
@@ -538,11 +557,11 @@
   (is (=* {:outer              [{:inner [2 3]}],
            :ex.trace/parent-id nil,
            :ex.trace/id        0}
-          (ex/with-ex (with-id-seq {:outer [{:inner [1 2]}]}) $
+          (ex/with-ex [$ (with-id-seq {:outer [{:inner [1 2]}]})]
             (sp/transform [:outer sp/FIRST :inner sp/ALL] inc $))))
 
   (is (= 2
-         (ex/with-ex {:test 1} $
+         (ex/with-ex [$ {:test 1}]
            (let [$ {:test 2}]
              (:test $)))))
 
@@ -551,7 +570,7 @@
            :actual             1
            :expected           1}
           (let [$ {:unexpected 2}]
-            (ex/with-ex (with-id-seq {:actual 1}) $ (merge $ {:expected 1})))))
+            (ex/with-ex [$ (with-id-seq {:actual 1})] (merge $ {:expected 1})))))
 
   (is (= 3
          (ex/with-ex {:actual 1} (+ 1 2))))
@@ -575,5 +594,17 @@
             @trace-state))))
 
 
-(deftest example-test
-  (is (= "a" (ex/with-ex {} (ex/example "a" 1)))))
+(deftest additional-bindings-test
+  (is (= "a" (ex/with-ex {} (ex/example "a" 1))))
+
+  (is (= 7
+         (ex/with-ex [$ {:test 3}
+                      x 2
+                      y 2] 
+           (+ (:test $) x y))))
+
+  (is (= 5
+         (ex/with-ex [$ {:test 3}
+                      {t :test :as system} $] 
+                      (is (:ex.trace/id system))
+           (+ t 2)))))

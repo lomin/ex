@@ -147,16 +147,19 @@
       [`(~token ~@body)])))
 
 
+(defn- build-try-from-parsed
+  [parsed-try]
+  `(try
+     ~@(:body parsed-try)
+     ~@(-> []
+           (into (->exit-dispatch parsed-try))
+           (into (->ex-info-dispatch parsed-try))
+           (into (->exception-clauses parsed-try))
+           (into (->finally-clause parsed-try)))))
+
 (defmacro try+
   [& try-body]
-  (let [parsed-try (parse-try try-body)]
-    `(try
-       ~@(:body parsed-try)
-       ~@(-> []
-             (into (->exit-dispatch parsed-try))
-             (into (->ex-info-dispatch parsed-try))
-             (into (->exception-clauses parsed-try))
-             (into (->finally-clause parsed-try))))))
+  (build-try-from-parsed (parse-try try-body)))
 
 
 (defn replace-ex-fns
@@ -260,22 +263,17 @@
 
 
 (defn destruct
-  [var-or-expr name-or-expr body]
-  (if (seq body)
-    (if (symbol? name-or-expr)
-      {:ex.as/expr  var-or-expr
-       :ex.as/sym   name-or-expr
-       :ex.as/forms body}
-      {:ex.as/expr  var-or-expr
-       :ex.as/sym   var-or-expr
-       :ex.as/forms (into [name-or-expr] body)})
-    (if (symbol? var-or-expr)
-      {:ex.as/expr  var-or-expr
-       :ex.as/sym   var-or-expr
-       :ex.as/forms [name-or-expr]}
-      {:ex.as/expr  var-or-expr
-       :ex.as/sym   name-or-expr
-       :ex.as/forms [name-or-expr]})))
+  [bindings-or-expr & body]
+  (if (vector? bindings-or-expr)
+    (let [[system-sym system-expr] bindings-or-expr]
+      {:ex.as/expr          system-expr
+       :ex.as/sym           system-sym
+       :ex.as/other-bindings (subvec bindings-or-expr 2)
+       :ex.as/forms         body})
+    {:ex.as/expr          bindings-or-expr
+     :ex.as/sym           bindings-or-expr
+     :ex.as/other-bindings []
+     :ex.as/forms         body}))
 
 
 (defn ->replacement-ast-node
@@ -308,10 +306,16 @@
 
 
 (defmacro with-ex
-  [var-or-expr name-or-expr & body]
+  [bindings-or-expr & body]
   (let [ex-sym   (gensym "with_ex_")
-        {:ex.as/keys [sym forms expr]} (destruct var-or-expr name-or-expr body)
-        body'    `(try+ ~@(replace-ex-fns ex-sym forms &env))
+        {:ex.as/keys [sym forms expr other-bindings]} (apply destruct bindings-or-expr body)
+        body'    (if (seq other-bindings)
+                   (let [parsed-try (parse-try (replace-ex-fns ex-sym forms &env))
+                         modified-parsed (assoc parsed-try :body
+                                                [`(let ~other-bindings
+                                                    ~@(:body parsed-try))])]
+                     (build-try-from-parsed modified-parsed))
+                   `(try+ ~@(replace-ex-fns ex-sym forms &env)))
         analysis (try (transform-ast ex-sym
                                      sym
                                      (analyze body' &env {ex-sym (->replacement-ast-node ex-sym)}))
