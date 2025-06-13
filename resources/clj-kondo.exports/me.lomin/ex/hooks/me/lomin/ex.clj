@@ -1,68 +1,56 @@
 (ns hooks.me.lomin.ex
   (:require [clj-kondo.hooks-api :as api]))
 
+(defn- catch-clause? [node]
+  (and (api/list-node? node)
+       (= 'catch (some-> node :children first api/sexpr))))
+
+(defn- transform-catch-clause [catch-node]
+  ;; Transform (catch :keyword binding body...) to (catch Exception binding body...)
+  (let [children (:children catch-node)
+        [catch-token _error-type binding & body] children]
+    (api/list-node
+     (list* catch-token
+            (api/token-node 'Exception)
+            binding
+            body))))
+
 (defn with-ex [{:keys [node]}]
   (let [children (rest (:children node))
-        ;; First child is always the system
-        system-expr (first children)
-        ;; Analyze remaining children to find if there's a catch
-        rest-children (rest children)
-        ;; Look for a child that starts with 'catch'
-        catch-index (->> rest-children
-                         (map-indexed vector)
-                         (filter (fn [[_ child]]
-                                   (when-let [token (some-> child :children first)]
-                                     (= 'catch (api/sexpr token)))))
-                         (map first)
-                         first)
-        ;; Separate body and catch clause
-        body-exprs (if catch-index
-                     (take catch-index rest-children)
-                     rest-children)
-        catch-expr (when catch-index
-                     (nth rest-children catch-index))
-        ;; Extract catch parts if it exists
-        catch-parts (when catch-expr
-                      (let [catch-children (rest (:children catch-expr))]
-                        [(first catch-children)         ; error type (keyword)
-                         (second catch-children)        ; error binding (symbol)
-                         (drop 2 catch-children)]))     ; catch body
-        ;; Create catch node with proper binding analysis if it exists
-        new-catch (if catch-expr
-                    (let [[error-type-node bind-node body] catch-parts
-                          binding-symbol (api/sexpr bind-node)]
-                      (api/list-node
-                       (list
-                        (api/token-node 'catch)
-                        (api/token-node 'Exception)
-                        bind-node
-                          ;; Create a let node to make clj-kondo understand the binding
-                          ;; Include the error-type in a binding to preserve its highlighting
-                        (api/list-node
-                         (list
-                          (api/token-node 'let)
-                          (api/vector-node
-                           [(api/token-node '_error_type)
-                            error-type-node]) ; Keep the original keyword node
-                          (api/list-node
-                           (list*
-                            (api/token-node 'do)
-                            body)))))))
-                    ;; Add a dummy catch when none is provided
-                    (api/list-node
-                     (list
-                      (api/token-node 'catch)
-                      (api/token-node 'Exception)
-                      (api/token-node '_dummy_e)
-                      (api/token-node nil))))
-        ;; Build the transformed node as a try/catch
-        new-node (api/list-node
-                  (list*
-                   (api/token-node 'try)
-                   (api/list-node
-                    (list*
-                     (api/token-node 'let)
-                     (api/vector-node [(api/token-node '_system) system-expr])
-                     body-exprs))
-                   [new-catch]))]
-    {:node new-node}))
+        first-arg (first children)
+        body-args (rest children)
+        ;; Separate regular body from catch/finally clauses
+        {body-forms :body catch-forms :catch} 
+        (group-by #(if (catch-clause? %) :catch :body) body-args)
+        ;; Transform catch clauses for clj-kondo
+        transformed-catches (map transform-catch-clause catch-forms)]
+    
+    (if (and (api/vector-node? first-arg)
+             (seq (:children first-arg)))
+      ;; Vector binding syntax: [$ system x 1 y 2] body...
+      (let [bindings (:children first-arg)
+            binding-pairs (partition 2 bindings)
+            let-bindings (api/vector-node (vec (mapcat identity binding-pairs)))
+            let-form (api/list-node
+                      (list*
+                       (api/token-node 'let)
+                       let-bindings
+                       body-forms))]
+        {:node (if (seq transformed-catches)
+                 (api/list-node
+                  (list* (api/token-node 'try)
+                         let-form
+                         transformed-catches))
+                 let-form)})
+      ;; Non-vector syntax: system body...
+      (let [let-form (api/list-node
+                      (list*
+                       (api/token-node 'let)
+                       (api/vector-node [(api/token-node '_system) first-arg])
+                       body-forms))]
+        {:node (if (seq transformed-catches)
+                 (api/list-node
+                  (list* (api/token-node 'try)
+                         let-form
+                         transformed-catches))
+                 let-form)}))))

@@ -60,3 +60,6 @@ modules/
 
 # Claude
 .claude/
+
+# clj-kondo imports (generated from dependencies)
+.clj-kondo/imports/
