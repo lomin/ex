@@ -608,3 +608,14 @@
                       {t :test :as system} $] 
                       (is (:ex.trace/id system))
            (+ t 2)))))
+
+(defmacro wrapper [& body]
+  `(ex/with-ex [~'$system {:test 1}
+                ~'$test (update ~'$system :test inc)]
+     (+ (:test ~'$test) (do ~@body))))
+
+(comment
+  (macroexpand '(wrapper (+ 1 1))))
+
+(deftest wrapper-macro-test
+  (is (= 4 (wrapper (+ 1 1)))))
