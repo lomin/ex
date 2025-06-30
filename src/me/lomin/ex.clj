@@ -161,15 +161,21 @@
   [& try-body]
   (build-try-from-parsed (parse-try try-body)))
 
-
 (defn replace-ex-fns
+  "Recursively replace forms that have :ex/replace metadata until no more replacements are possible."
   ([context body env]
-   (walk/postwalk
-    (fn [x]
-      (if-let [replace (and (seq? x) (symbol? (first x)) (:ex/replace (meta (resolve (first x)))))]
-        (replace (first x) (rest x) context env)
-        x))
-    body)))
+   (loop [result body]
+     (let [replaced (walk/postwalk
+                     (fn [form]
+                       (if (and (seq? form) (symbol? (first form)))
+                         (if-let [replace-fn (:ex/replace (meta (resolve (first form))))]
+                           (replace-fn (first form) (rest form) context env)
+                           form)
+                         form))
+                     result)]
+       (if (= result replaced)
+         result  ; No more replacements possible
+         (recur replaced))))))
 
 
 (defmacro with-examples

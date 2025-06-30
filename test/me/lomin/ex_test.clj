@@ -512,19 +512,19 @@
         :ex.as/forms         '($ nil)}
        (ex/destruct '$ '$ nil))))
 
-  (is (=
-       {:ex.as/expr          'system
-        :ex.as/sym           '$
-        :ex.as/other-bindings []
-        :ex.as/forms         '((prn $))}
-       (ex/destruct '[$ system] '(prn $))))
+(is (=
+     {:ex.as/expr          'system
+      :ex.as/sym           '$
+      :ex.as/other-bindings []
+      :ex.as/forms         '((prn $))}
+     (ex/destruct '[$ system] '(prn $))))
 
-  (is (=
-       {:ex.as/expr          'system
-        :ex.as/sym           '$
-        :ex.as/other-bindings '[x 1 y 2]
-        :ex.as/forms         '((+ $ x y))}
-       (ex/destruct '[$ system x 1 y 2] '(+ $ x y))))
+(is (=
+     {:ex.as/expr          'system
+      :ex.as/sym           '$
+      :ex.as/other-bindings '[x 1 y 2]
+      :ex.as/forms         '((+ $ x y))}
+     (ex/destruct '[$ system x 1 y 2] '(+ $ x y))))
 
 
 (defn nested-1
@@ -600,13 +600,13 @@
   (is (= 7
          (ex/with-ex [$ {:test 3}
                       x 2
-                      y 2] 
+                      y 2]
            (+ (:test $) x y))))
 
   (is (= 5
          (ex/with-ex [$ {:test 3}
-                      {t :test :as system} $] 
-                      (is (:ex.trace/id system))
+                      {t :test :as system} $]
+           (is (:ex.trace/id system))
            (+ t 2)))))
 
 (defmacro wrapper [& body]
@@ -619,3 +619,18 @@
 
 (deftest wrapper-macro-test
   (is (= 4 (wrapper (+ 1 1)))))
+
+(defmacro inner-wrapper
+  {:ex/replace  (fn [_ _ _ _]
+                  "right")}
+  [& body]
+  "wrong")
+
+(defmacro outer-wrapper
+  {:ex/replace  (fn [_ _ _ _]
+                  `(inner-wrapper nil))}
+  [& body]
+  "wrong")
+
+(deftest nested-wrapper-macro-test
+  (is (= "right" (ex/with-ex {} (outer-wrapper (+ 1 1))))))
